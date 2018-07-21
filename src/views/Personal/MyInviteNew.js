@@ -328,7 +328,7 @@ export class MyInvite extends Component {
                       <div className="inv-messR">
                         <div className="myinvite-top-qrcode">
                             <QRCode  value={this.state.link}  id="code"  renderAs="canvas" size={this.state.size} width='80' height="80" style={{width:'80px',height:'80px'}}/>
-                            <a href="javascript:void(0);" onClick={this.getImg} className="scaleBtn">{intl.get('点击放大')}</a>
+                            <a href="javascript:void(0);" onClick={this.getImg} className="scaleBtn">{intl.get('获取专属海报')}</a>
                             <canvas id="myCanvas" style={{display:'none'}}></canvas>
                             <Modal
                             wrapClassName="vertical-center-modal"

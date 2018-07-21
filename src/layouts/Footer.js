@@ -72,12 +72,10 @@ import Tcoinex from '../assets/Tcoinex8.png';
     }
     
     render() {
-
          //关于我们
         const Links = this.props.links.map( (item, index) => {
             return <Link to={'/site?index='+(index)} key={index.toString()}>{item.typeName}</Link>
         });
-        
         const OrderLinks = this.props.orderLinks.map( (item, index) => {
             return <a href={item.url} key={index.toString()} target="view_window">{item.name}</a> 
         });
