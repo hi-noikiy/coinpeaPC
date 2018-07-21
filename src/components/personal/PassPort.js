@@ -346,7 +346,7 @@ class PassPort extends Component {
                 </Upload>
                 </FormItem>
 
-                <p className="lastUpTip"><span>{intl.get('护照签名照1')} </span>{intl.get('护照签名照2')}<i>CoinPea</i>{intl.get('签名照3')}<i>{intl.get('签名照4')}</i>{intl.get('签名照5')}</p>
+                <p className="lastUpTip"><span>{intl.get('护照签名照1')} </span>{intl.get('护照签名照2')}<i>Coinex8</i>{intl.get('签名照3')}<i>{intl.get('签名照4')}</i>{intl.get('签名照5')}</p>
                 
                 <FormItem
                 label="."

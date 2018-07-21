@@ -21,7 +21,7 @@ import { CLEAR_LOGIN_ACTIONS } from '../LoginRedux';
 import friends from '../../assets/07_08.friends.png'
 import commission from '../../assets/07_08.commission.png'
 
-import inVite_CN from  '../../assets/11_01.chinese_card.png';
+import inVite_CN from  '../../assets/11_01.chinese_card.jpeg';
 import inVite_EN from  '../../assets/11_02.english_card.png';
 
 
@@ -92,9 +92,9 @@ export class MyInvite extends Component {
     }
 
     componentDidMount() {
-        var script = document.createElement('script');
-        script.src = "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=408841";
-        document.body.appendChild(script);
+        // var script = document.createElement('script');
+        // script.src = "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=408841";
+        // document.body.appendChild(script);
         this.myInvite()
         this.myInviteBanner()
         this.myInviteRank()
@@ -217,13 +217,15 @@ export class MyInvite extends Component {
         const  code = document.getElementById('code');
         var bgImg = new Image();
         if(this.props.lang === 'en_US'){
-            bgImg.src = inVite_EN; 
+            bgImg.src = inVite_CN; 
         }else{
             bgImg.src = inVite_CN; 
         }
         var canvas = document.getElementById('myCanvas');
         canvas.width = 415;
         canvas.height = 750;
+        // canvas.width = 150;
+        // canvas.height = 150
         var ctx = canvas.getContext('2d');
         bgImg.crossOrigin = '*';
         var srcImg;
@@ -231,7 +233,7 @@ export class MyInvite extends Component {
       
         bgImg.onload = () =>{
             ctx.drawImage(bgImg,0,0,415,750);
-            ctx.drawImage(code,143,256,code.width,code.height);
+            ctx.drawImage(code,147,600,120,120);
             srcImg = canvas.toDataURL("image/png");
             this.setState({
                 codepic:srcImg,

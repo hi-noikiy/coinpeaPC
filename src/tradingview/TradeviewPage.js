@@ -181,7 +181,7 @@ return {
       "pointvalue": 1, 
       'volume_precision':1000000,
       "pricescale": 100000000, */
-      library_path: '/',
+      library_path: './',
       locale: lang,
       drawings_access: {
         type: 'black',

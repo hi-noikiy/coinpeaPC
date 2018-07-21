@@ -421,8 +421,10 @@ export  class API extends Component {
                     <div className="api-top-right">
                         <h4>{intl.get('提示')}</h4>
                         <p>• 	{intl.get('api提示1')}<a href={this.state.documentLink}>{intl.get('API DOC')}</a>{intl.get('api提示1-1')}</p>
-                        <p>• 	{intl.get('api提示2')}{this.state.apiKeyNumber}{intl.get('api提示2-1')}</p>
-                        <p>• 	<span>{intl.get('不要泄露')}</span>{intl.get('api提示3')}{this.state.apiIpNumber}{intl.get('api提示3-1')}</p>
+                        <p>•    {intl.get('api提示2')}{intl.get('api提示2-1')}</p>
+                        {/*<p>• 	{intl.get('api提示2')}{this.state.apiKeyNumber}{intl.get('api提示2-1')}</p>*/}
+                        <p>•    <span>{intl.get('不要泄露')}</span>{intl.get('api提示3')}{intl.get('api提示3-1')}</p>
+                        {/*<p>• 	<span>{intl.get('不要泄露')}</span>{intl.get('api提示3')}{this.state.apiIpNumber}{intl.get('api提示3-1')}</p>*/}
                     </div>
                 </div>
                 <div className="api-bottom">

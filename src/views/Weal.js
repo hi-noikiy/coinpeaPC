@@ -126,7 +126,7 @@ class Weal extends Component {
                 {/* banner */}
                 <div className="weal-banner"  style={sectionStyle}>
                     <p className="p1">不错过任何一颗糖</p>
-                    <p className="p2">CoinPea糖果旨在帮助优秀的区块链项目增长，并给CoinPea用户带来好处</p>   
+                    <p className="p2">Coinex8糖果旨在帮助优秀的区块链项目增长，并给Coinex8用户带来好处</p>   
                 </div>
                 {/* 内容 */}
                 <div className="weal-content">

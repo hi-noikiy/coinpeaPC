@@ -234,7 +234,7 @@ class KlineTrade extends React.Component {
                                         y="90%" 
                                         className="hd-text hd-text_1"
                                     >
-                                        CoinPea
+                                        Coinex8
                                     </text>
                                     <text
                                         textAnchor="middle"
@@ -242,7 +242,7 @@ class KlineTrade extends React.Component {
                                         y="90%" 
                                         className="hd-text hd-text_1"
                                     >
-                                        CoinPea
+                                        Coinex8
                                     </text> 
                                     <text
                                         textAnchor="middle"
@@ -250,7 +250,7 @@ class KlineTrade extends React.Component {
                                         y="90%" 
                                         className="hd-text hd-text_2"
                                     >
-                                        CoinPea
+                                        Coinex8
                                     </text> 
                                     <text
                                         textAnchor="middle"
@@ -258,7 +258,7 @@ class KlineTrade extends React.Component {
                                         y="90%" 
                                         className="hd-text hd-text_3"
                                     >
-                                        CoinPea
+                                        Coinex8
                                     </text> 
                                     <text
                                         textAnchor="middle"
@@ -266,7 +266,7 @@ class KlineTrade extends React.Component {
                                         y="90%" 
                                         className="hd-text hd-text_4"
                                     >
-                                        CoinPea
+                                        Coinex8
                                     </text>     
                                 </svg>
                         </NavLink>
