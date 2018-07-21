@@ -242,6 +242,12 @@ const Dividend =  Loadable({
     delay:200
 })
 
+// http://coinex8.com/.well-known/pki-validation/fileauth.txt
+const Fileauth = Loadable({
+    loader:()=>import('../views/Fileauth'),
+    loading:Loading,
+    delay:200
+})
 
 
 // function mapStyles(styles) {
@@ -290,6 +296,7 @@ const MyRouter = (props) => (
                         <Route path="/currency"  component={JoinCoin}></Route>
                         <Route path="/details"  component={Details}></Route>
                         <Route path="/dividend"  component={Dividend}></Route>
+                        <Route path="/.well-known/pki-validation/fileauth.txt" component={Fileauth}  ></Route>
                         <Redirect to="/" />
                     {/* </AnimatedSwitch> */}
                 </Switch>
