@@ -1,0 +1,220 @@
+/*
+    我的邀请页样式
+*/
+.clear:after{
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    clear: both;
+    content: "";
+}
+.myinvite{
+    background: #fff;
+    padding: 60px 30px;
+    .myinvite-top{
+        margin-bottom: 60px;
+        .myinvite-top-qrcode{
+            text-align: center;
+            width: 120px;       
+            float: left;
+            span{
+                color: #3DADD9;
+                font-size: 12px;
+                line-height: 24px;
+            }
+        }
+        .myinvite-top-info{
+            float: left;
+            padding: 0 60px 0 18px;
+            width: 650px;   
+            border-right: 1px solid rgba(40,40,40,.1);
+            span{
+                display: inline-block;
+                text-align: right;
+                width: 90px;
+            }
+            p{
+                font-size: 14px;
+                
+            }
+            .link{
+                margin: 19px 0 13px;
+                height: 40px;
+                span{
+                    line-height: 40px;
+                }
+                input{
+                    width: 401px;
+                    height: 40px;
+                    padding: 0 10px;
+                    vertical-align: top;
+                }
+                button{
+                    margin-left: 15px;
+                    width: 50px;
+                    height: 40px;
+                    font-size: 20px;
+                    border-color: #3DADD9;
+                    i{
+                        color: #3DADD9;
+                    }
+                }
+                button:hover{
+                    background: #3DADD9;
+                    i{
+                        color: #fff;
+                    }
+                }
+            }
+            #share{
+                p{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                a{
+                    width: 28px;
+                    height: 28px;
+                    margin-right: 12px;
+                }
+                a.bds_fbook{
+                    background: url('../../assets/07_08.share_to0101.png') no-repeat;
+                }
+                a.bds_fbook:hover{
+                    background: url('../../assets/07_08.share_to0102.png') no-repeat;
+                }
+                a.bds_twi{
+                    background: url('../../assets/07_08.share_to0201.png') no-repeat;
+                }
+                a.bds_twi:hover{
+                    background: url('../../assets/07_08.share_to0202.png') no-repeat;
+                }
+                a.bds_linkedin{
+                    background: url('../../assets/07_08.share_to0301.png') no-repeat;
+                }
+                a.bds_linkedin:hover{
+                    background: url('../../assets/07_08.share_to0302.png') no-repeat;
+                }
+                a.bds_tsina{
+                    background: url('../../assets/07_08.share_to0401.png') no-repeat;
+                }
+                a.bds_tsina:hover{
+                    background: url('../../assets/07_08.share_to0402.png') no-repeat;
+                }
+                a.bds_qzone{
+                    background: url('../../assets/07_08.share_to0501.png') no-repeat;
+                }
+                a.bds_qzone:hover{
+                    background: url('../../assets/07_08.share_to0502.png') no-repeat;
+                }
+            }
+            
+        }
+        .myinvite-top-data{
+            float: right;
+            margin-top: 28px;
+            li{
+                margin-right: 60px;
+                text-align: center;
+                float: left;
+                h4{
+                    height: 22px;
+                    margin-bottom: 15px;
+                    img{
+                        vertical-align: middle;
+                        margin-right: 8px;
+                    }
+                    span{
+                        vertical-align: middle;
+                        color: #505050;
+                        font-size: 12px;
+                    }
+                }
+                span{
+                    font-size: 22px;
+                    color: #3DADD9;
+                }
+            }
+        }
+    }
+    .myinvite-middle{
+        .myinvite-middle-one{
+            float: left;
+        }
+        .myinvite-middle-two{
+            float: right;
+        }
+        h4{
+            font-size: 16px;
+            line-height: 38px;
+            color: #4b4f52;
+        }
+        .ant-table-wrapper{
+            width: 555px;
+            table{
+                padding: 0;
+                text-align: center;
+                background: #fff;
+                thead{
+                    th{
+                        background-color: #F4F7FA !important;
+                        color: #808080;
+                        text-align: center;
+                        padding: 10px 16px !important;
+                        font-size: 12px;
+                    }
+                }
+                tbody{
+                    td{
+                        padding: 10 16px !important;
+                        font-size: 12px;
+                        color: #4b4f52;
+                    }
+                }
+               
+            }
+        }
+    }
+    .rule{
+        margin-top: 60px;
+        h4{
+            font-size: 16px;
+            line-height: 24px;
+        }
+        li{
+            font-size: 12px;
+            line-height: 24px;
+            color: #000;
+            span{
+                margin-left: 5px;
+                color: #4b4f52;
+            }
+        }
+    }
+    .scaleBtn{color:#3DADD9}
+    .copyBtn{
+        margin-left:15px;
+        cursor: pointer;
+    }
+    
+}
+
+.vertical-center-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vertical-center-modal .ant-modal {
+    width: 415px ;
+    top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    .ant-modal-content{
+        width: 462px;
+        padding: 0;
+        .ant-modal-footer{
+            display: none;
+        }
+    }
+  }

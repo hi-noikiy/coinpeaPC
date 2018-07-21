@@ -1,0 +1,51 @@
+/* 
+    交易也 交易区表格样式
+*/
+.trade-content-left-t{
+    .ant-tabs-content{
+        box-sizing: border-box;
+    }
+    .trade-tab{
+        margin: 0 auto;
+        width: 280px;
+        box-sizing: border-box;
+        overflow: hidden;
+        .trade-area-title{
+            height: 36px;
+            line-height: 36px;
+            font-size: 12px;
+            color: #8EA0B5;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+          
+        }
+        ul {
+            font-size: 12px;
+            padding-top: 4px;
+            li{
+                cursor: pointer;
+                height: 26px;
+                line-height: 26px;
+                color: #FFFFFF;
+                display: flex;
+               span{
+                   letter-spacing: 1px;
+               }
+                .custom-select{
+                    color:#BCBCBC;
+                 
+                    font-size: 14px;
+                }
+                .custom-slect-add{
+                    color: #3DADD9;
+                }
+            }
+            .select-coin-tr{
+                background: #2B3E55;
+            }
+            tr td:last-child{
+                text-align: right;
+            }
+        }
+    }
+}

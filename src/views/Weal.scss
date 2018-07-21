@@ -1,0 +1,130 @@
+.weal-banner{
+    color: #fff;
+    .p1{
+        text-align: center;
+        font-size: 60px;
+        padding-top: 177px;
+    }
+    .p2{
+        font-size: 16px;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+
+.weal-content{
+    width:1200px;
+    margin: 0 auto;
+    .ant-tabs-bar{
+
+        border-width: 0;
+    }
+    .ant-tabs-ink-bar{
+        background: none;
+    }
+    .ant-tabs-tab-prev,.ant-tabs-tab-next{
+        color:#fff;
+    }
+    .ant-tabs-tab-prev:hover, .ant-tabs-tab-next:hover{
+        color:#1890ff;
+    }
+    .ant-tabs-tab{margin: 0}
+    .ant-tabs-tab::after{
+        content: '';
+        width: 1px;
+        height: 14px;
+        background: #BCBCBC;
+        display: inline-block;
+        margin-left: 16px;
+        vertical-align: middle;
+    }
+    .ant-tabs-tab:last-child::after{
+        background: none
+    }
+    .ant-tabs-nav {
+        .ant-tabs-tab-active{
+            color:#49CCFF;
+        }
+    }
+    .ant-tabs-tabpane{
+        display: flex;
+
+    }
+       
+}
+.weal_dl:nth-child(3n+1){margin-left: 0}
+.weal_dl{
+    background: #fff;
+    width: 380px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(40,40,40,0.12);
+    border-radius: 2px;
+    margin-left: 30px;
+    float: left;
+    .ant-btn[disabled]:hover{
+        background-color: #BBBBBB
+    }
+    dt{
+        position: relative;
+        img{
+            width: 380px;
+            height:220px;
+        }
+        p{
+            position: absolute;
+            top:20px;
+            left: 0;
+            padding: 0 14px;
+            height: 42px;
+            background: #FF5817;
+            text-align: center;
+            line-height: 42px;
+            color: #fff;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+        p.colorBlue{
+            background:  #3DADD9
+        }
+        p.colorHui{
+            background:  #BBBBBB
+        }
+        
+
+    }
+    dd{
+        h3{
+            font-size: 14px;
+            color: #4b4f52;
+            padding: 25px 30px 15px;
+        }
+        p{
+            color:#666;
+            font-size: 12px;
+            line-height: 28px;
+            padding: 0 30px;
+        }
+        span{color: #808080}
+        .btn{
+            width: 340px;
+            background: #3DADD9;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 40px;
+            margin: 16px auto 0;
+            display: block;
+            font-size: 14px;
+            border: none;
+            height: 40px;
+            span{
+                color: #fff
+            }
+
+        }
+        .colorHui{
+            background:  #BBBBBB
+        }
+    }
+}

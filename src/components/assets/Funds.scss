@@ -1,0 +1,148 @@
+.funds-wrap{
+    .funds-wrap-top{
+        padding: 30px;
+        .funds-wrap-topL{
+            width: 400px;
+            float: left;
+            margin-top: 6px;
+            .ant-search-input-wrapper{
+                width: 180px;
+                height: 30px;
+                line-height: 30px;
+                position: relative;
+                float: left;
+                .anticon-search{
+                    position: absolute;
+                    top: 10px;
+                    right: 8px;
+                    z-index: 9;
+                    font-size:14px;
+                }
+                .ant-input{
+                    border-radius:2px;
+                    font-size: 12px;
+                }
+            }
+            .ant-search-input-wrapper:hover{
+                color:  #3DADD9;
+            }
+            .hide-assets{
+                float: left;
+                span{
+                    vertical-align: middle;
+                }
+                span:first-child{
+                    margin: 0 10px 0 30px;
+                    line-height: 32px;
+                }
+            }
+        }
+        .funds-wrap-topR{
+            float: right;
+            width: 300px;
+            text-align: right;
+            p{
+                font-size: 12px;
+                line-height: 12px;
+                margin-bottom: 12px;
+                span{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .ant-table-wrapper{
+        .ant-table-thead{
+            th{
+                padding: 10px 16px;
+                font-size: 12px;
+                background: #F4F7FA;
+                color: #808080;
+                text-align: left;
+                .ant-table-column-sorter{
+                    vertical-align: top;
+                    margin-top: 4px;
+                    .ant-table-column-sorter-up, .ant-table-column-sorter-down{
+                        width: 7px;
+                        height: 3px;
+                        color: #808080;
+                    }
+                    .ant-table-column-sorter-down{
+                        margin-top: 3px;
+                    }
+                }
+            }
+            .recharge{
+                width: 86px;
+                padding-left: 12px;
+            }           
+        }
+        .ant-table-row{
+            td{
+                color: #4b4f52;
+                padding: 10px 16px;
+                font-size: 12px;
+                text-align: left;
+            }
+            .no-trade-wrap{
+                padding-left: 0;
+                padding-right: 0;
+                text-align: right;
+                width: 20px;
+                div{
+                    margin-right: -10px;
+                }
+            }
+            .withdraw,.trade,.recharge{    
+                padding: 0;
+               width:80px;
+                a{
+                    padding: 5px 12px;
+                    border-radius: 2px;
+                }
+            }
+            .recharge{
+                width: 80px;
+            }
+            .trade{
+                width: 96px;
+                padding-right: 30px;
+            }
+            .recharge a,.withdraw a{
+                color: #78A429;
+            }
+            .trade a{
+                color:  #42B9E7;
+            }
+            .recharge a:hover,.withdraw a:hover{
+                color: #fff;
+                background: #78A429;
+            }
+            .trade a:hover{
+                background: #42B9E7;
+                color: #fff;
+            }
+            a.no-trade{
+                color:#BCBCBC;
+              
+            }
+            a.no-trade:hover {
+                background: transparent;
+                color:#BCBCBC;
+            }
+        }
+        .colum1{
+            padding-left: 30px !important;
+            p{
+                span{
+                    vertical-align: middle;
+                    margin-left: 14px;
+                }
+                img{
+                    width: 22px;
+                }
+            }
+        }
+    }
+    
+}

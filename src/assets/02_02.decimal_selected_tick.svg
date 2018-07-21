@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="9px" viewBox="0 0 11 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>02_02.decimal_selected_tick</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="02_02.交易(黑-已登录-K线图-鼠标悬停与点击下拉)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1472.000000, -211.000000)">
+        <g id="Group-63" transform="translate(1280.000000, 158.000000)" fill="#ABDB55" fill-rule="nonzero">
+            <g id="Group-59" transform="translate(177.000000, 40.000000)">
+                <g id="勾选" transform="translate(15.000000, 13.000000)">
+                    <path d="M4.22587653,8.36720011 C4.05400664,8.36720011 3.88869666,8.3029129 3.76405819,8.18614633 L0.207269715,4.86945091 C-0.059063023,4.62148594 -0.0682469182,4.20952298 0.186277972,3.94975017 C0.440802862,3.68997736 0.864573669,3.68210545 1.13090642,3.9300704 L4.16814925,6.76264374 L9.67716983,0.24339552 C9.91201495,-0.033433089 10.3331618,-0.074104598 10.6178623,0.154180618 C10.9025628,0.382465826 10.9432343,0.791804815 10.7097012,1.06994541 L4.74279822,8.131043 C4.62471966,8.27142528 4.45153778,8.35670424 4.26654804,8.36720011 L4.22587653,8.36720011 Z" id="02_02.decimal_selected_tick"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

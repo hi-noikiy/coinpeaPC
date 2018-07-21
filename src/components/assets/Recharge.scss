@@ -1,0 +1,213 @@
+/*
+    充值页面样式
+*/
+.clear::after{
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    clear: both;
+    content: "";
+}
+.recharge-wrap{
+    .assets-wrap-top{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        margin: 30px 0;
+        .select-coin{
+            margin-top: 0 !important;
+        }
+        .coinAssets{
+            float: left;
+            li{
+                float: left;
+                padding: 0 36px;
+                height: 40px;
+                font-size: 12px;
+                line-height: 20px;
+                color: #8A8A8A;
+                position:relative;
+                }
+                span{
+                    color: #3DADD9;
+                    font-weight: bold;
+                }
+                .freeze{
+                    color: #8A8A8A;
+                }
+            }
+            li:first-child{
+                border-left: none;
+                margin-left: 24px;
+            }
+            .lineBox{&::after{
+                    content:'';
+                    width:1px;
+                    height:30px;
+                    background:rgba(40,40,40,.12);
+                    display:inline-block;
+                    position:absolute;
+                    right:0;
+                    top:5px;
+                }
+        }
+    }
+
+    .address{
+        border: 1px solid #EDEEEF;
+        margin: 0 30px;
+        padding: 15px;
+        padding-left: 30px;
+        .address-copy{
+            float: left;
+            p{
+                color: #8A8A8A;
+                margin-top: 30px;
+                span{
+                    color: #3DADD9;
+                }
+            }
+            .link{
+                margin: 19px 0 13px;
+                height: 40px;
+                span{
+                    line-height: 30px;
+                }
+                input{
+                    width: 350px;
+                    height: 30px;
+                    padding: 0 10px;
+                    vertical-align: top;
+                    border:none;
+                    background: #F4FAFD;
+                    color: #3DADD9;
+                }
+                button{
+                    margin-left: 15px;
+                    height: 30px;
+                    font-size: 12px;
+                    background:#3DADD9;
+                    border-radius: 2px;
+                    border-color:#3DADD9;
+                    i{
+                        color: #3DADD9;
+                    }
+                    span{color:#fff}
+                }
+                .copy_icon{
+                    background: url('../../assets/06_03.copy_icon.svg') no-repeat center;
+                    width: 14px;
+                    height: 17px;
+                    display:inline-block;
+                    vertical-align: middle;
+                    margin-right:5px
+                
+                }
+            }
+        }
+        .qrcode{
+            float: right;
+        }
+    }
+    .tips{
+        margin: 40px 30px 43px;
+        
+        h4{
+            font-size: 16px;
+            line-height: 24px;
+            color: #4b4f52;
+        }
+        li{
+            font-size: 12px;
+            line-height: 30px;
+            height:30px;
+            color: #4b4f52;
+            position: relative;
+            span:first-child{
+                width:4px;
+                height:4px;
+                display:inline-block;
+                background:#000000;
+                border-radius:50%;
+            }
+             span:last-child {
+                font-size: 12px;
+                position: absolute;
+                left:15px;
+            }
+        }
+    }
+    h3{
+        margin: 40px 0 11px 30px;
+    }
+    .record{
+        color: #808080;
+        width: 100%;
+        .record-head{
+            background: #F4F7FA;
+            th{
+                text-align: center;
+                width: 154px;   
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+            th:first-child{
+                text-align: left;
+                padding-left: 30px;
+            }
+            th:nth-child(2){
+                width: 340px;
+            }
+            th:last-child{
+                padding-right: 30px;
+                text-align: right;
+            }
+        }
+        .recode-detail{
+            td{
+                text-align: left !important;
+            }
+        }
+        tr{
+            td{
+                text-align: center;
+                color: #4b4f52;
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+            td:first-child{
+                padding-left: 30px;
+                text-align: left;
+            }
+            td:last-child{
+                padding-right: 30px;
+                text-align: right;
+                a{
+                    transition: all .3s;
+                    color:#3DADD9;
+                }
+                a.show .anticon-caret-up::before{
+                    transform: rotate(180deg);
+                }
+                .anticon-caret-up:before{
+                    background: url('../../assets/01_01.arrow0202.png') no-repeat center;
+                    content: '';
+                    width: 10px;
+                    height: 6px;
+                    transition: transform .3s;
+                }
+                
+            }
+        }
+    }
+    .ant-pagination-item-active:focus a, .ant-pagination-item-active:hover a{
+	        color: #1890ff!important;
+    }
+
+}
+//修改默认样式--xu
+.ant-table-tbody>tr:hover{
+    box-shadow: 0 6px 8px 0 rgba(61,173,217,0.12);
+}
+

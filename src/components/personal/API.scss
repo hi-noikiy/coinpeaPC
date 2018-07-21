@@ -1,0 +1,317 @@
+/* 
+    个人中心页api样式
+*/
+
+.api{
+    padding: 40px 30px 20px;
+    margin: 0 auto;
+    background: #fff;
+    .api-top{
+        h4{
+            margin-bottom: 15px;
+            color: #4b4f52;
+            font-size: 16px;
+        }
+        padding-bottom: 40px;
+        border-bottom: 1px solid #e7e7e7;
+        .api-top-left{
+            width: 476px;
+            float: left;
+            input,button{
+                height: 40px;
+                width: 400px;
+            }
+            button{
+                margin-top: 30px;
+            }   
+        }
+        .api-top-right{
+            h4{
+                color: #808080;
+            }
+            width: 606px;
+            float: right;
+            p{
+                line-height: 36px;
+                font-size: 12px;
+                color:  #808080;
+                a,span{
+                    color: #49CCFF;
+                }
+            }
+        }
+    }
+    .api-bottom{
+        margin-top: 40px;
+        .api-bottom-head{
+            margin-bottom: 15px;
+            color: #4b4f52;
+            h4{
+                font-size: 14px;
+                float: left;
+            }
+            a{
+                color: #4b4f52;
+                float: right;
+                font-size: 14px;
+                text-decoration: underline !important;
+            }
+        }
+        .key{
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #E7E7E7;
+            .hide{
+                display: none;
+            }
+            .key-head{
+                height: 38px;
+                line-height: 38px;
+                background: #f4f7fa;
+                padding: 0 13px;
+                font-size: 12px;
+                h5{
+                    float: left;
+                    color: #808080;
+                }
+                .handle{
+                    float: right;
+                    a{
+                        margin-left: 30px;
+                    }
+                    a.save{
+                        color: #78A429
+                    }
+                    a.edit{
+                        color: #3DADD9
+                    }
+                    a.delete{
+                        color: #FF4B4B;
+                    }
+                }
+            }
+            .key-con{
+                background: #fff;
+                padding: 30px;
+                .key-con-info{
+                    padding-bottom: 30px;
+                    border-bottom:  1px dashed #E7E7E7;
+                    .lock{
+                        width: 158px;
+                        height: 158px;
+                        text-align: center;
+                        line-height: 158px;
+                        background: #f4f7fa;
+                        float: left;
+                    }
+                    .key-con-info-data{
+                        float: left;
+                        margin-left: 30px;
+                        font-size: 12px;
+                        h6{
+                            margin-bottom: 12px;
+                            line-height: 12px;
+                            color: #808080;
+                        }
+                        p{
+                            margin-bottom: 21px;   
+                            line-height: 12px;
+                            color: #4b4f52; 
+                            a{
+                                text-decoration: underline !important;
+                                color: #4b4f52;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+                .limit{
+                    margin-top: 30px;
+                    font-size: 12px;
+                    color:  #000;
+                    h5{
+                        float: left;
+                        margin-right: 12px;
+                        color:  #808080;
+                        line-height: 24px;
+                    }
+                    .radio{
+                        float: left;
+                        .radio-con{
+                            p{
+                                margin-top: 12px;
+                            }
+                            p:nth-last-child{
+                                color: #808080;
+                            }
+                            input{
+                                width: 476px;
+                                height: 34px;
+                                line-height: 34px;
+                            }
+                        }
+                        p.tip{
+                            color: #FF4B4B;
+                            margin-top: 13px;
+                        }
+                        span{
+                            vertical-align: middle;
+                            font-size: 12px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    
+}
+
+
+/*
+    确认弹窗样式
+*/
+.ant-modal-wrap{
+    text-align: center;
+    &::before{
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: 0;
+    }
+}
+.ant-modal{
+    display: inline-block;
+  vertical-align: middle;
+  top: 0;
+    // width: 500px !important;
+    // top: 50%;
+    // margin-top: -146px;
+    .ant-confirm-body-wrapper{
+        // width: 500px !important;
+        // padding: 60px 20px !important;
+        text-align: center;
+        p{
+            word-wrap: break-word;
+        }
+        .ant-confirm-btns{
+            text-align: center;
+            float: none;
+            button{
+                width: 120px;
+                height: 36px;
+                line-height: 36px;
+                padding: 0;
+                background: #DEDEDE;
+                border-radius: 4px;
+                font-size: 14px;
+                color: #FFFFFF; 
+            }
+            .ant-btn-primary{
+                margin-left: 20px;
+                background-color: #3DADD9;
+            }
+        }
+        .ant-confirm-body{
+            text-align: center;
+            color: #4b4f52;
+            i{
+                display: none;
+            }
+            .ant-confirm-title{
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .ant-confirm-content{
+                font-size: 14px;
+                line-height: 24px;
+                margin: 30px 0 42px;
+            }
+        }
+
+    }
+}
+
+
+.selectCheck{
+    .ant-modal-body{
+        text-align: center;
+        h5{
+            font-size: 16px;
+            color: #282828;
+            letter-spacing: -0px;
+            line-height: 16px;
+            margin: 40px auto;
+        }
+        input{
+            width: 340px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .getCode{
+            height: 40px;
+            color: #40a9ff;
+            border-width: 1px !important;
+            border-style: solid !important;
+            border-color: #40a9ff !important;
+            width: 100px;
+            margin-left: 15px;
+            
+        }
+
+
+        .phoneNum{
+            width: 240px;
+        }
+    
+        .get-phone-Code{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .getCode:hover,.getCode:focus{
+            color: #40a9ff;
+            background-color: #fff;
+            border-color: #40a9ff !important;
+        }
+
+        .coutDown{
+            border-color:#FF4B4B !important;
+            color:#FF4B4B;
+        }
+        .coutDown:hover, .coutDown:focus{
+            border-color:#FF4B4B !important;
+            color:#FF4B4B !important;
+        }
+    }
+    .ant-modal-footer{
+        padding: 20px 0 60px;
+        text-align: center;
+        border-top: 0;
+        button{
+            width: 120px;
+            height: 36px;
+            line-height: 36px;
+            padding: 0;
+            background: #DEDEDE;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #FFFFFF; 
+        }
+        .ant-btn-primary{
+            margin-left: 20px;
+            background-color: #3DADD9;
+        }
+    }
+}
+
+.select{
+    .ant-btn{
+        background-color: #3DADD9 !important;
+    }
+}
+
+.ant-input-disabled:hover{
+    color: rgba(0, 0, 0, 0.25);
+}

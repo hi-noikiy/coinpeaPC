@@ -1,0 +1,43 @@
+@mixin triangle {
+    content:'.';
+        display: block;
+        width:0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #49CCFF;
+        position: absolute;
+        top:-6px;
+        left: 50%;
+        margin-left:-6px;
+}
+
+.trade-content-left-t{
+    .ant-tabs-bar{
+        margin: 0;
+        font-size: 12px;
+        color: #fff;
+        border-color:#49CCFF;
+        border-width: 2px;
+        box-sizing: border-box;
+    }
+    .ant-tabs-ink-bar{
+        background: #49CCFF;
+        bottom:0;
+    }
+    .ant-tabs-ink-bar::before{
+       @include  triangle;
+    }
+    .ant-tabs-tab-prev,.ant-tabs-tab-next{
+        color:#fff;
+    }
+    .ant-tabs-tab-prev:hover, .ant-tabs-tab-next:hover{
+        color:#49CCFF;
+    }
+    .ant-tabs-nav {
+        .ant-tabs-tab-active{
+            color:#49CCFF;
+        }
+    }
+       
+}

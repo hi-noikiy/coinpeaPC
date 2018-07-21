@@ -1,0 +1,78 @@
+//三角形
+@mixin triangle {
+    content:'.';
+        display: block;
+        width:0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #49CCFF;
+        position: absolute;
+        top:-6px;
+        left: 50%;
+        margin-left:-6px;
+}
+
+.TradePricesList-wrap{
+   
+    height: 45px;
+    .TradePricesList-wrap-top {
+        display: flex;
+        height: 45px;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom:2px solid #49CCFF;
+        .TradePricesList-wrap-top-toggle{
+            position: relative;
+            .triangle{
+                position: absolute;
+                @include triangle;
+                top:28px;
+                left:12px;
+                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+           
+        }
+        .deep-merge-wrap{
+            width: 134px;
+            display: flex;
+            .deep-merge-title{
+                font-size: 12px;
+                color: #8EA0B5;
+            }
+            .deep-merge{
+                color:#fff;
+                .deep-merge-tooltip-wrap{
+                    cursor: pointer;
+                    position: relative;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .TradePricesList-title{
+        display: flex;
+        justify-content: space-between;
+        padding: 11px 10px;
+        margin-bottom:8px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        
+        p {
+            color: #8EA0B5;
+            font-size: 12px;
+            height: 12px;
+            line-height: 12px;
+        }
+      
+    }
+    .price-list-newPrice{
+        font-size: 18px;
+        color: #FF4B4B;
+        line-height: 18px;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .list-wrap{
+        margin-bottom:4px;
+    }
+}

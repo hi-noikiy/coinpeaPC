@@ -1,0 +1,119 @@
+/* 
+    专业K线页面 选择币种组件
+*/
+#KlineSelectCoin{
+     cursor: pointer;
+     width: 150px;
+     height: 60px;
+    position: relative;
+    .KlineSelectCoin-name{
+        position: absolute;
+        top:0;
+        height: 60px;
+        z-index: 99;
+        font-size: 22px;
+        line-height: 60px;
+        color: #FFFFFF;
+        width:100%;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,0.1);
+        border-right: 1px solid rgba(255,255,255,0.1);
+        transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        .KlineSelectCoin-slide{
+            transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            font-size: 10px;
+            margin-left: 8px;
+            margin-top:-5px;
+            vertical-align: middle;
+            color:#49CCFF;
+        }
+    }
+    .active-select{
+        background: rgb(23,36,51);
+        box-shadow: 1px -6px 8px rgba(0, 0, 0, 0.5);
+        .KlineSelectCoin-slide{
+           transform: rotate(180deg);
+        }
+    }
+    .KlineSelectCoin-list{
+        position: absolute;
+        top:59px;
+        right: 0;
+        width: 700px;
+        height: 460px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgb(23,36,51);
+        box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 98;
+        padding:16px 16px;
+      
+        .selectCoinArea{
+            background: #29394D;
+            color:#49CCFF;
+        }
+         //选择币列表
+        .KlineSelectCoin-nav{
+            display: flex;
+            font-size: 16px;
+            color: #FFFFFF;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: relative;
+            
+           &:after{
+               content: '';
+                height: 1px;
+                width: 100%;
+                background: #29394d;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+           }
+            div{
+                width: 64px;
+                transition: all 0.3s ease-in-out;
+            }
+            div:first-child{
+                margin-left: 10px;
+            }
+        }
+        //table
+        .KlineSelectCoin-table{
+            table{
+                width: 100%;
+                thead{
+                    th{
+                        font-size: 14px;
+                        color: #8EA0B5;
+                        padding:20px 0;
+                    }
+                }
+                tbody{
+                    td{
+                        font-size: 14px;
+                        color: #FFFFFF;
+                        padding:10px 0;
+                    }
+                    .selectCoinArea-coinPair{
+                        background: #29394D;
+                    }
+                }
+            }
+        }
+    }
+    .KlineSelectCoin-line{
+       
+        position: absolute;
+        top:59px;
+        width: 148px;
+        height: 1px;
+        left: 1px;
+        background: rgb(23,36,51);
+        z-index: 100;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+   
+}

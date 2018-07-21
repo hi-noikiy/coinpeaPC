@@ -1,0 +1,139 @@
+.light {
+    background-color: #ffffff; }
+    .light body {
+      color: #9194a4; }
+    .light .pane-legend-icon-container svg {
+      fill: #9194a4; }
+    .light .tv-side-toolbar .tools-group .button {
+      background-color: #ffffff;
+      border-color: #ffffff; }
+      .light .tv-side-toolbar .tools-group .button .main.text-as-icon {
+        color: #9194a4; }
+      .light .tv-side-toolbar .tools-group .button svg {
+        fill: #9194a4; }
+      .light .tv-side-toolbar .tools-group .button.selected, .light .tv-side-toolbar .tools-group .button:hover, .light .tv-side-toolbar .tools-group .button:active {
+        background-color: #9194a4;
+        border-color: #9194a4; }
+        .light .tv-side-toolbar .tools-group .button.selected svg, .light .tv-side-toolbar .tools-group .button:hover svg, .light .tv-side-toolbar .tools-group .button:active svg {
+          fill: #ffffff; }
+        .light .tv-side-toolbar .tools-group .button.selected .main.text-as-icon, .light .tv-side-toolbar .tools-group .button:hover .main.text-as-icon, .light .tv-side-toolbar .tools-group .button:active .main.text-as-icon {
+          color: #ffffff; }
+        .light .tv-side-toolbar .tools-group .button.selected .side, .light .tv-side-toolbar .tools-group .button:hover .side, .light .tv-side-toolbar .tools-group .button:active .side {
+          border-left: 1px solid transparent; }
+      .light .tv-side-toolbar .tools-group .button:active svg {
+        fill: #9194a4; }
+    .light .charts-popup-list {
+      background-color: #ffffff;
+      color: #9194a4;
+      border-color: #9194a4; }
+      .light .charts-popup-list .separator {
+        border-top: 1px solid white; }
+      .light .charts-popup-list .item {
+        background-color: #ffffff;
+        color: #9194a4; }
+        .light .charts-popup-list .item.active {
+          background-color: #9194a4;
+          color: #ffffff; }
+      .light .charts-popup-list .icon-wrap svg {
+        fill: #9194a4; }
+    .light .list-inner .item {
+      background-color: #ffffff; }
+      .light .list-inner .item.active {
+        background-color: #9194a4; }
+        .light .list-inner .item.active svg {
+          fill: #ffffff; }
+        .light .list-inner .item.active span.title {
+          color: #ffffff; }
+      .light .list-inner .item span.title {
+        color: #9194a4; }
+    .light .favored-list-container span:hover {
+      background-color: #9194a4; }
+    .light .tv-floating-toolbar {
+      background-color: #9194a4;
+      border-color: #ffffff; }
+      .light .tv-floating-toolbar .tv-floating-toolbar__widget-wrapper .tv-floating-toolbar__drag, .light .tv-floating-toolbar .tv-floating-toolbar__widget-wrapper input {
+        background-color: #ffffff; }
+        .light .tv-floating-toolbar .tv-floating-toolbar__widget-wrapper .tv-floating-toolbar__drag svg, .light .tv-floating-toolbar .tv-floating-toolbar__widget-wrapper input svg {
+          fill: #9194a4; }
+      .light .tv-floating-toolbar .tv-floating-toolbar__widget-wrapper .tv-floating-toolbar__widget {
+        border-color: #ffffff; }
+        .light .tv-floating-toolbar .tv-floating-toolbar__widget-wrapper .tv-floating-toolbar__widget svg {
+          fill: #9194a4; }
+    .light .apply-common-tooltip {
+      background-color: #ffffff;
+      border: 1px solid transparent;
+      color: #9194a4; }
+      .light .apply-common-tooltip:before {
+        border: 1px solid transparent; }
+    .light .light .layout__area--center .chart-container.active {
+      border: 1px solid #ffffff !important;
+      background: #ffffff;
+      outline: 3px dashed green; }
+    .light .chart-controls-bar {
+      background-color: #ffffff; }
+    .light .tv-side-toolbar .tools-group .button:hover,
+    .light .header-chart-panel .tools-group .button:hover {
+      background-color: #9194a4; }
+    .light .tv-side-toolbar .button:hover,
+    .light .header-chart-panel .button:hover {
+      background: #9194a4; }
+    .light .tv-side-toolbar .group,
+    .light .header-chart-panel .group {
+      float: left; }
+      .light .tv-side-toolbar .group .button,
+      .light .header-chart-panel .group .button {
+        font-weight: normal;
+        color: #9194a4; }
+        .light .tv-side-toolbar .group .button svg,
+        .light .header-chart-panel .group .button svg {
+          fill: #9194a4; }
+        .light .tv-side-toolbar .group .button:hover, .light .tv-side-toolbar .group .button.selected,
+        .light .header-chart-panel .group .button:hover,
+        .light .header-chart-panel .group .button.selected {
+          background: #9194a4;
+          color: #ffffff; }
+          .light .tv-side-toolbar .group .button:hover svg, .light .tv-side-toolbar .group .button.selected svg,
+          .light .header-chart-panel .group .button:hover svg,
+          .light .header-chart-panel .group .button.selected svg {
+            fill: #ffffff; }
+        .light .tv-side-toolbar .group .button:active,
+        .light .header-chart-panel .group .button:active {
+          color: #9194a4; }
+          .light .tv-side-toolbar .group .button:active svg,
+          .light .header-chart-panel .group .button:active svg {
+            fill: #9194a4; }
+    .light .tv-side-toolbar .header-group-fullscreen,
+    .light .header-chart-panel .header-group-fullscreen {
+      float: right;
+      padding-right: 5px; }
+    .light .tv-side-toolbar .header-group-properties, .light .tv-side-toolbar .header-group-indicators,
+    .light .header-chart-panel .header-group-properties,
+    .light .header-chart-panel .header-group-indicators {
+      float: none; }
+    .light .tv-side-toolbar .tools-group:not(:first-child):not(.no-delimiter):before {
+      background: #9194a4; }
+    .light .button svg {
+      fill: #9194a4; }
+    .light .tv-side-toolbar {
+      border-right: 1px solid #ffffff;
+      background-color: #ffffff; }
+      .light .tv-side-toolbar .tools-group .button.selected .side {
+        border-left: 1ps solid transparent; }
+      .light .tv-side-toolbar .tools-group .button.selected .side, .light .tv-side-toolbar .tools-group .button.selected .main {
+        background: #9194a4; }
+    .light .chart-container {
+      background-color: #ffffff;
+      border: 1px solid transparent; }
+    .light .tv-close-panel {
+      background-color: white;
+      border: none; }
+    .light .button {
+      background-color: #ffffff;
+      border-color: #ffffff; }
+      .light .button:hover {
+        background-color: #9194a4; }
+      .light .button.selected, .light .button.active {
+        background-color: #9194a4 !important; }
+        .light .button.selected svg, .light .button.active svg {
+          fill: #ffffff; }
+  

@@ -1,0 +1,104 @@
+/* 
+    home页面 
+*/
+.advertising-wrap{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    .advertising-top{
+        display: flex;
+        justify-content: flex-start;
+        // margin-left: -70px;
+        .advertising-top-r{
+            padding-top: 50px;
+            h3{
+                font-size: 28px;
+                color: #4b4f52;
+            }
+            .advertising-top-r-button{
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-around;
+                .download-button-wrap{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .download-button{
+                        width: 160px;
+                        height:44px;
+                        line-height: 44px;
+                    }
+                    .ipone{
+                        background: #fff;
+                        border-color: #3dadd9;
+                        color:#3dadd9;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    .andriod{
+                        background: #fff;
+                        color:#9BCA46;
+                        border-color:#9BCA46;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    .ipone:hover{
+                        background-image: radial-gradient(50% 139%, #6BD5FF 6%, #3DADD9 100%);
+                        box-shadow: 0 6px 6px 0 rgba(124,218,255,0.50);
+                        color:#fff;
+                    }
+                    .andriod:hover{
+                        background-image: radial-gradient(50% 134%, #B0DF5B 6%, #91BF3C 100%);
+                        box-shadow: 0 6px 6px 0 rgba(187,219,129,0.57);
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+    //文字广告
+    .advertising-bottom{
+        display: flex;
+        margin-top:80px;
+        justify-content: space-between;
+        text-align: center;
+        padding-bottom:80px;
+        dl {
+            cursor: help;
+            dt{
+                div{
+                    width: 88px;
+                    height: 88px;
+                    display: inline-block;
+                    transition: all 0.3s ease-in-out;
+                }
+               
+                h4{
+                    font-size: 18px;
+                    color: #4b4f52;
+                    line-height: 18px;
+                }
+            }
+            dd{
+                margin-top: 15px;
+                p{
+                    margin-bottom: 0;
+                    font-size: 12px;
+                    color: #8C97A4;
+                    line-height: 20px;
+                }
+            }
+        }
+        dl:nth-child(1)  .advertising-icon{
+            background: url('../../assets/01_01.icon0101.svg') no-repeat 100% 100%;
+        }
+        dl:nth-child(2) .advertising-icon{
+            background: url('../../assets/01_01.icon0201.svg') no-repeat 100% 100%;
+        }
+        dl:nth-child(3) .advertising-icon{
+            background: url('../../assets/01_01.icon0301.svg') no-repeat 100% 100%;
+        }
+        dl:nth-child(4) .advertising-icon{
+            background: url('../../assets/01_01.icon0401.svg') no-repeat 100% 100%;
+        }
+        
+    }
+}

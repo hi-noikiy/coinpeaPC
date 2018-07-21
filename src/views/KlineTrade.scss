@@ -1,0 +1,208 @@
+.KlineTrade{
+    background: #172433;
+    min-height: 100vh;
+    .ktrade-header-nav{
+        padding:0 15px;
+        height: 60px;
+        background: #223143 ;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        .ktrade-header-nav-l,.ktrade-header-nav-r{
+            display: flex;
+            align-items: center;
+        }
+        //LOGO动画
+        .hd-text{
+            font-size:34px;
+            font-weight: bold;
+            text-transform: uppercase;
+            fill:none;
+            stroke-width: 2px;
+            stroke-dasharray: 90 310;
+           animation: stroke 6s infinite linear;
+        }
+        .hd-text_1{
+            stroke: #3498db;
+            text-shadow: 0 0 1px #3498db;
+            animation-delay: -1.5s;
+        }
+        .hd-text_2{
+            stroke: #f39c12;
+            text-shadow: 0 0 1px #f39c12;
+            animation-delay: -3s;
+        }
+        .hd-text_3{
+            stroke: #e74c3c;
+            text-shadow: 0 0 1px #e74c3c;
+            animation-delay: -4.5s;
+        }
+        .hd-text_4{
+            stroke: #9b59b6;
+            text-shadow: 0 0 1px #9b59b6;
+            animation-delay: -6s;
+        }
+        @keyframes stroke {
+            100%{
+                stroke-dashoffset: -400;
+            }
+        }
+        /* 币种信息 */
+        .coin-info-wrap{
+          
+           margin-right: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 586px;
+            text-align: center;
+            .coin-info-box{
+                span{
+                    font-size: 16px;
+                    color: #8EA0B5;
+                }
+                p{
+                  
+                    font-size: 16px;
+                    color:#fff;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    //内容
+    .KlineTrade-content{
+        padding: 15px 15px;
+        .KlineTrade-content-l{
+            width: 1200px;
+            float: left;
+            position: relative;
+            .ContralTitle-top{
+                border-bottom-color: transparent;
+                //width: 200px;
+               position: absolute;
+               right:20px;
+               top:-2px;
+               z-index: 1;
+                #kchartTriangle{
+                    display: none;
+                }
+                div{
+                    padding: 0 4px;
+                    background:#44556B; 
+                    height: 20px;
+                    line-height: 20px;
+                    border-radius:0;
+                }
+            }
+            .delegateTabs {
+                  height: 401px;
+                  background:#223143; 
+                  margin-top: 15px;
+                  border-radius:0;
+                  .tradeInpPannel-top{
+                      display: flex;
+                      align-items: center;
+                      font-size: 12px;
+                     color: #8EA0B5;
+                     border-bottom: 1px solid rgba(255,255,255,0.1);
+                     .triangle{
+                        display: none;
+                    }
+                     span{
+                         cursor: pointer;
+                         display: inline-block;
+                         padding: 4px 4px;
+                         background: #44556B;
+                         border-radius:0x;
+                     }
+                     .ant-btn-primary{
+                         border: 0;
+                         padding:0;
+                            span{
+                                color:#8EA0B5;
+                            }
+                     }
+                  }
+                  .delegateTabs-top{
+                      padding: 15px 15px;
+                  }
+            }
+        }
+        .KlineTrade-content-r{
+            width: 640px;
+            float: right;
+        }
+
+        //右侧列表
+        .KlineTrade-content-r{
+            .KlineTrade-content-r-t{
+                display: flex;
+                justify-content: space-between;
+                align-items: top;
+                .TradePricesList-wrap{
+                    height: 612px;
+                    width: 345px;
+                    border-radius:0;
+                    background: #223143;
+                    .TradePricesList-wrap-top{
+                        border-bottom:1px solid rgba(255, 255, 255, 0.1);
+                        .triangle{
+                            display: none;
+                        }
+                    }
+                    
+                    .TradePricesList-title{
+                        margin-bottom: 0;
+                    }
+                    .TradePricesList-title, ul{
+                        background: #223143;
+                    }
+                }
+                .new-trade-wrap{
+                    border-radius:0;
+                    height: 612px;
+                    background: #223143;
+                    .new-trade-title{
+                        display: none;
+                    }
+                    .new-trade-list-hd{
+                        padding:16px 10px;
+                    }
+                }
+            }
+            .KlineTrade-content-r-b{
+                background: #223143;
+                border-radius:0x;
+                margin-top: 15px;
+                border-radius:0x;
+                .tradeInpPannel-top{
+                    height: 45px;
+                    line-height: 45px;
+                    background: #1D2A3B;
+                   span{
+                       display: inline-block;
+                       height: 45px;
+                       padding:0 15px;
+                       color:#8EA0B5;
+                       cursor: pointer;
+                   }
+                   .isActive{
+                       background: #223143;
+                   }
+                   span:last-child{
+                       margin-left: 0 !important;
+                   }
+                }
+                .tradeInpPannel-content{
+                    display: flex;
+                    justify-content: space-between;
+                    padding:0 15px;
+                }
+               
+            }
+        }
+    }
+   
+}

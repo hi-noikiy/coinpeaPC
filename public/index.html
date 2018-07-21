@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Cache-Control" content="max-age=7200" />
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <title>CoinPea</title>
+</head>
+
+<body>
+  
+  <div id="root"></div>
+ 
+</body>
+  <script src="%PUBLIC_URL%/charting_library.min.js"></script>
+  <script src="%PUBLIC_URL%/static/js/external/spin.min.js"></script>
+  <script src="%PUBLIC_URL%/dist/bundle.js"></script>
+  <script src="%PUBLIC_URL%/dist/polyfills.js"></script>
+  <script>
+    window.onload = function(){
+        var viewport = document.querySelector("meta[name=viewport]");
+        var scale= document.documentElement.clientWidth/1300>1?1:document.documentElement.clientWidth/1300;  
+        viewport.setAttribute('content', 'width=device-width, initial-scale='+scale+', shrink-to-fit=no, user-scalable=no'); 
+     
+    }
+  </script>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="30px" viewBox="0 0 60 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>01_02.trade_button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01_02.首页(鼠标悬停与点击下拉)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1470.000000, -946.000000)">
+        <g id="Group-36" transform="translate(0.000000, 540.000000)" fill="#3DADD9">
+            <g id="Group-35" transform="translate(360.000000, 190.000000)">
+                <g id="Group-33" transform="translate(0.000000, 42.000000)">
+                    <g id="Group-31-Copy-2" transform="translate(1.000000, 159.000000)">
+                        <g id="Group-32" transform="translate(1109.000000, 15.000000)">
+                            <rect id="01_02.trade_button" x="0" y="0" width="60" height="30" rx="2"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

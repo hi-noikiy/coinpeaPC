@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>08_02.tick01</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="08_02.注册" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-809.000000, -593.000000)">
+        <g id="Group-4" transform="translate(701.000000, 243.000000)">
+            <g id="Group-3">
+                <g id="Group-9" transform="translate(108.000000, 350.000000)">
+                    <g id="08_02.tick01">
+                        <rect id="Rectangle-5" fill="#3DADD9" x="0" y="0" width="13" height="13" rx="2"></rect>
+                        <g id="勾选" transform="translate(2.000000, 3.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <path d="M3.66870102,7.26349871 C3.51948485,7.26349871 3.37596395,7.20768502 3.26775375,7.10630915 L0.179776287,4.2267787 C-0.051451827,4.01149735 -0.0594252169,3.65383416 0.161551411,3.42830132 C0.38252804,3.20276849 0.750442722,3.19593415 0.981670844,3.41121549 L3.61858262,5.87043473 L8.40147357,0.21047161 C8.60536437,-0.0298689418 8.97100095,-0.0651796453 9.21817583,0.133015892 C9.46535072,0.331211422 9.50066141,0.686596507 9.29790967,0.928076114 L4.11748861,7.05846885 C4.01497368,7.18034771 3.86461845,7.25438627 3.70401173,7.26349871 L3.66870102,7.26349871 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

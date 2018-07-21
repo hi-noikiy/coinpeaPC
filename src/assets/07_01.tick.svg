@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>07_01.tick</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="07_01.个人中心(账户信息)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1416.000000, -437.000000)">
+        <g id="Group-13" transform="translate(361.000000, 322.000000)" fill="#78A429" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(29.000000, 113.000000)">
+                <g id="勾选" transform="translate(1026.000000, 2.000000)">
+                    <path d="M5.00277412,9.90477096 C4.79929752,9.90477096 4.6035872,9.8286614 4.45602784,9.69042157 L0.245149482,5.76378914 C-0.0701615823,5.47022367 -0.0810343867,4.98250112 0.220297379,4.67495635 C0.521629145,4.36741157 1.02333098,4.35809203 1.33864206,4.65165749 L4.93443085,8.00513827 L11.4565549,0.287006741 C11.7345878,-0.0407303752 12.2331831,-0.0888813345 12.5702398,0.181385307 C12.9072964,0.451651939 12.9554474,0.936267964 12.6789677,1.26555834 L5.61475719,9.6251848 C5.47496411,9.79138324 5.26993425,9.89234491 5.05092508,9.90477096 L5.00277412,9.90477096 Z" id="07_01.tick"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>02_04.star02</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="17.0939613%" cy="0%" fx="17.0939613%" fy="0%" r="129.897695%" gradientTransform="translate(0.170940,0.000000),scale(0.951008,1.000000),rotate(48.919061),translate(-0.170940,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#83E6FD" offset="0%"></stop>
+            <stop stop-color="#3DADD9" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="02_04.交易(白-未登录-K线图-原状态)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-375.000000, -286.000000)">
+        <g id="Group-55" transform="translate(360.000000, 158.000000)" fill="url(#radialGradient-1)">
+            <g id="Group-5">
+                <g id="Group-9" transform="translate(1.000000, 104.000000)">
+                    <g id="Group-4-Copy" transform="translate(0.000000, 20.000000)">
+                        <polygon id="02_04.star02" points="21.0149603 4 23.1827738 8.39208309 28.0299997 9.09630628 24.5224958 12.5150234 25.3505083 17.3426454 21.0149603 15.0633584 16.6794757 17.3426454 17.5074723 12.5150234 14 9.09630628 18.8471943 8.39208309"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
