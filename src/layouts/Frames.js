@@ -105,6 +105,7 @@ class Frames extends  Component {
 
     getInfo = async (fn, key) => {
         const res = await fn();
+        console.log(res)
         const ls = new _LocalStorage();
         if(res.status === 1) {
             this.setState({
@@ -112,15 +113,14 @@ class Frames extends  Component {
             })
 
             if(key === 'siteInfo') {
-              
                 this.props.saveInfo(res.data)
             }
           
         }
 
-        if(key==='links'){
-            ls.set("footerList",res.data)
-        }
+        // if(key==='links'){
+        //     ls.set("footerList",res.data)
+        // }
         
     }
 

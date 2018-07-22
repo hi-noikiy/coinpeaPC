@@ -133,10 +133,11 @@ class Banner extends React.PureComponent {
                     <h3>{intl.get('Banner-hd')}</h3>
                     <p>
                         {
-                            intl.get('Banner-des-1')+this.state.data.awardPercent1Today/100+'%'
-                            +intl.get('Banner-des-1_1')+this.state.data.coinName +' '+intl.get('Banner-des-2')+
-                            this.state.data.awardPercentToday/100+'%'+
-                            intl.get('Banner-des-2_1')
+                            // intl.get('Banner-des-1')+this.state.data.awardPercent1Today/100+'%'
+                            // +intl.get('Banner-des-1_1')+this.state.data.coinName +' '+intl.get('Banner-des-2')+
+                            // this.state.data.awardPercentToday/100+'%'+
+                            // intl.get('Banner-des-2_1')
+                            intl.get('Banner-des-1')+this.state.data.coinName +' '+intl.get('Banner-des-2')
                         }
                     </p>
                 </div>
