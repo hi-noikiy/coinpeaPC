@@ -14,8 +14,10 @@
             justify-content: space-between;
             padding-top:30px;
             .footer-top-l{
+                flex-basis: 900px;
                 .footer-top-l-link{
-                    display: flex;               
+                    display: flex;       
+                    flex-wrap: wrap;        
                     a{
                         line-height: 40px;
                         cursor: pointer;
