@@ -18,9 +18,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            .slick-slide{
-                width: auto !important;
-            }
+            // .slick-slide{
+            //     width: auto !important;
+            // }
         }
         i.inform-icon{
             background: url('../assets/01_01.notice.svg') no-repeat 100% 100%;
@@ -29,6 +29,9 @@
             height: 16px;
             margin-right: 6px;
             vertical-align: text-bottom;
+            position: absolute;
+            top: 14px;
+            left: 520px;
         }
         .ant-carousel{
             margin-left: 10px;
@@ -37,7 +40,7 @@
             font-size: 13px;
             color: #C6D0DD;
             overflow: hidden;
-           
+            text-align: center;
         }
     }
    
@@ -150,7 +153,7 @@
                 .select-lang-wrap{
                     position: absolute;
                     top:54px;
-                    width: 106px;
+                    width: 110px;
                     background: #FFFFFF;
                     box-shadow: 0 6px 8px 0 rgba(0,0,0,0.12);
                     border-radius: 2px;

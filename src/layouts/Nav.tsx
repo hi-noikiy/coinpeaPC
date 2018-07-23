@@ -251,8 +251,8 @@ class Nav extends React.Component<NavProps, any> {
                             {
                                 this.state.notice ?
                                 <div className={cs("inform clearfix")}>
+                                    <i className="inform-icon"></i>
                                     <div className="inform-l">
-                                        <i className="inform-icon"></i>
                                         <Carousel 
                                             className="notify"
                                             autoplay
@@ -260,10 +260,14 @@ class Nav extends React.Component<NavProps, any> {
                                             easing="ease-in-out"
                                             vertical
                                         >
-                                    {
-                                        this.state.notice.map( (item) => (<div key={Math.random().toString(36)} onClick={this.redirect('/news')}>{item.title}</div>))
-                                    }
-                                    </Carousel>
+                                            {
+                                                this.state.notice.map( (item) => {
+                                                    return(
+                                                        <div key={Math.random().toString(36)} onClick={this.redirect('/news')}>{item.title}</div>
+                                                        )
+                                                })
+                                            }
+                                        </Carousel>
                                 </div>
                                 <Icon type="close" onClick={this.hiddNotify} />
                             </div> : null
