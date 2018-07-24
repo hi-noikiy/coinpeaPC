@@ -21,7 +21,7 @@ const Option = Select.Option;
 const content = (
                 <div className="pop-usr-body">
                     <NavLink to="/personal" className="pop-usr-body-top">
-                        <span>账户信息</span>
+                        <span>个人中心</span>
                         <Icon type="right" />
                     </NavLink>
                     <NavLink to="/assets" className="pop-usr-body-bottom">

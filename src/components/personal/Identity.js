@@ -9,6 +9,8 @@ import { idcardCheck } from './AccountInfoRedux';
 import upload from '../../assets/07_05.add.png';
 import { postAuthenInfo } from '../../api/personal';
 import { withRouter } from 'react-router-dom';
+import SFRZ1 from '../../assets/SFRZ1.jpg';
+import SFRZ2 from '../../assets/SFRZ2.png';
 
 import intl from 'react-intl-universal';
 
@@ -324,7 +326,13 @@ class Identify extends Component {
                     beforeUpload={this.beforeUpload}
                 >
                 {this.state.fileList3.length >= 1 ? null : uploadButton2} 
-                </Upload>   
+                </Upload>
+                <div style={{marginRight:'8px'}}>
+                    <img src={SFRZ1} alt=""/>
+                </div>
+                <div>
+                    <img src={SFRZ2} alt=""/>
+                </div>
                {/*  <a href="https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png" target="_blank" className="upload-example">
                     <img alt="example" src="https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png" />
                     <span>{intl.get('示例')}</span>

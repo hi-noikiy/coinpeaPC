@@ -222,7 +222,7 @@ class Nav extends React.Component<NavProps, any> {
        const content = (
                             <div className="pop-usr-body">
                                 <Link to="/personal" className="pop-usr-body-top">
-                                    <span>{intl.get("账户信息")}</span>
+                                    <span>{intl.get("个人中心")}</span>
                                     <Icon type="right" />
                                 </Link>
                                 <Link to="/assets" className="pop-usr-body-bottom">

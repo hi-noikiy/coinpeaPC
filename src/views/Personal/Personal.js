@@ -19,7 +19,7 @@ class Personal extends Component {
         super(props);
         
         this.state = {
-            breadText: [intl.get('账户信息'),intl.get('身份认证'),'API'],
+            breadText: [intl.get('个人中心'),intl.get('身份认证'),'API'],
             columText:intl.get('个人中心'),
             showComponent:[<AccountInfo history={this.props.history}/>,<AccountCheck />,<API />],
            
