@@ -41,7 +41,7 @@ class Identify extends Component {
         }
         const isLt10M = file.size / 1024 / 1024 < 10;
         if (!isLt10M) {
-          return message.error(intl.get('文件大小不能超高10M'));
+          return message.error(intl.get('文件大小不能超过10M'));
         }
     }
 
@@ -65,6 +65,7 @@ class Identify extends Component {
             let fileList = info.fileList;   
             this.setState({ fileList });
             if (info.file.status === 'done') {
+                console.log('handleChagnelsls')
                 this.setState({
                     imageUrl:info.file.response.data.pathUrl
                 })  
