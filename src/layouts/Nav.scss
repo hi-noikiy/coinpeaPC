@@ -18,9 +18,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            // .slick-slide{
-            //     width: auto !important;
-            // }
+            .slick-slide{
+                width: auto !important;
+            }
         }
         i.inform-icon{
             background: url('../assets/01_01.notice.svg') no-repeat 100% 100%;
@@ -31,7 +31,7 @@
             vertical-align: text-bottom;
             position: absolute;
             top: 14px;
-            left: 520px;
+            left: 420px;
         }
         .ant-carousel{
             margin-left: 10px;
