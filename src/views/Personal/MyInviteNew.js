@@ -221,11 +221,11 @@ export class MyInvite extends Component {
         }else{
             bgImg.src = inVite_CN; 
         }
+        console.log('hello')
+        // canvas生成二维码
         var canvas = document.getElementById('myCanvas');
         canvas.width = 415;
         canvas.height = 750;
-        // canvas.width = 150;
-        // canvas.height = 150
         var ctx = canvas.getContext('2d');
         bgImg.crossOrigin = '*';
         var srcImg;
@@ -233,7 +233,7 @@ export class MyInvite extends Component {
       
         bgImg.onload = () =>{
             ctx.drawImage(bgImg,0,0,415,750);
-            ctx.drawImage(code,147,600,120,120);
+            // ctx.drawImage(code,147,600,120,120);
             srcImg = canvas.toDataURL("image/png");
             this.setState({
                 codepic:srcImg,
@@ -320,15 +320,15 @@ export class MyInvite extends Component {
                           </li>
                           <li style={{display:'flex',flexDirection:'column'}}>
                               <h4><img src={commission} alt='' /><span>{intl.get("返佣比例")}</span></h4>
-                              <span style={{fontSize:'12px',textAlign:'left'}}>一级{this.state.commission}</span>
-                              <span style={{fontSize:'12px',textAlign:'left'}}>二级{this.state.commission}</span>
+                              <span style={{fontSize:'12px',textAlign:'left'}}>一级12%</span>
+                              <span style={{fontSize:'12px',textAlign:'left'}}>二级8%</span>
                           </li>
                         </ul>
                       </div>
                       <div className="inv-messR">
                         <div className="myinvite-top-qrcode">
-                            <QRCode  value={this.state.link}  id="code"  renderAs="canvas" size={this.state.size} width='80' height="80" style={{width:'80px',height:'80px'}}/>
-                            <a href="javascript:void(0);" onClick={this.getImg} className="scaleBtn">{intl.get('获取专属海报')}</a>
+                            <a onClick={this.getImg}><QRCode  value={this.state.link}  id="code"  renderAs="canvas" size={this.state.size} width='80' height="80" style={{width:'80px',height:'80px'}}/></a>
+                            <a onClick={this.getImg} className="scaleBtn">{intl.get('获取专属海报')}</a>
                             <canvas id="myCanvas" style={{display:'none'}}></canvas>
                             <Modal
                             wrapClassName="vertical-center-modal"
