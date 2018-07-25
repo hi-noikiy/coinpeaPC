@@ -233,7 +233,7 @@ export class MyInvite extends Component {
       
         bgImg.onload = () =>{
             ctx.drawImage(bgImg,0,0,415,750);
-            // ctx.drawImage(code,147,600,120,120);
+            ctx.drawImage(code,293,570,110,110);
             srcImg = canvas.toDataURL("image/png");
             this.setState({
                 codepic:srcImg,
