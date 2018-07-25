@@ -327,7 +327,7 @@ class RegisterForm extends React.Component {
 					onCancel={() => this.setState({ visible: !this.state.visible })}
 				>
 					<p className="model_txt">
-						{intl.get("EMAIL_MSG2")}
+						{intl.get("EMAIL_MSG2")} <i style={{color:'red'}}>{intl.get("垃圾箱")}</i> 
 					</p>
 					<div className="model_btn">
 						<p><Link to="/login">{intl.get("登录")}</Link></p>
