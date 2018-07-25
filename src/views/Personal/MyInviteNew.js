@@ -360,10 +360,10 @@ export class MyInvite extends Component {
                     <div className="myinvite-middle clear" style={{display:this.state.loginShow ? "none" : 'block'}}>
                       <Tabs defaultActiveKey="1" onChange={this.callback}>
                         <TabPane tab={intl.get('邀请记录')} key="1">
-                        <Table columns={columns1} pagination={false}  dataSource={inviteList} size="small" locale={{emptyText: intl.get('暂无邀请好友记录') }}/>
+                        <Table columns={columns1} pagination={this.state.pagination}  dataSource={inviteList} size="small" locale={{emptyText: intl.get('暂无邀请好友记录') }}/>
                         </TabPane>
                         <TabPane tab={intl.get('返佣记录')} key="2">
-                          <Table columns={columns2} pagination={false} dataSource={detailList} size="small" locale={{emptyText: intl.get('暂无返佣记录') }} />
+                          <Table columns={columns2} pagination={this.state.pagination2} dataSource={detailList} size="small" locale={{emptyText: intl.get('暂无返佣记录') }} />
                         </TabPane>
                       </Tabs>
                     </div>
