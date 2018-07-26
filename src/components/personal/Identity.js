@@ -35,10 +35,10 @@ class Identify extends Component {
     
     beforeUpload(file) {
         if(!window.navigator.onLine) return message.error(intl.get('网络出错'));
-        const isJPG = file.type === 'image/jpeg';
-        if (!isJPG) {
-          return message.error(intl.get('仅支持JPG图片格式'));
-        }
+        const isJPG = file.type === 'image/*';
+        // if (!isJPG) {
+        //   return message.error(intl.get('仅支持JPG图片格式'));
+        // }
         const isLt10M = file.size / 1024 / 1024 < 10;
         if (!isLt10M) {
           return message.error(intl.get('文件大小不能超过10M'));
@@ -64,8 +64,8 @@ class Identify extends Component {
             if(info.file.type.indexOf('image')===-1) return
             let fileList = info.fileList;   
             this.setState({ fileList });
+            console.log('info===>', info)
             if (info.file.status === 'done') {
-                console.log('handleChagnelsls')
                 this.setState({
                     imageUrl:info.file.response.data.pathUrl
                 })  
@@ -281,7 +281,7 @@ class Identify extends Component {
                     beforeUpload={this.beforeUpload}
                     onChange={handleChange}
                     onPreview={this.handlePreview}
-                    accept="image/jpeg"
+                    accept="image/*"
                 >
                  {/*imageUrl ? <img src={imageUrl} alt="avatar" width="100%" height="100%"/> : uploadButton*/}
                  { this.state.fileList.length >= 1 ? null : uploadButton}  
@@ -303,7 +303,7 @@ class Identify extends Component {
                     onChange={handleChange2}
                     onPreview={this.handlePreview}
                     beforeUpload={this.beforeUpload} 
-                    accept="image/jpeg"
+                    accept="image/*"
                 >
                 {this.state.fileList2.length >= 1 ? null : uploadButton} 
                  
@@ -323,7 +323,7 @@ class Identify extends Component {
                     fileList={this.state.fileList3}     
                     onChange={handleChange3}
                     onPreview={this.handlePreview}
-                    accept="image/jpeg"
+                    accept="image/*"
                     beforeUpload={this.beforeUpload}
                 >
                 {this.state.fileList3.length >= 1 ? null : uploadButton2} 

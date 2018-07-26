@@ -19,7 +19,8 @@
             justify-content: center;
             align-items: center;
             .slick-slide{
-                width: auto !important;
+                // width: auto !important;
+                overflow: hidden;
             }
         }
         i.inform-icon{
