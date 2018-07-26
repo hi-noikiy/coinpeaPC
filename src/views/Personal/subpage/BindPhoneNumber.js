@@ -3,8 +3,8 @@
 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Icon,Form,Input,Button,message } from 'antd';
-import { BondNote,unBondNote,getVerification,identification } from '../../../api/personal'; 
+import { Icon,Form,Input,Button,message,Select } from 'antd';
+import { BondNote,unBondNote,getVerification,identification,getCountry } from '../../../api/personal'; 
 import { idcardCheck, idcardUnCheck,msgCheck,msgUnCheck,googleCheck,googleUnCheck } from '../../../components/personal/AccountInfoRedux';
 import './PersonalTwo.scss';
 
@@ -13,7 +13,7 @@ import intl from 'react-intl-universal';
 import SubpageHead from '../../../components/shared/SubpageHead';
 const createForm = Form.create;
 const FormItem = Form.Item;
-
+const Option = Select.Option;
 
 
 class ChangePassword extends Component {
@@ -27,22 +27,45 @@ class ChangePassword extends Component {
             text:intl.get('获取验证码'),
             lock:false,
             timer:60,
-            timerStart:false
+            timerStart:false,
+            country:[],
+            nowCountry:null,
+            defaultValue:"中国"
         }
     }
     componentDidMount() {
-        this.mounted = true;
+        getCountry().then(res=>{
+            this.setState({
+                country:res.data,
+                nowCountry:res.data[0].areaCode,
+                defaultValue:res.data[0].countryName,
+            })
+        })
     }
 
-    componentWillUnmount(){
-        this.mounted = false;
+    select(v){
+        let value = this.state.country.filter(e=>Number(e.areaCode) === Number(v))[0].areaCode;
+        this.setState({ nowCountry: Number(v),defaultValue:value })
     }
+
     render() {      
+
+        const selectBefore =  (<Select defaultValue={this.state.defaultValue} value={'+'+Number(this.state.nowCountry)} style={{ width: 90 }} onChange={ v=>this.select(v)} >
+                                    {
+                                        this.state.country.length?this.state.country.map((e,i) => {
+                                            return <Option key={e.areaCode} value={e.areaCode}>{'+'+e.areaCode} {'['+e.ename+']'}</Option>
+                                        }):null
+                                    }
+                                </Select>)
+
+        
+
         const { getFieldProps, getFieldValue,validateFields } = this.props.form;
         const  noop = () =>{
             return false;
         }
         const checkPass0 = (rule, value, callback) => {
+
             
             if (value && value.length !== 11) {
               callback(intl.get('手机号长度不对'));
@@ -79,7 +102,7 @@ class ChangePassword extends Component {
                     return;
                 }
                 
-                getVerification(values).then(data=>{
+                getVerification({...values,areaCode:this.state.nowCountry}).then(data=>{
                     if(data.status === 90021){
                         message.success(intl.get('验证码已发送'));
                         this.setState({
@@ -121,7 +144,6 @@ class ChangePassword extends Component {
            
             validateFields((errors, values) => {
               if (!!errors) {
-             
                 this.setState({lock:false})
                 return;
               }
@@ -130,7 +152,7 @@ class ChangePassword extends Component {
                     phone:values.phone,
               } 
               
-              BondNote({"userMember":userMember,'gaCode':values.phoneCode}).then(data =>{
+              BondNote({"userMember":userMember,'gaCode':values.phoneCode,areaCode:this.state.nowCountry}).then(data =>{
                 if(data.status === 1){
                     message.success(intl.get('手机号绑定成功'));
                     this.props.msgCheck();
@@ -193,6 +215,7 @@ class ChangePassword extends Component {
                              label={intl.get('手机号码')}
                         >
                         <Input 
+                            addonBefore={selectBefore}
                             {...phoneProps} 
                             type="number" 
                             autoComplete="off"
@@ -246,10 +269,11 @@ class ChangePassword extends Component {
 
 ChangePassword = createForm()(ChangePassword);
 
+const mapStateToProps = state => {}
 
 const actionCreators = { msgCheck }
 
 export default connect(
-    null,
+    mapStateToProps,
     actionCreators
 )(ChangePassword)

@@ -263,7 +263,7 @@ class Nav extends React.Component<NavProps, any> {
                                             {
                                                 this.state.notice.map( (item) => {
                                                     return(
-                                                        <div key={Math.random().toString(36)} onClick={this.redirect('/news')}>{item.title}</div>
+                                                        <div key={Math.random().toString(36)} onClick={this.redirect(`/news?id=${item.articleType}`)}>{item.title}</div>
                                                         )
                                                 })
                                             }

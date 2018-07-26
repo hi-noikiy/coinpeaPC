@@ -365,7 +365,7 @@ class Withdraw extends React.Component {
        
 
         if(key === 'quantity' && value !=='') {
-            const re = /^[0-9]+([.]{1}[0-9]*){0,1}$/;
+            const re = /^[0-9]+([.]{1}[0-9]{0,8}){0,1}$/;
            
             if(!re.test(value)) return;
             
@@ -418,7 +418,7 @@ class Withdraw extends React.Component {
         this.setState({
             coinName:coinName,
             coinIcon:coinIcon,
-            addr:''
+            address:''
         });
 
          //获取提币记录
@@ -824,17 +824,17 @@ class Withdraw extends React.Component {
                 >
                    <div className="modal-content-wrap">
                         <img src={warn} className="warning" alt="warning"  style={{width:60, height:52}} />
-                        <p className="top-p">{intl.get("提现验证")}</p>
-                        {/*<p className="bottom-p">{intl.get("二次验证")}</p>*/}
+                        {/*<p className="top-p">{intl.get("提现验证")}</p>*/}
+                        <p className="bottom-p">{intl.get("二次验证")}</p>
                         <div className="button-wrap">
-                            <div className="my-custom_one-button" onClick={()=>this.props.history.push('/googlecheck')}>
+                            <div className="my-custom_one-button" onClick={()=>this.props.history.push('/personal')}>
                                 <img src={google} alt="google"/>
                                 {intl.get("谷歌验证")}
                             </div>
-                            {/*<div className="my-custom_one-button" onClick={()=>this.props.history.push('/bindphonenum')}>
+                            <div className="my-custom_one-button" onClick={()=>this.props.history.push('/personal')}>
                                 <img src={phone} alt="phone"/>
                                 {intl.get("短信验证")}
-                            </div>*/}
+                            </div>
                         </div>
                         {/* <p onClick={this.cancel} className="modal-tips">{intl.get("风险")}</p> */}
                    </div>

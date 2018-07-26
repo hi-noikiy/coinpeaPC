@@ -46,7 +46,7 @@ class AginValid extends React.PureComponent {
             timer:60,
             text:intl.get('获取验证码'),
             token:search.token,
-            validType:'1',
+            validType:search.type,
             activeKey:'1'
         }
   }

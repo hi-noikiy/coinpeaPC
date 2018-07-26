@@ -222,7 +222,7 @@ class AccountInfo extends Component {
                            {/*<li className="clear"><p><img alt="" src={pIncon2} /><span>{intl.get('身份认证')}</span></p>
                                 { userMessage }
                             </li>*/}
-                            {/*<li className="clear">
+                            <li className="clear">
                                 <p>
                                     <span className="clearPic">
                                         <img src={pIncon3} alt="" />
@@ -236,7 +236,7 @@ class AccountInfo extends Component {
                                     <p>
                                         {/* <Icon type="check" style={{ fontSize:16,color:'#78A429' }} />
                                         <span>{intl.get('已绑定')}</span> 
-                                        <a href="javascript:;" onClick={() =>this.changePhoneState({redirect:'updatePhone'})}>{intl.get('修改')}</a> 
+                                        <a href="javascript:;" onClick={() =>this.changePhoneState({redirect:'updatePhone'})}>{intl.get('修改')}</a> */}
                                         {
                                             this.state.openPhone ? <a 
                                                                         href="javascript:;" 
@@ -253,7 +253,7 @@ class AccountInfo extends Component {
                                         <Link to="/bindphonenum">{intl.get('绑定')}</Link>
                                     </p>
                                 }
-                            </li>*/}
+                            </li>
                             <li className="clear"><p><span className="clearPic"><img alt="" src={pIncon4} /></span><span>{intl.get('谷歌认证')}</span></p>
                                 {
                                     this.props.acccount.googleCheck?

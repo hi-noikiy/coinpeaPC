@@ -209,6 +209,7 @@ export  class API extends Component {
             this.setState({ visible: false,key:'',gooleCode:'' });
         }else{
             message.info(res.msg);
+            this.setState({ visible: false,key:'',gooleCode:'' });
         }
 
     }

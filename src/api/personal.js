@@ -79,3 +79,6 @@ export const apiConfig = () => _mAjax('/coinex-interface/api/houseseting/detail'
 
 //谷歌验证状态
 export const googleStatus = () => _mAjax('/coinex-interface/api/usercentre/checkgoogle',{method:'post'});
+
+//获取国家
+export const getCountry = () => _mAjax('/coinex-interface/api/sysauthcountry/areaList',{method:'get'});

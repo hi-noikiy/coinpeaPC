@@ -121,20 +121,20 @@ const CloseGoogle = Loadable({
      delay: 200, 
 });
 
-/*
-    //绑定电话
-    const AsyncBindPhoneNumber = Loadable({
-        loader:()=>import('../views/Personal/subpage/BindPhoneNumber'),
-        loading: Loading,
-        delay: 200, 
-    });
-    //身份认证
-    const AsyncAccountCheck = Loadable({
-        loader:()=>import('../views/Personal/subpage/AccountCheck'),
-        loading: Loading,
-        delay: 200, 
-    });
- */
+
+//绑定电话
+const AsyncBindPhoneNumber = Loadable({
+    loader:()=>import('../views/Personal/subpage/BindPhoneNumber'),
+    loading: Loading,
+    delay: 200, 
+});
+//身份认证
+const AsyncAccountCheck = Loadable({
+    loader:()=>import('../views/Personal/subpage/AccountCheck'),
+    loading: Loading,
+    delay: 200, 
+});
+
 const AsyncGoogleCheck = Loadable({
     loader:()=>import('../views/Personal/subpage/GoogleCheck'),
     loading: Loading,
@@ -281,9 +281,8 @@ const MyRouter = (props) => (
                         <PrivateRoute path="/closephone"  component={AsyncClosePhone} loginState={props.loginState}></PrivateRoute>
                         <PrivateRoute path="/updatePhone"  component={UpdatePhone} loginState={props.loginState}></PrivateRoute>
                         <PrivateRoute path="/closeGoogle"  component={CloseGoogle} loginState={props.loginState}></PrivateRoute>
-                        {/*  
-                            <PrivateRoute path="/bindphonenum"  component={AsyncBindPhoneNumber} loginState={props.loginState}></PrivateRoute>
-                            <PrivateRoute path="/accountcheck"  component={AsyncAccountCheck} loginState={props.loginState}></PrivateRoute> */}
+                        <PrivateRoute path="/bindphonenum"  component={AsyncBindPhoneNumber} loginState={props.loginState}></PrivateRoute>
+                        <PrivateRoute path="/accountcheck"  component={AsyncAccountCheck} loginState={props.loginState}></PrivateRoute>
                         <PrivateRoute path="/googlecheck"  component={AsyncGoogleCheck} loginState={props.loginState}></PrivateRoute>
                         <Route path="/site" component={AsyncSiteContent}></Route>
                         <PrivateRoute path="/assets" component={AsyncAssets}  loginState={props.loginState}></PrivateRoute>
