@@ -407,9 +407,11 @@
     "验证谷歌验证码":"Verify Google Captcha",
     "api提示1":"Coinex8 provides you with a powerful API that allows you to use quotes, self-transactions and more.See how to use it with the ",
     "API DOC":"API DOC.",
-    "api提示2":"Create up to 5 pairs of keys per user.",
+    "api提示2":"Create up to ",
+    "api提示2-1":" pairs of keys per user.",
     "不要泄露":"Please do not reveal your password to avoid loss of assets. ",
-    "api提示3":"For security reasons, it is recommended to bind IP to the key, and each key can be bound with up to 4 IPs.",
+    "api提示3":"For security reasons, it is recommended to bind IP to the key, and each key can be bound with up to ",
+    "api提示3-1":" IPs.",
     "我的密钥":"My key",
     "删除全部API":"Delete all APIs",
     "请先保存正在编辑的密钥":"Please save the key being edited first",
@@ -425,5 +427,6 @@
     "二次验证_1":"Secondary verification",
     "请输入谷歌验证器中的6位验证码":"Please enter the 6-digit verification code in Google Authenticator",
     "请输入短信验证码":"Please enter SMS verification code",
-    "请输入长度为6位的谷歌验证码":"Please enter a 6-digit Google verification code"
+    "请输入长度为6位的谷歌验证码":"Please enter a 6-digit Google verification code",
+    "上传失败":"Upload failed"
 }

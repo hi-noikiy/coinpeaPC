@@ -71,6 +71,12 @@ class Identify extends Component {
                 })  
                 setFieldsValue({['frontUrl']:this.state.imageUrl});
             }
+            if(info.file.status === 'error'){
+                message.error(intl.get('上传失败'));
+                this.setState({
+                    fileList:[]
+                })
+            }
          }
 
         const handleChange2 = (info) => {
@@ -85,6 +91,12 @@ class Identify extends Component {
                 })  
                 setFieldsValue({['versoUrl']:this.state.imageUrl2});
             }
+            if(info.file.status === 'error'){
+                message.error(intl.get('上传失败'));
+                this.setState({
+                    fileList2:[]
+                })
+            }
         }
 
         const handleChange3 = (info) => {
@@ -98,6 +110,12 @@ class Identify extends Component {
                     imageUrl3:info.file.response.data.pathUrl
                 }) 
                 setFieldsValue({['handUrl']:this.state.imageUrl3}); 
+            }
+            if(info.file.status === 'error'){
+                message.error(intl.get('上传失败'));
+                this.setState({
+                    fileList3:[]
+                })
             }
         }
 
