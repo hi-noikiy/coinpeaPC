@@ -1,0 +1,43 @@
+/**
+* 个人中心头部公共组件
+*/
+.clear::after{
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    clear: both;
+    content: "";
+}
+.personalTop{
+    border-bottom: 1px solid rgba(40,40,40,0.12);
+    background: #fff;
+    padding: 25px 30px;
+    font-size:14px;
+    h2{
+        float: left;
+        font-size: 20px;
+        line-height: 24px;
+        color:  #4b4f52;
+        span{
+            font-size: 12px;
+            color: #808080;
+        }
+    }
+    .personalNav{
+        float: right;
+        margin-top: 3px;
+        color: rgba(40,40,40,0.12);
+        a{
+            color: #4b4f52;
+            padding: 0 20px;
+            border-left: 1px solid rgba(40,40,40,0.12);
+        }
+        a.active{
+            color: #3DADD9;
+        }
+        a:first-child{
+            border-left: none;
+        }
+    }
+}

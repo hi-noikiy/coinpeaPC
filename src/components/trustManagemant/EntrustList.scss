@@ -1,0 +1,81 @@
+
+.entrust-tabs{
+    width: 100%;
+    background: #fff;
+    thead{
+        tr{
+            background:  #F4F7FA;
+            height: 36px;
+            line-height: 36px;
+           th{
+               color: #808080;
+               font-size: 12px;
+               
+               .exState-wrap{
+                   position: relative;
+
+                   .select-exstate{
+                       position: absolute;
+                       z-index: 100;
+                       opacity: 0;
+                       display: none;
+                       cursor: pointer;
+                       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                       ul{
+                           background: #F4F7FA;
+                           padding: 10px 0;
+                           padding-top:5px;
+                       }
+                        li {
+                           height: 20px;
+                           line-height: 20px;
+                           padding: 0 10px;
+                           font-size: 12px;
+                         
+                       }
+                   }
+                   .isShow{
+                       opacity: 1;
+                       display: block;
+                   }
+               }
+           }
+           th:nth-child(1){
+                width: 22%;
+           }
+           th:nth-child(2){
+            width: 12%;
+           }
+           th:nth-child(3),th:nth-child(4),th:nth-child(5),{
+                width: 15%;
+            }
+            .history-tr{
+                width: 10%;
+            }
+            .history-tr::last-child{
+                width: 10%;
+            }
+        }
+    }
+    th:nth-child(1){
+        padding-left: 30px;
+    }
+    th:last-child{
+        padding-right: 30px;
+        text-align: right;
+    }
+    tbody{
+        tr{
+            height: 36px;
+            line-height: 36px;
+            border-bottom: 1px solid raba(40,40,40,0.1);
+        }
+        td:nth-child(1){
+            padding-left: 30px;
+        }
+        td:last-child{
+            padding-right: 30px;
+            text-align: right;
+        }
+    }
+}

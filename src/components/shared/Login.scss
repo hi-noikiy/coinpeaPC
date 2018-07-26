@@ -1,0 +1,53 @@
+/* 
+    导航头部及国际化组件
+*/
+.nav-right{
+    display: flex;
+    align-items: center;
+    padding-left:40px;
+    width: 300px;
+        div{
+            border: 0;
+            background: transparent;
+            box-shadow: 0 0 0 0;  
+        }
+       
+        .nav-user-login{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 120px;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+        .ant-select-focused .ant-select-selection, .ant-select-selection:focus, .ant-select-selection:active{
+            border-color:transparent;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0) ;
+        }
+        .ant-btn-primary{
+            background: transparent;
+            border-color:transparent;
+        }
+        .ant-btn-background-ghost{
+            border-color: transparent;
+        }
+        .ant-btn-primary:hover,.ant-btn-background-ghost:hover{
+            color:#49CCFF;
+        }
+      
+}
+.ant-select-dropdown {
+    background:#212842;
+    
+}
+.ant-select-dropdown-menu-item-selected{
+    background:#212842;
+
+}
+.ant-select-dropdown-menu-item-selected:hover,.ant-select-dropdown-menu-item:hover{
+    background: #182031;
+    color:#49CCFF;
+}
+.ant-select-dropdown-menu-item{
+    color:#c7cce6;
+}

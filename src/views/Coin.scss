@@ -1,0 +1,86 @@
+/* 
+    币种介绍样式
+*/
+@mixin borderStyle {
+    background: #FFFFFF;
+    border: 1px solid rgba(40,40,40,0.12);
+    border-radius: 2px;
+}
+
+.coin-wrap{
+    width: 100%;
+    margin: 0 auto;
+    padding-top:4px;
+    padding-bottom: 40px;
+    background: #F4F7FA;
+    .coin-top{
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        height: 86px;
+        h3{
+            margin-right: 15px;
+            cursor: pointer;
+            
+        }
+    }
+    .coin-content{
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        height: 638px;
+        .coin-content-left{
+            width:280px;
+            height: 100%;
+           @include borderStyle;
+           padding-left: 30px; 
+           padding-top:10px;
+           .coin-list {
+               li{
+                   height: 44px;
+                   line-height: 44px;
+                   font-size: 14px;
+                    color: #4b4f52;
+                    cursor: pointer;
+               }
+               .avtive_li{
+                color: #3DADD9
+               }
+           }
+          
+        }
+        .coin-content-right{
+            width:905px;
+            height: 100%;
+             padding:26px 30px;
+            @include borderStyle;
+            color:#4b4f52;
+            .conin-hd{
+                font-size: 24px;
+                font-weight: normal;
+            }
+            .what-coin{
+                font-size: 16px;
+                height: 60px;
+                line-height: 60px;
+            }
+            .what-coin-info{
+                font-size: 14px;
+                line-height: 24px;
+            }
+            .coin-parmas{
+                margin-top: 24px;
+                font-size: 14px;
+                line-height: 24px;
+               dd {
+                    display: flex;
+                    p{
+                        margin-right: 20px;
+                    }
+               }
+            }
+        }
+    }
+}

@@ -1,0 +1,156 @@
+/*
+    账户信息样式
+*/
+.info{
+    padding: 30px;
+    .info_l{
+        float: left;
+    }
+    .info_r{
+        float: left;
+        margin-left: 10px; 
+        h5{
+            font-size: 16px;
+            margin: 0;
+            color:  #4b4f52;
+            span{
+                font-size: 12px;
+                border-radius: 2px;
+                margin-left: 15px;
+                padding: 5px 5px 5px 26px;
+            }
+        }
+        span{
+            font-size: 12px;
+            color: #808080;
+        }
+        .hide{
+            display: none;
+        }
+        p{
+            font-size: 12px;
+            margin-top: 20px;
+            color: #8a8a8a;
+            span{
+                margin-right: 5px;
+            }
+        }
+        .switch{
+            font-size: 12px;
+            margin-top: 15px;
+            span{color: #8A8A8A;}
+            .ant-switch-checked{background: #3DADD9;}
+        }
+    }
+}
+
+.personalTable{ 
+    .noteTitle{
+        padding: 40px 0 12px 30px;
+        font-size: 16px;
+        color: #4b4f52;
+    }
+    .personTitle{
+        display: flex;
+        justify-content: space-between;
+        padding:15px 30px 11px;
+        font-size: 16px;
+        p{color: #8A8A8A;font-size: 12px;
+            span{margin-right: 10px}
+        }
+        h3{font-size: 16px;}
+    }
+    .safeSet{
+        padding: 0 29px;
+        border: 1px solid rgba(40,40,40,0.12);
+        border-left: none;
+        border-right: none;
+        li{
+            height: 60px;
+            line-height: 60px;
+            border-bottom: 1px dashed rgba(40,40,40,0.12);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        li:last-child{
+            border-bottom: none;
+        }
+        p:first-child{
+            float: left;
+            span{
+                margin-left: 14px;
+                vertical-align: middle;
+            }
+        }
+        p:last-child{
+            float: right;
+            width: 160px;
+            height: 60px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            span{
+                display: inline-block;
+                margin: 0 0px 0 8px;
+                color: #78A429;
+            }
+            a{
+                color: #3DADD9;
+               
+                width: 50px;
+                text-align: right;
+                float:right;
+            }
+        }
+        .iconIdCard{
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-size: contain;
+            vertical-align: middle;
+        }
+        .clearPic{
+            width:20px;
+            display:inline-block;
+            margin-left: 0!important;
+            img{
+                width:16px;
+                height:auto;
+                margin: -7px auto;
+                display: block;
+                }
+        }
+    }
+    .note{
+        th{
+            background: #F4F7FA !important;
+            color: #808080;
+            padding: 10px 16px !important;
+            font-size: 12px; 
+            text-align: center;
+        }
+        .one{
+            padding-left:30px !important;
+            text-align: left;
+            width: 400px;
+        }
+        .three{
+            padding-right: 30px !important;
+            text-align: right !important;
+            width: 400px;
+        }
+        .two{
+            width: 400px;
+            text-align: center;
+        }
+        td{
+            padding: 10px 16px !important;
+            font-size: 12px;
+            color: #4b4f52;
+        }
+    }
+}
+.lastUp-item-children {
+    display: flex;
+    justify-content: center;
+}

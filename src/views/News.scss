@@ -1,0 +1,113 @@
+//三角形
+@mixin triangle {
+    content:'';
+        display: block;
+        width:0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid #3DADD9;
+        position: absolute;
+        top:-6px;
+        left: 50%;
+        margin-left:-6px;
+        transform:rotate(90deg);
+}
+// 滑块样式
+::-webkit-scrollbar
+{
+    width: 12px;
+    height: 16px;
+    background-color: #fff;
+    margin: 0 10px
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: #E5E5E5;
+    border-radius: 2px;
+}
+.neawBox{
+    width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    justify-content:space-between;
+    .neawsL{
+        .ant-tabs-bar{
+            background: #fff;
+            height: 688px;
+        }  
+        li{
+            .ant-tabs-tab-disabled{
+                margin-left: 74px;
+                line-height: 56px;
+                color: #808080;
+                font-size: 14px;
+            }
+            .newsTabs .ant-tabs-nav-container{           
+                line-height: 44px;
+                color:  #808080;
+                position: relative;
+                width: 280px;
+            }
+            .ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab{
+                text-align: left;
+                padding: 0 76px;
+                margin:0;
+            }
+            .ant-tabs-nav .ant-tabs-tab-active{
+                border-left:2px solid #3DADD9;
+                color:  #3DADD9;
+                background: #F4FAFD ;
+            }
+            .ant-tabs-vertical > .ant-tabs-bar .ant-tabs-ink-bar{
+                width: 0
+            }
+            .ant-tabs-nav .ant-tabs-tab-active:after{
+                @include triangle;
+                top:20px;
+                left:60px;
+            }
+            .ant-tabs-tab:hover{
+                color: #3DADD9
+            }
+           
+        }
+    }
+    .neawsR{
+        width: 896px;
+         height: 688px;
+        background: #fff;
+        // overflow-y: scroll;
+        border: 1px solid #e8e8e8;
+        border-radius: 4px;
+        padding: 8px 24px;
+        overflow-y:scroll;
+        .newSumBox{
+            display: flex
+        }
+        .moreNeaw{
+            font-size: 12px;
+            color: #3DADD9;
+            width: 40px;
+            margin-left: 5px
+        }
+        .newsTime{
+            font-size: 12px;
+            color: #A8A8A8;
+        }
+        .newSummary{
+            max-width: 616px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }  
+    }
+    .demo-loading {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+      }
+      .ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar{border:none}
+}

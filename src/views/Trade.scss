@@ -1,0 +1,148 @@
+/* 
+    交易页样式
+*/
+
+@mixin layOutBottom {
+    margin-top: 9px;
+    height: 412px;
+    background:#223143;
+    width:100%;
+    border: 1px solid rgba(40,40,40,0.1);
+}
+@mixin layOutTop {
+    width: 100%;
+    height: 444px;
+    background:#223143;
+    border: 1px solid rgba(40,40,40,0.1);
+}
+
+#trade{
+    min-height: 100vh;
+    padding-bottom: 10px;
+    background: #172433;
+    //头部样式
+    .trade-top{
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 16px 0;
+        .trade-top-l {
+            width: 132px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .ant-avatar-lg{
+                width: 46px;
+                height: 46px;
+                line-height: 46px;
+                border-radius: 23px;
+            }
+            .trade-top-l-coin{
+                font-size: 20px;
+                color: #fff;
+                font-weight: normal;
+            }
+            .trade-top-l-coin-area{
+                font-size: 14px;
+                color: #8a9cb1;
+            }
+        }
+        //头部中间
+        .trade-top-c{
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            justify-content: space-around;
+            margin-right: 20px;
+          flex:1;
+            dl {
+               
+                dt{
+                    font-size: 12px;
+                    height: 12px;
+                    line-height: 12px;
+                    color: #8A8A8A;
+                }
+                dd{
+                    margin-top: 8px;
+                    height: 14px;
+                    line-height: 14px;
+                    font-size-adjust: 14px;
+                    span:first-child {
+                            color:#FF4B4B;
+                    }
+                    span:last-child {
+                        margin-left: 5px;
+                        color: #fff;
+                    }
+                    .price{
+                        color: #fff !important;
+                        margin-left: 0px !important;
+                      
+                    }
+                }
+            }
+        }
+        //头部右侧
+        .trade-top-r{
+            cursor: pointer;
+            margin-right: 30px;
+            width:20px;
+            height: 20px;
+            background: url('../assets/02_04.day_and_night.svg') no-repeat 100% 100%;
+           background-size: cover;
+        }
+        .sun{
+            background: url('../assets/02_01.day_and_night.svg') no-repeat 100% 100%;
+        }
+    }
+    //内容样式
+    .trade-content{
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        //左侧
+        .trade-content-left{
+            width: 280px;
+            .trade-content-left-t{
+                @include layOutTop;
+            }
+            .trade-content-left-b{
+                @include layOutBottom;
+            }
+        }
+        //中间
+        .trade-content-center{
+           
+            width:616px;
+            .trade-content-center-t{
+                @include layOutTop;
+            }
+            .trade-content-center-b{
+                @include layOutBottom;
+            }
+        }
+        //右侧
+        .trade-content-right{
+            width: 280px;
+            height: 865px;
+            background:#223143;
+            border: 1px solid rgba(40,40,40,0.1);
+            border-radius:0;
+        }
+      
+    }
+    //底部
+    .trade-bottom{
+        margin: 0 auto;
+        width: 1192px;
+        min-height: 338px;
+        background:#223143;
+       
+        border-radius:0;
+        margin-top: 9px;
+    }
+}

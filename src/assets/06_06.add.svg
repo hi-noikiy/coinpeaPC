@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>06_06.add</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="7.5" cy="7.5" r="7.5"></circle>
+    </defs>
+    <g id="06_06.资产管理(提币03)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-482.000000, -356.000000)">
+        <g id="Group-4" transform="translate(467.000000, 303.000000)">
+            <g id="Group-3" transform="translate(15.000000, 53.000000)">
+                <g id="06_06.add">
+                    <g id="Oval">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <circle stroke="#3DADD9" stroke-width="1" cx="7.5" cy="7.5" r="7"></circle>
+                    </g>
+                    <rect id="Rectangle-4" fill="#3DADD9" x="2.64705882" y="7.05882353" width="9.70588235" height="1"></rect>
+                    <rect id="Rectangle-4-Copy" fill="#3DADD9" transform="translate(7.500000, 7.500000) rotate(90.000000) translate(-7.500000, -7.500000) " x="2.64705882" y="7.05882353" width="9.70588235" height="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+/*
+    个人中心页样式
+*/
+#personal{
+    width: 1200px;
+    margin: 40px auto;
+    border: 1px solid rgba(40,40,40,0.12);
+    background: #fff;
+}
+.clear:after{
+    clear: both;
+    height: 0;
+    display: block;
+    content: "";
+    overflow: hidden;
+    visibility: hidden;
+}
+

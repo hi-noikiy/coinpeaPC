@@ -1,0 +1,110 @@
+.dividend{
+    
+    .banner{
+        background-image: url('../assets/banner03.png');
+
+       
+
+        .banner-text{
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h2{
+                font-size: 54px;
+                letter-spacing: 0.74px;
+                text-align: center;
+                line-height: 54px;
+                color: transparent;
+                background: linear-gradient(to bottom, #46F3F3, #32A9CE);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+            }
+           /*  h2:before{
+                content: attr(data-text);
+                position: absolute;
+                z-index: 100;
+              
+            } */
+
+            .banner-plan{
+                width: 50%;
+                font-size: 18px;
+                color: #fff;
+
+                &::before,&::after{
+                    border-color: rgba(255,255,255,0.22);
+                }
+              
+            }
+
+
+        }
+    }
+
+    .banner-des{
+        flex-direction: column;
+        padding:  25px 25px;
+        justify-content: space-around;
+        align-items: flex-start;
+      
+            margin-left: 360px;
+       
+        h3{
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0.02px;
+            line-height: 16px;
+        }
+
+        p{
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.01px;
+            text-align: justify;
+            line-height: 22px;
+        }
+    }
+
+    .income-wrap{
+        margin-left: 360px;
+
+        .income-tile{
+            margin-left: 25px;
+            padding: 25px 0;
+        }
+
+        .income-list{
+            li {
+                display: flex;
+                padding: 0 25px;
+
+                div:nth-child(1) {
+                    flex: 0.3;
+                    text-align: left;
+                }
+                div {
+                    flex: 1;
+                    text-align: right;
+                    color: #fff;
+                }
+                border-bottom: 1px solid rgba(255,255,255,0.06);
+                background: #223143 !important;
+            }
+
+            .page{
+                justify-content: space-between;
+                border-bottom: 0;
+                div{
+                    color: #3DADD9;
+                    letter-spacing: 0.01px;
+                    cursor: pointer;
+                    flex: 0.1 !important;
+                }
+            }
+        }
+       
+    }
+}

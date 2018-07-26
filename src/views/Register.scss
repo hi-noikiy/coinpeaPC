@@ -1,0 +1,150 @@
+/* 
+    注册页样式
+*/
+
+*:not(input, textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+@mixin boxYt{
+  // width: 1200px;
+  // margin: 40px auto;
+  background: url(../assets/2.jpg) no-repeat;
+  background-size: cover;
+  // border: 1px solid rgba(40,40,40,0.12);
+  border-radius: 2px;
+  min-height:550px;
+  height: 900px;
+}
+@mixin btn{
+  width: 378px;
+  height:40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #2EB3AE;
+  border-radius: 24px !important;
+}
+a{color:#3DADD9 }
+.ant-checkbox-wrapper + span, .ant-checkbox + span {
+  color: #fff;
+}
+.ant-form-item{
+  font-size: 12px;margin-bottom:30px;
+  .ant-form-item-control{
+    line-height: auto !important;
+  }
+}
+.ant-form-explain{margin-top: 0}
+.regist_yt{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  @include boxYt;
+  .registTip{
+    font-size: 34px;
+    color: #4b4f52;
+    line-height: 64px;
+    color: #fff;
+    // padding-left: 30px;
+    // border-bottom: 1px solid  rgba(40,40,40,.15);
+    text-align: center;
+    padding: 170px 0 50px 0;
+  }
+  .registForm{
+    // margin-top: 170px;
+    .inputItem{
+      width: 378px;
+      height:40px;
+      margin: 0 auto;
+      font-size: 12px;
+      border-radius: 24px !important;
+      text-indent: 1em;
+    }
+    .code_yt{
+      position: relative      
+    }
+    .codePic{
+      position: absolute;
+      right: 7px;
+      top: -5px;
+      width: 80px;
+      height: 26px;
+    }
+    .regist_btn{
+      @include btn;
+    }
+    .checkTxt{
+      font-size: 12px
+    }
+    .goLogin{
+      text-align: right;
+    }
+    .goLogin,.goRegist{  
+      width: 378px;
+      font-size: 12px;
+      color: #fff;
+      margin-bottom: 40px;
+      position: relative;
+      line-height:12px;
+      margin-bottom: 190px;
+    }
+    .goRegist{
+      text-align: left;
+
+    }
+    .forget{
+      position: absolute;
+      right: 0;
+      top:0;
+    }
+  }
+ 
+}
+ // 弹框
+ .regist-model{
+  .ant-modal-content{
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.33);
+    border-radius: 2px;
+  }
+  .ant-modal-header{
+    border-bottom:none;
+    color: #4b4f52;
+    padding: 40px 0 0 0 ;
+    .ant-modal-title{font-size: 24px;}
+  }
+  .ant-modal-body{
+    padding: 30px 0 40px!important;
+    width: 336px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #4b4f52;
+    line-height: 21px;
+    .model_txt{padding-bottom: 30px;text-align: left;}
+    .model_btn{
+      color: #3DADD9;
+      display: flex;
+      justify-content: flex-end;
+      p{padding-left: 15px;cursor: pointer}
+    }
+  }
+
+}
+.vertical-center-modal {
+  text-align: center;
+}
+.vertical-center-modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0;
+} 
+.vertical-center-modal .ant-modal {
+  display: inline-block;
+  vertical-align: middle;
+  top: 0;
+}
+.last_tip{
+  .ant-form-item-control{line-height:12px}
+}

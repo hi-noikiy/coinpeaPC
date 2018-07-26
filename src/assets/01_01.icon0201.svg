@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 88 88" style="enable-background:new 0 0 88 88;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#BBC8D7;stroke-width:2.2;}
+	.st1{fill:#3DADD9;fill-opacity:6.000000e-02;stroke:#CED6E1;stroke-width:2.2;}
+	.st2{fill:none;stroke:#E2E6EC;stroke-width:2.2;stroke-linecap:round;}
+	.st3{fill:#FFFFFF;stroke:#8FC8DE;stroke-width:2.2;}
+	.st4{fill:#C7D1DD;}
+	.st5{fill:none;stroke:#8FC8DE;stroke-width:2.2;stroke-linecap:round;}
+</style>
+<title>01_01.icon0201</title>
+<desc>Created with Sketch.</desc>
+<g id="Group-38" transform="translate(17.000000, 23.000000)">
+	<path id="Rectangle-20" class="st0" d="M4.5,0h45c1.6,0,2.1,0.2,2.7,0.5c0.6,0.3,1,0.8,1.3,1.3S54,2.9,54,4.5v36
+		c0,1.6-0.2,2.1-0.5,2.7s-0.8,1-1.3,1.3C51.6,44.8,51,45,49.5,45h-45c-1.6,0-2.1-0.2-2.7-0.5s-1-0.8-1.3-1.3S0,42.1,0,40.5v-36
+		c0-1.6,0.2-2.1,0.5-2.7s0.8-1,1.3-1.3S3,0,4.5,0z"/>
+	<path id="Rectangle-21" class="st1" d="M9.8,8.1h35.4c0.9,0,1.6,0.7,1.6,1.5v26.7c0,0.8-0.7,1.5-1.6,1.5H9.8
+		c-0.9,0-1.6-0.7-1.6-1.5V9.6C8.1,8.8,8.8,8.1,9.8,8.1z"/>
+	<path id="Path-14" class="st2" d="M9,22.2h37.1"/>
+	<circle id="Oval-4" class="st3" cx="21.1" cy="23" r="5.9"/>
+	<path id="Rectangle-22" class="st4" d="M45.7,11.7H47c0.9,0,1.6,1.2,1.6,2.7v2.7c0,1.5-0.7,2.7-1.6,2.7h-1.2
+		c-0.9,0-1.6-1.2-1.6-2.7v-2.7C44.1,12.9,44.8,11.7,45.7,11.7z"/>
+	<path id="Rectangle-22-Copy" class="st4" d="M45.7,26.1H47c0.9,0,1.6,1.2,1.6,2.7v2.7c0,1.5-0.7,2.7-1.6,2.7h-1.2
+		c-0.9,0-1.6-1.2-1.6-2.7v-2.7C44.1,27.3,44.8,26.1,45.7,26.1z"/>
+	<g id="Group-43" transform="translate(18.000000, 20.700000)">
+		<path id="Path-15" class="st5" d="M0.3,2l1.6,2.2"/>
+		<path id="Path-16" class="st5" d="M1.9,4.2l3.6-3.9"/>
+	</g>
+</g>
+</svg>

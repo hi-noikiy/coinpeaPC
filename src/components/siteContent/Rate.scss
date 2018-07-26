@@ -1,0 +1,71 @@
+/*
+    费率说明
+*/
+.clear::after{
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    content: "";
+}
+.rate-wrap{
+    .rate-head{
+        background: #F4F7FA;
+        li{
+            padding: 10px 0;
+            font-size: 12px;
+            color: #808080;
+            float: left;
+            width: 129px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        li:first-child{
+            text-align: left;
+            padding-left: 30px;
+        }
+    }
+    .ant-table-thead{
+        th{
+            background: #F4F7FA;
+            color: #808080;
+            text-align: center;
+        }   
+    }
+    .ant-table-body{
+        td{
+            text-align: center;
+            color: #FF4B4B;
+            padding: 10px 0;
+            font-size: 12px;
+            img{
+                margin-right: 8px;
+            }
+        }
+        .colum1{
+            width: 130px;
+            color: #4b4f52;
+        }
+        .colum2{
+            width: 130px;
+        }
+        .colum3{
+            width: 130px;
+        }
+        .colum4{
+            width: 130px;
+        }
+        .colum5{
+            width: 130px;
+        }
+        .colum6{
+            width: 130px;
+            color: #4b4f52;
+        }
+        .colum7{
+            width: 130px;
+            color: #4b4f52;
+        }
+    }
+}

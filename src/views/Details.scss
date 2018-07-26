@@ -1,0 +1,170 @@
+.details{
+    background: #172433;
+    min-height: 900px;
+    padding-bottom: 40px;
+    .banner{
+        width: 100%;
+        height: 300px;
+        background: url('../assets/banner02.png') no-repeat center;
+        padding-top: 85px; 
+    }
+
+      
+    .banner-des{
+        width: 1200px;
+        height: 156px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #223143;
+        margin: 0 auto;
+       
+        .left,.right{
+            flex: 0.5;
+            text-align: center;
+            
+            p{
+              padding-top: 20px;
+            }
+
+            i {
+                display: inline-block;
+               
+                width: 22px;
+                height: 32px;
+                vertical-align: text-bottom  ;
+                margin-right: 8px;
+              
+            }
+
+            span{
+                font-size: 26px;
+                color: #FFFFFF;
+                letter-spacing: 0.03px;
+                display: inline-block;
+             
+
+            }
+        }
+
+       
+        .left {
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height:100%;
+                    right: 0;
+                    top: 0;
+                    background: rgba(255,255,255,0.12);
+                
+                }
+
+                 i{
+                     background: url('../assets/bitcoin01_b.svg') no-repeat 100% 100%;
+                    } 
+
+                span{
+                    color: #3EBAE4 ;
+                    font-size:34px;
+                }
+        }
+
+        .right {
+
+            i{
+               background: url('../assets/bitcoin02_white.svg') no-repeat 100% 100%;
+            } 
+            span{
+                color: #fff;
+            }
+       }
+
+        h3{
+            font-size: 14px;
+            color: #A7B5C6;
+            letter-spacing: 0.02px;
+            line-height: 14px;
+        }
+    }
+
+    .income-wrap{
+        width: 1200px;
+        margin: 30px auto 0;
+        background: #223143;
+
+        .income-tile{
+            width: 1040px;
+            margin: 0 auto;
+            padding: 45px 0;
+            color: #fff;
+
+            .ant-divider::before,.ant-divider::after{
+                border-color:  rgba(255,255,255,0.12);
+            }
+
+            span{
+                font-size: 25px;
+                color: #FFFFFF;
+            }
+        }
+
+        .income-list{
+
+            .income-list-title{
+                display: flex;
+                font-size: 14px;
+                color: #A7B5C6;
+                height: 40px;
+                line-height: 40px;
+              
+                div:nth-child(1){
+                   width: 420px;
+                }
+                div:nth-child(2){
+                    width: 140px;
+                    text-align: right;
+                }
+                div:nth-child(3){
+                    flex: 1;
+                    text-align: right;
+                }
+            }
+            li{
+                padding:0 80px;
+                height: 60px;
+                line-height: 60px;
+            }
+         
+            li:nth-of-type(even) {
+                background: #25364B;
+            }
+
+            .list-wrap{
+               
+                div:nth-child(1){
+                    width: 420px;
+                 }
+                 div:nth-child(2){
+                     width: 140px;
+                     text-align: right;
+                 }
+                 div:nth-child(3){
+                     flex: 1;
+                     text-align: right;
+                 }
+
+                 .list-right{
+                    div:nth-child(1){
+                        width: 100%;
+                     }
+                    .list-bg{
+                      display: none;
+                    }
+                 }
+                 
+            }
+        }
+    }
+}

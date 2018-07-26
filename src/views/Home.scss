@@ -1,0 +1,61 @@
+/* 
+    Home页样式
+*/
+#home{
+    background: #f4f5f6;
+    .ant-carousel {
+        .slick-slide {
+            text-align: center;
+            height: auto;
+            line-height: auto;
+            overflow: hidden;
+           
+        }
+    }
+    .frameWork{
+        height: 500px;
+        text-align: center;
+        background: rgb(69, 66, 119);
+        font-size: 32px;
+        color:transparent;
+      // background: url('../assets/banners.jpg') no-repeat 100% 100%;
+       background-size: 100% 100%;
+    }
+  
+}
+.joinT-model {
+    text-align: center;
+    border-radius: 20px !important;
+    h1 {
+        font-size: 28px;
+        color: #fff;
+        line-height: 70px;
+    }
+    .ant-modal-content {
+        background: #222226;
+        
+    }
+    .ant-modal-footer {
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+    }
+    .ant-modal-footer .btn1 {
+        border: 1px solid #23bd68 !important;
+        color: #fff;
+        background: #222226;
+        margin-bottom: 20px;
+        border-radius: 4px !important;
+        margin-left: 0;
+    }
+    .ant-modal-footer .btn2 {
+        background: #23bd68;
+        color: #222226;
+        margin-left: 0;
+        border-radius: 4px !important;
+        margin-bottom: 20px;
+    }
+    .ant-modal-footer {
+        padding: 10px 45px;
+    }
+}

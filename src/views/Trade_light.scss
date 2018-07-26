@@ -1,0 +1,163 @@
+.light{
+    #trade{
+        background: #F4F7FA;
+
+        .trade-top{
+
+            .trade-top-c dl dd {
+
+                .price{
+                    color:#4b4f52 !important;
+                }
+                span:last-child {
+                    color:#4b4f52;
+                }
+            }
+           
+        
+            .trade-top-l .trade-top-l-coin{
+                color:#4b4f52;
+            }
+        }
+
+        .trade-content {
+
+            .trade-content-left{
+    
+                .trade-content-left-t{
+                    background: #fff;
+                    .ant-tabs-ink-bar {
+                        background: #3dadd9;
+                    }
+                    .ant-tabs-bar {
+                        color:#4b4f52;
+                    }
+                   
+                    .trade-tab {
+                        .trade-area-title{
+                            border-color: rgba(0,0,0,0.1);
+                        }
+
+                        ul .select-coin-tr{
+                            background: #DFF6FF;
+                        }
+                        ul li {
+                            color:#4b4f52;
+                            .custom-select{
+                                color:#3dadd9;
+                            }
+                        }
+                    } 
+                }
+
+                .trade-content-left-b{
+                    background: #fff;
+                    .list-wrap{
+                        color:#4b4f52;
+                        .list-left{
+                            color:#4b4f52;
+                        }
+                    }
+                    .new-trade-wrap {
+
+                        .new-trade-list-hd{
+                            border-color: rgba(0,0,0,0.1);
+                        }
+                    }
+                }
+            }
+
+            .trade-content-right{
+                background: #fff;
+
+                .list-wrap{
+                    color:#4b4f52;
+                }
+
+                .TradePricesList-wrap {
+                    .TradePricesList-wrap-top{
+                        border-color: #3dadd9;
+                    }
+                    .TradePricesList-title{
+                        border-color: rgba(0,0,0,0.1);
+                    }
+                }
+            }
+
+            .trade-content-center {
+
+                .trade-content-center-t{
+                    background: #fff;
+
+                    .ContralTitle .ContralTitle-top{
+                        color:#4b4f52;
+                        border-color:#3dadd9;
+                    }
+                    .isActive{
+                        color:#3dadd9;
+                    }
+                }
+
+                .trade-content-center-b{
+                    background: #fff;
+                    .tradeInpPannel-top {
+                        border-bottom-color: #3dadd9;
+
+                        .isActive{
+                            color: #3dadd9;
+                        }
+                    }
+                    .tradeInp-wrap {
+
+                        .tradeInp-title{
+                            .tradeInp-title-des {
+                                color:#8A8A8A;
+                            }
+                        }
+
+                        .prcieInp-wrap {
+                            border-color: rgba(40,40,40,0.12);
+                            color:#4b4f52;
+
+                            span, input{
+                                color:#4b4f52;
+                            }
+                        }
+                        .fees-wrap p{
+                            color:#4b4f52;
+                        }
+
+                        .selectPercent span{
+                            border-color: rgba(40,40,40,0.12);
+                        }
+                    } 
+                }
+            }
+
+        }
+        
+        .trade-bottom{
+            background: #fff;
+            .trade-content-center-b .tradeInpPannel-top{
+                color: #4b4f52;
+                border-bottom-color: #3dadd9;
+                .isActive{
+                    color:#3dadd9;
+                }
+            }
+            .my-tabs .ant-table-tbody > tr > td{
+                color: #4b4f52;
+            }
+        }
+        
+        .triangle, .new-trade-wrap .new-trade-title:after{
+            border-bottom-color:#3dadd9!important;
+        }
+        .delegateTabs .delegateTabs-right .ant-btn span{
+            color:#3dadd9;
+        }
+    }
+
+
+
+}

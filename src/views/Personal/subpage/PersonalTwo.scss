@@ -1,0 +1,195 @@
+/* 
+    个人中心二级页样式
+*/
+
+#personalTwo{
+    background:#fff;
+    width: 1200px;
+    margin: 40px auto;
+    border: 1px solid rgba(40,40,40,0.12);
+    .submit{
+        height: 600px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        p{
+            font-size: 14px;
+            line-height: 34px;
+            color: #282828;
+        }
+    }
+    .personalTwo_top{
+        border-bottom: 1px solid rgba(40,40,40,0.12);
+        padding: 23px 0 25px 30px;
+        a{
+            font-size: 12px;
+            color: #3DADD9;
+            img{
+                vertical-align: middle;
+                margin-right: 7px;
+            }
+            span{
+                vertical-align: middle;
+                line-height: 12px;
+            }
+            margin-bottom: 10px;
+        }
+        h3{
+            font-size: 20px;
+            line-height: 20px;
+            margin-top: 10px;
+            color: #282828;
+        }
+    }
+    .personalTwo_con{
+        text-align: center;
+        padding: 106px 0 197px;
+        p{
+            color: #FF4B4B;
+            font-size: 14px;
+            margin-bottom: 32px;
+            i{
+                margin-right: 6px;
+            }
+            span{
+                color: #8a8a8a;
+            }
+        }
+        .lastUpTip{
+            color: #8a8a8a;
+            font-size: 12px;
+            line-height: 14px;
+            span{
+                color: #282828;
+                font-size: 14px;
+            }
+            i{
+                color: #3dadd9;
+                font-style:normal;
+                margin-right:0;
+            }   
+        }
+        .ant-select-selection-selected-value{
+            color: #000;
+        }
+        .hide{
+            display: none;
+            transition: all .3s;
+        }
+        .ant-form-item{margin-bottom:30px;}
+        .btn{
+            height:40px;
+            border-radius: 3px;
+        }
+        .getCode{
+            height: 40px;
+            color: #40a9ff;
+            border-width: 1px !important;
+            border-style: solid !important;
+            border-color: #40a9ff !important;
+            width: 100px;
+            margin-left: 15px;
+            
+        }
+    
+        #confirm{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .getCode:hover,.getCode:focus{
+            color: #40a9ff;
+            background-color: #fff;
+            border-color: #40a9ff !important;
+        }
+
+        .coutDown{
+            border-color:#FF4B4B !important;
+            color:#FF4B4B;
+        }
+        .coutDown:hover, .coutDown:focus{
+            border-color:#FF4B4B !important;
+            color:#FF4B4B !important;
+        }
+   }
+   .ant-col-8{
+       text-align: left !important;
+   }
+   .lastUp-item{
+        margin-bottom: 24px;
+   }
+   .lastUp-item-label{
+        label{
+            opacity: 0;
+        }   
+   }
+   .lastUp-item-control-wrapper{
+       position: relative;
+   }
+   .lastUp-explain{
+       color: #f5222d;
+   }
+   .ant-form-item-children input{
+       color: #000;
+       height:40px;
+       font-size: 12px;
+   }
+   .ant-upload{
+    display: block !important;
+    text-align:center !important;
+    width: 300px;
+    height: 180px;
+    border: 1px solid #EDEEEF;
+   }
+   .ant-upload-list-item{
+       width: 300px;
+   }
+   .upload-example {
+    position: absolute;
+    display: inline-block;
+    height: 96px;
+    width: 96px;
+    padding: 8px;
+    right: -15px;
+    top: 0;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    vertical-align: top;
+  }
+  
+  .upload-example img {
+    height: 78px;
+    width: 78px;
+  }
+  
+  .upload-example:before {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    content: ' ';
+    width: 78px;
+    height: 24px;
+    background-color: #808080;
+    opacity: .8;
+  }
+  
+  .upload-example span {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    width: 78px;
+    height: 24px;
+    color: #fff;
+    line-height: 24px;
+    text-align: center;
+  }
+  .ant-btn-primary {
+    background: #3dadd9!important;
+    border-color: #3dadd9!important;
+}
+.ant-btn-primary:hover, .ant-btn-primary:focus{
+    background: #49CCFF!important;
+    border-color: #49CCFF!important;
+}
+}

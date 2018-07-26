@@ -1,0 +1,34 @@
+/* 
+    Home页列表组件样式
+*/
+#home{
+    //交易区列表样式
+    .ant-tabs-bar, .ant-table-placeholder{
+        border:0;
+    }
+    #hom-tab-wrap .ant-tabs {
+        width: 1200px;
+
+    }
+    .ant-tabs-nav-scroll {
+        padding-left: 20px;
+    }
+    .ant-tabs-extra-content{
+        height: 49px;
+        line-height: 50px;
+    }
+    #hom-tab-wrap .ant-tabs-nav .ant-tabs-tab {
+    	font-size: 18px;
+    	line-height: 26px;
+    }
+    #hom-tab-wrap .home-tab thead tr {
+    	background: #fff;
+    	font-size: 12px;
+    	line-height: 55px;
+    	color: #B4BCC8;
+    }
+    #hom-tab-wrap .ant-tabs .ant-tabs-bar {
+        margin-bottom: 0;
+        background:rgba(252,252,252,1);
+    }
+}

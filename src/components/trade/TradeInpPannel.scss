@@ -1,0 +1,67 @@
+/* 
+    交易页inp 交易面板样式
+*/
+.trade-content-center-b{
+    
+    .tradeInpPannel-top{
+        position: relative;
+        display: flex;
+        height: 45px;
+        padding:0 10px;
+        align-items: center;
+        font-size: 12px;
+        color:#fff;
+        border-bottom: 2px solid #49CCFF;
+      
+        span{
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .isActive {
+            color:#49CCFF;
+            
+        }
+        span:hover{
+            color:#49CCFF;
+        }
+        .triangle{
+            position: absolute;
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #49CCFF;
+            position: absolute;
+            bottom:0;
+            left: 34px;
+            margin-left: -6px;
+           
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+    }
+    .tradeInpPannel-content{
+        margin-top: 8px;
+        padding:0 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .split-line{
+        width: 40px;
+        height: 356px;
+        position: relative;
+
+    }
+    .split-line::after{
+        content: '';
+        border-right:1px dashed  rgba(255, 255, 255, 0.1);
+        position: absolute;
+        top:12px;
+        left: 50%;
+        height: 92%;
+        margin-left: -1px;
+    }
+
+   
+}

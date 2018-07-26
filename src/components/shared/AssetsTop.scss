@@ -1,0 +1,70 @@
+/*
+    资产管理提币和充值页面公共
+*/
+
+.clear::after{
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    clear: both;
+    content: "";
+}
+.assets-wrap-top{
+    padding: 0 30px;
+    margin: 40px 0;
+    .ant-select{
+        float: left;
+        .ant-select-selection{
+            border: none !important;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            height: auto;
+            position: none;
+            color: #4b4f52;
+            .ant-select-selection-selected-value{
+                color: #4b4f52;
+                font-size: 20px;
+                img{
+                    width: 40px;
+                    margin-right: 10px;
+                }
+            }
+            .ant-select-arrow{
+                color: #4b4f52;
+                margin-left: 6px;
+                margin-top: 0px;
+            }
+            .ant-select-arrow:before{
+                background: url('../../assets/05_01.triangle01.png') no-repeat center;
+                content: '';
+                width: 8px;
+                height: 5px;
+            }
+        }
+
+    }
+    .coinAssets{
+        float: left;
+        li{
+            float: left;
+            padding: 0 36px;
+            border-left: 1px solid rgba(40,40,40,.12);
+            height: 40px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #8A8A8A;
+            span{
+                color: #3DADD9;
+                font-weight: bold;
+            }
+            .freeze{
+                color: #8A8A8A;
+            }
+        }
+        li:first-child{
+            border-left: none;
+            margin-left: 24px;
+        }
+    }
+}

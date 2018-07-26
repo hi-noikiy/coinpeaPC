@@ -1,0 +1,307 @@
+/*
+    我的邀请页样式
+*/
+.clear:after{
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  clear: both;
+  content: "";
+}
+@mixin box{
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid rgba(40,40,40,0.12);
+    border-radius: 2px;
+}
+.myinvite{
+  background: #f0f2f5;
+  .inviteBanner{
+      width: 100%;
+      min-height:400px;
+  }
+  .myinvite-top{
+    margin-bottom: 60px;
+    width: 1200px;
+    margin: 30px auto;
+    .inv-rank{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        li:nth-child(1){
+        background: url('../../assets/07_08.first.png') no-repeat center;
+        }
+        li:nth-child(2){
+        background: url('../../assets/07_08.second.png') no-repeat center;
+        }
+        li:nth-child(3){
+        background: url('../../assets/07_08.third.png') no-repeat center;
+        }
+        li{
+        width: 380px;
+        height: 60px;
+        font-size: 12px;
+        color: #505050;
+        display: flex;
+        align-items: center;
+        .colorH{color: #505050;}
+        .li1{
+            margin-left: 70px;
+            min-width: 110px;;
+        }
+        .li2{
+                margin-left: 62px;
+                color: #1e2b34;
+            }
+        }
+    }
+    .inv-mess{
+        @include box;
+        display: flex;
+        padding: 30px 30px 40px;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        .inv-messL{
+            h2{
+                font-size: 16px;
+            }
+            h3{
+                font-size: 14px;
+                margin-top: 40px;
+            }
+            .myinvite-top-data{
+                margin-top: 28px;
+                li{
+                    margin-right: 60px;
+                    text-align: center;
+                    float: left;
+                    h4{
+                        height: 22px;
+                        margin-bottom: 15px;
+                        img{
+                            vertical-align: middle;
+                            margin-right: 8px;
+                        }
+                        span{
+                            vertical-align: middle;
+                            color: #505050;
+                            font-size: 12px;
+                        }
+                    }
+                    span{
+                        font-size: 22px;
+                        color: #3DADD9;
+                    }
+                }
+            }
+
+
+        }
+        .inv-messR{
+            display: flex;
+            margin-top: 74px;
+            .myinvite-top-qrcode{
+                text-align: center;
+                width: 80px;       
+                margin-right: 15px;
+                span{
+                    color: #3DADD9;
+                    font-size: 12px;
+                    line-height: 24px;
+                }
+            }
+            #share{
+                p{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                a{
+                    width: 28px;
+                    height: 28px;
+                    margin-right: 12px;
+                }
+                a.bds_fbook{
+                    background: url('../../assets/07_08.share_to0101.png') no-repeat;
+                }
+                a.bds_fbook:hover{
+                    background: url('../../assets/07_08.share_to0102.png') no-repeat;
+                }
+                a.bds_twi{
+                    background: url('../../assets/07_08.share_to0201.png') no-repeat;
+                }
+                a.bds_twi:hover{
+                    background: url('../../assets/07_08.share_to0202.png') no-repeat;
+                }
+                a.bds_linkedin{
+                    background: url('../../assets/07_08.share_to0301.png') no-repeat;
+                }
+                a.bds_linkedin:hover{
+                    background: url('../../assets/07_08.share_to0302.png') no-repeat;
+                }
+                a.bds_tsina{
+                    background: url('../../assets/07_08.share_to0401.png') no-repeat;
+                }
+                a.bds_tsina:hover{
+                    background: url('../../assets/07_08.share_to0402.png') no-repeat;
+                }
+                a.bds_qzone{
+                    background: url('../../assets/07_08.share_to0501.png') no-repeat;
+                }
+                a.bds_qzone:hover{
+                    background: url('../../assets/07_08.share_to0502.png') no-repeat;
+                }
+            }
+            
+        }
+        .link{
+            margin: 11px 0 13px;
+            height: 40px;
+            input{
+                width: 401px;
+                height: 36px;
+                padding: 0 10px;
+                vertical-align: top;
+                font-size: 12px;
+                border: 1px solid #EDEEEF;
+                color: #3DADD9;
+            }
+            span{
+                display: inline-block;
+                width: 115px;
+                height: 36px;
+                line-height: 36px;
+                color: #fff;
+                background:  #3DADD9;
+                text-align: center;
+                margin-left: 15px;
+            }
+        }
+    }
+    .myinvite-middle{
+        @include box;
+        .ant-tabs-bar{
+            border: none;
+            margin-left: 30px;  
+        }
+        .ant-tabs-nav .ant-tabs-tab{
+            padding:30px 0 12px 0;   
+        }
+        .ant-tabs-ink-bar{
+            bottom: 5px;
+            background-color:#3DADD9;
+        }
+        .ant-tabs-nav .ant-tabs-tab:hover{
+            color: #3DADD9;
+        }
+        .ant-tabs-nav-container{
+            font-size: 16px;
+        }
+        .ant-table-wrapper{
+            width: 100%;
+            .ant-table-small{
+                border:none;
+                border-radius: 0;
+            }
+            table{
+                padding: 0;
+                text-align: center;
+                background: #fff;
+                thead{
+                    th{
+                        background-color: #F4F7FA !important;
+                        color: #808080;
+                        text-align: center;
+                        padding: 10px 16px !important;
+                        font-size: 12px;
+                        border: none
+                    }
+                }
+                tbody{
+                    td{
+                        padding: 10 16px !important;
+                        font-size: 12px;
+                        color: #1e2b34;
+                    }
+                }
+               
+            }
+        }
+    }
+    .rule{
+        margin-top: 15px;
+        @include box;
+        padding: 30px;
+        h4{
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        li{
+            font-size: 12px;
+            line-height: 24px;
+            color: #1e2b34;
+            span{
+                margin-left: 5px;
+                color: #1e2b34;
+            }
+        }
+    }
+    .myinv_login{
+        @include box;
+        justify-content: space-between;
+        padding: 0 30px;
+        height: 134px;
+        display: none;
+        p:nth-child(1){
+            font-size: 14px;
+            color: #505050;
+            line-height: 134px
+        }
+        .login{
+            display: flex;
+            align-items: center;
+            .btn-login{
+                display: inline-block;
+                width: 115px;
+                height: 36px;
+                line-height: 36px;
+                background: #3DADD9;
+                text-align: center;
+                color: #fff;
+                margin-right: 15px;
+            }
+            p{
+                a{
+                    color: #3DADD9
+                }
+                
+            }
+        }
+    }
+    .scaleBtn{color:#3DADD9}
+    .copyBtn{
+        margin-left:15px;
+        cursor: pointer;
+    }
+  } 
+}
+
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-center-modal .ant-modal {
+  width: 415px ;
+  top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  .ant-modal-content{
+      width: 462px;
+      padding: 0;
+      .ant-modal-footer{
+          display: none;
+      }
+  }
+}

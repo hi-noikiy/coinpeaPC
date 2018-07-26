@@ -1,0 +1,160 @@
+.distribution-wrap{
+  .funds-wrap-top{
+      padding: 30px;
+      .funds-wrap-topL{
+        display: flex;
+        align-items: center;
+          .select-date{
+            .my-datepiker{
+                input{
+                    font-size:12px;
+                    color:#8A8A8A 
+                }
+            }
+            .ant-btn-primary {
+              background: #3dadd9 !important;
+          }
+          .ant-select-selection--single .ant-select-selection__rendered {
+            margin-top: -2px;
+          } 
+          .ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+            font-size: 12px;
+            color: #8A8A8A;
+          }
+          .ant-select-selection-selected-value{
+            color: #8A8A8A;
+          }
+          .ant-btn-primary[disabled]{
+            color:#fff
+          }
+          } 
+
+      }
+      .funds-wrap-topR{
+          float: right;
+          width: 300px;
+          text-align: right;
+          p{
+              font-size: 12px;
+              line-height: 12px;
+              margin-bottom: 12px;
+              span{
+                  margin-left: 5px;
+              }
+          }
+      }
+  }
+  .ant-table-wrapper{
+      .ant-table-thead{
+         
+          th{
+              padding: 10px 16px;
+              font-size: 12px;
+              background: #F4F7FA;
+              color: #808080;
+              text-align: left;
+              .ant-table-column-sorter{
+                  vertical-align: top;
+                  margin-top: 4px;
+                  .ant-table-column-sorter-up, .ant-table-column-sorter-down{
+                      width: 7px;
+                      height: 3px;
+                      color: #808080;
+                  }
+                  .ant-table-column-sorter-down{
+                      margin-top: 3px;
+                  }
+              }
+          }
+          .recharge{
+              width: 86px;
+              padding-left: 12px;
+          }           
+      }
+      .ant-table-row{
+          td{
+              color: #4b4f52;
+              padding: 10px 16px;
+              font-size: 12px;
+              text-align: left;
+          }
+    
+          .no-trade-wrap{
+              padding-left: 0;
+              padding-right: 0;
+              text-align: right;
+              width: 20px;
+              div{
+                  margin-right: -10px;
+              }
+          }
+          .withdraw,.trade,.recharge{    
+              padding: 0;
+             width:80px;
+              a{
+                  padding: 5px 12px;
+                  border-radius: 2px;
+              }
+          }
+          .recharge{
+              width: 80px;
+          }
+          .trade{
+              width: 96px;
+              padding-right: 30px;
+          }
+          .recharge a,.withdraw a{
+              color: #78A429;
+          }
+          .trade a{
+              color:  #42B9E7;
+          }
+          .recharge a:hover,.withdraw a:hover{
+              color: #fff;
+              background: #78A429;
+          }
+          .trade a:hover{
+              background: #42B9E7;
+              color: #fff;
+          }
+          a.no-trade{
+              color:#BCBCBC;
+            
+          }
+          a.no-trade:hover {
+              background: transparent;
+              color:#BCBCBC;
+          }
+      }
+
+  }
+    .colum3{
+        padding-left: 40px !important;
+        p{
+            span{
+                vertical-align: middle;
+                margin-left: 14px;
+            }
+            img{
+                width: 22px;
+            }
+        }
+    }
+    .colum4{
+        padding-left: 60px !important;
+        
+    }
+    .colum5{
+        width: 130px;
+    }
+    .ant-pagination-item-active:focus a, .ant-pagination-item-active:hover a{
+    color: #1890ff!important;
+    } 
+    .distribution-wrap .ant-pagination-item-active:focus a, .distribution-wrap .ant-pagination-item-active:hover a{
+    color: #1890ff!important;
+    } 
+    .ant-table-pagination.ant-pagination{
+    margin-right: 20px;
+    }
+  
+}

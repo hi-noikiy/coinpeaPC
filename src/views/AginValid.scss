@@ -1,0 +1,115 @@
+.aginvalid{
+
+    .all-valid{
+        margin-top: 40px;
+    }
+
+    .all{
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 170px;
+        margin-bottom: 240px;
+        
+        .ant-tabs-content{
+            margin-top: 40px;
+        }
+
+        .valid-inp{
+            height: 40px;
+            line-height: 40px;
+            font-size: 12px;
+            color: #4b4f52;
+         
+        }
+
+        .valid-p{
+            color: #f5222d;
+            font-size: 12px;
+            height: 16px;
+            line-height: 16px;
+            transition: all 0.3s ease-in-out;
+            margin-top:5px;
+        }
+        .ant-input-affix-wrapper .ant-input:not(:first-child){
+            padding-left: 40px;
+        }
+
+        .ant-input-group-addon{
+            background: #fff;
+        }
+
+        .ant-tabs-nav{
+            width: 100%;
+
+            .ant-tabs-tab{
+                width: 50%;
+                margin: 0;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .ant-tabs-ink-bar{
+                background-color: #3dadd9;
+            }
+        }
+
+        .icon-num{
+            background: url('../assets/20_icon01.svg') no-repeat 100% 100%;
+            display: inline-block;
+            width: 18px;
+            height: 14px;
+            background-size: cover;
+            
+        }
+
+        .my-btn {
+            margin-top: 30px;
+            background: #3dadd9;
+            width: 100%;
+            height: 40px;
+        }
+
+
+        .getCode{
+            height: 40px;
+            color: #40a9ff;
+            border-width: 1px !important;
+            border-style: solid !important;
+            border-color: #40a9ff !important;
+            width: 100px;
+            margin-left: 15px;
+            
+        }
+
+    
+        .get-phone-Code{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .getCode:hover,.getCode:focus{
+            color: #40a9ff;
+            background-color: #fff;
+            border-color: #40a9ff !important;
+        }
+
+        .coutDown{
+            border-color:#FF4B4B !important;
+            color:#FF4B4B;
+        }
+        .coutDown:hover, .coutDown:focus{
+            border-color:#FF4B4B !important;
+            color:#FF4B4B !important;
+        }
+
+        .errInp{
+            .ant-input,.ant-input:focus {
+                border-color:#f5222d;
+            }
+            .ant-input:focus{
+                box-shadow: 0 0 0 2px rgba(230, 22, 78, 0.1);
+            }
+           
+        }
+    }
+}

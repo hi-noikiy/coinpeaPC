@@ -1,0 +1,54 @@
+.list-wrap{
+    position: relative;
+    padding: 0 10px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    .list-left{
+        width: 32%;
+        
+    }
+    .list-cent{
+        width: 32%;
+        text-align: right;
+       
+    }
+    .list-right{
+        width: 35%;
+      
+        div {
+            text-align: right;
+        
+        }
+    }
+    .list-bg{
+        position: absolute;
+        top:0;
+        right: 0;
+        height: 100%;
+    }
+    .sell-list-bg{
+        background:  rgba(255,75,75,0.1);
+    }
+    .buy-list-bg{
+        background:  rgba(171,219,85,0.1);
+    }
+}
+
+//买盘价格颜色
+.list-buy-color {
+    .list-left {
+        color:#ABDB55;
+    }
+}
+//卖盘价格颜色
+.list-sale-color {
+    .list-left {
+        color:#FF4B4B;
+    }
+}

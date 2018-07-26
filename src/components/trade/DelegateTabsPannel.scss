@@ -1,0 +1,27 @@
+/* 
+    交易页面 委托列表样式
+*/
+.delegateTabs {
+    .delegateTabs-top{
+        span{
+            margin-right: 20px;
+        }
+    }
+  .delegateTabs-right{
+      position: absolute;
+      right: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      width: 200px;
+      justify-content: space-between;
+      .ant-btn span{
+          font-size: 12px;
+          color:#49CCFF ;
+      }
+      .ant-btn-background-ghost.ant-btn-primary{
+          border-color:#49CCFF;
+          border: none;
+      }
+  }
+}
