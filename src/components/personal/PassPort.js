@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  护照表单
  */
 
@@ -203,7 +203,7 @@ class PassPort extends Component {
             ],
         });
 
-        const numberProps = getFieldProps('number', {
+        const numberProps = getFieldProps('numbers', {
             rules: [
                 {required: true,whitespace: true,message: intl.get('请输入护照号码')},
                 { validator: checkPass1 },

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 身份认证表单
  */
 
@@ -180,7 +180,7 @@ class Identify extends Component {
             ],
         });
 
-        const numberProps = getFieldProps('number', {
+        const numberProps = getFieldProps('numbers', {
             rules: [
                 { required: true, whitespace: true, message: intl.get('请输入身份证号码') },
                 { validator: checkPass0 },
