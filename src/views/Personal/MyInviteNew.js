@@ -38,6 +38,9 @@ const columns2 = [{
     title: intl.get('佣金'),
     dataIndex: 'money',
 },{
+    title: intl.get('类型'),
+    dataIndex: 'type',
+},{
     title: intl.get('币种'),
     dataIndex: 'coin',
 },{
@@ -55,10 +58,9 @@ export class MyInvite extends Component {
     constructor(props){
         super(props);
         this.state = {
-            id:'',
-            link:'',
-            friends:'',
-            commission:'',
+            inviteInfo:{
+                url:''
+            }
             Modal2Visible: false,
             data1: [],
             data2: [],
@@ -125,21 +127,8 @@ export class MyInvite extends Component {
     myInvite = async ()=>{
         const res= await myInvite();
         if(res.status === 1){
-            if(res.data.inviteList){
-                this.setState({
-                    data1:res.data.inviteList,  
-                })
-            }
-            if(res.data.detailList){
-                this.setState({
-                    data2:res.data.detailList
-                })
-            }
             this.setState({
-                id:res.data.referrerId,
-                link: res.data.url,
-                friends:res.data.count,
-                commission:res.data.BTCCount,  
+                inviteInfo:res.data
             })
         }else{
             this.setState({
@@ -257,6 +246,19 @@ export class MyInvite extends Component {
             return intl.get('第一名')
         }
     }
+
+    getBoustype(type){
+		switch(type){
+			case 1:
+				return intl.get('注册返币')
+			case 2:
+				return intl.get('邀请返币')
+			case 3:
+				return intl.get('交易返币')
+			default:
+				return intl.get('邀请返币')
+		}
+	}
  
     render() {
         const inviteList=this.state.data1.map((item,index)=>{
@@ -270,6 +272,7 @@ export class MyInvite extends Component {
             return {
                 money: item.amount,
                 key: index,
+                type:this.getBoustype(item.type),
                 coin:item.coinName,
                 state:item.status?intl.get('已结算'):intl.get('未结算'),
                 email: item.contributor,
@@ -300,62 +303,72 @@ export class MyInvite extends Component {
                       { rankList }
                     </ul>
                     <div className="inv-mess" style={{display:this.state.loginShow ? "none" : 'flex'}}>
-                      <div className="inv-messL">
-                        <h2>{intl.get('我的邀请')}</h2>
-                        <h3>{intl.get('邀请码')}：</h3>
-                        <div className="link">
+                        <div className="inv-messcon">
+                            <div className="inv-messL">
+                                <h2>{intl.get('我的邀请')}</h2>
+                                <h3>{intl.get('邀请码')}：</h3>
+                                <div className="link">
 
-                          <Input ref='id' value={this.state.id} onChange={this.changeLink}/>
-                          <span onClick={this.copyId.bind(this)} className="copyBtn">{intl.get('复制邀请码')}</span>
+                                <Input ref='id' value={this.state.inviteInfo.referrerId} onChange={this.changeLink}/>
+                                <span onClick={this.copyId.bind(this)} className="copyBtn">{intl.get('复制邀请码')}</span>
 
+                                </div>
+                            </div>
+                            <div className="inv-messR">
+                                <div className="myinvite-top-qrcode">
+                                    <a onClick={this.getImg}><QRCode  value={this.state.inviteInfo.url}  id="code"  renderAs="canvas" size={this.state.size} width='80' height="80" style={{width:'80px',height:'80px'}}/></a>
+                                    <a onClick={this.getImg} className="scaleBtn">{intl.get('获取专属海报')}</a>
+                                    <canvas id="myCanvas" style={{display:'none'}}></canvas>
+                                    <Modal
+                                    wrapClassName="vertical-center-modal"
+                                    closable={false}
+                                    visible={this.state.Modal2Visible}
+                                    onCancel={this.hideModel.bind(this)}
+                                    >
+                                    <a href={this.state.codepic} download="invitecode.png"><img src={this.state.codepic} style={{width:'415'}} alt=""/></a>
+                                    </Modal>
+                                </div>
+                                <div>
+                                    <h3>{intl.get('邀请链接')}：</h3>
+                                    <div className="link">
+                                        <Input ref='link' value={this.state.inviteInfo.url} onChange={this.changeLink} style={{width:'314px'}}/>
+                                        <span onClick={this.copyLink.bind(this)} className="copyBtn">{intl.get('复制邀请链接')}</span>
+                                    </div>
+                                    <div id="share" style={{display:"none"}}>
+                                        <p  className="bdsharebuttonbox" data-tag="share_1">
+                                        <a className="bds_fbook" data-cmd="fbook" href="javascript:;"></a>
+                                        <a className="bds_twi" data-cmd="twi" href="javascript:;"></a>
+                                        <a className="bds_linkedin" data-cmd="linkedin" href="javascript:;"></a>
+                                        <a className="bds_tsina" data-cmd="tsina" href="javascript:;"></a>
+                                        <a className="bds_qzone" data-cmd="qzone" href="javascript:;"></a>
+                                        </p>     
+                                    </div>
+                                </div>
+                            </div>  
                         </div>
                         <ul className="myinvite-top-data clear">
-                          <li>
-                              <h4><img src={friends} alt='' /><span>{intl.get('邀请总人数')}</span></h4>
-                              <span>{this.state.friends}</span>
-                          </li>
-                          <li>
-                              <h4><img src={commission} alt='' /><span>{intl.get("获得返佣")}（BTC）</span></h4>
-                              <span>{this.state.commission}</span>
-                          </li>
-                          <li style={{display:'flex',flexDirection:'column'}}>
-                              <h4><img src={commission} alt='' /><span>{intl.get("返佣比例")}</span></h4>
-                              <span style={{fontSize:'12px',textAlign:'left'}}>一级12%</span>
-                              <span style={{fontSize:'12px',textAlign:'left'}}>二级8%</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="inv-messR">
-                        <div className="myinvite-top-qrcode">
-                            <a onClick={this.getImg}><QRCode  value={this.state.link}  id="code"  renderAs="canvas" size={this.state.size} width='80' height="80" style={{width:'80px',height:'80px'}}/></a>
-                            <a onClick={this.getImg} className="scaleBtn">{intl.get('获取专属海报')}</a>
-                            <canvas id="myCanvas" style={{display:'none'}}></canvas>
-                            <Modal
-                            wrapClassName="vertical-center-modal"
-                            closable={false}
-                            visible={this.state.Modal2Visible}
-                            onCancel={this.hideModel.bind(this)}
-                            >
-                            <a href={this.state.codepic} download="invitecode.png"><img src={this.state.codepic} style={{width:'415'}} alt=""/></a>
-                            </Modal>
-                        </div>
-                        <div>
-                          <h3>{intl.get('邀请链接')}：</h3>
-                          <div className="link">
-                            <Input ref='link' value={this.state.link} onChange={this.changeLink} style={{width:'314px'}}/>
-                            <span onClick={this.copyLink.bind(this)} className="copyBtn">{intl.get('复制邀请链接')}</span>
-                          </div>
-                          <div id="share" style={{display:"none"}}>
-                            <p  className="bdsharebuttonbox" data-tag="share_1">
-                              <a className="bds_fbook" data-cmd="fbook" href="javascript:;"></a>
-                              <a className="bds_twi" data-cmd="twi" href="javascript:;"></a>
-                              <a className="bds_linkedin" data-cmd="linkedin" href="javascript:;"></a>
-                              <a className="bds_tsina" data-cmd="tsina" href="javascript:;"></a>
-                              <a className="bds_qzone" data-cmd="qzone" href="javascript:;"></a>
-                            </p>     
-                          </div>
-                        </div>
-                      </div>                  
+                            <li>
+                                <h4><img src={friends} alt='' /><span>{intl.get('邀请总人数')}</span></h4>
+                                <span>{this.state.inviteInfo.count}</span>
+                            </li>
+                            <li>
+                                <h4><span>{intl.get("KYC通过人数")}</span></h4>
+                                <span>{this.state.inviteInfo.KYCNum}</span>
+                            </li>
+                            <li>
+                                <h4><span>{intl.get("邀请奖励")}</span></h4>
+                                <span>{this.state.inviteInfo.KYCCoinNum}</span>
+                            </li>
+                            <li>
+                                <h4><img src={commission} alt='' /><span>{intl.get("获得返佣")}（BTC）</span></h4>
+                                <span>{this.state.inviteInfo.BTCCount}</span>
+                            </li>
+                            <li style={{display:'flex',flexDirection:'column'}}>
+                                <h4><span>{intl.get("返佣比例")}</span></h4>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>一级12%</span>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>二级8%</span>
+                            </li>
+                        </ul>              
                     </div>
                     <div className="myinvite-middle clear" style={{display:this.state.loginShow ? "none" : 'block'}}>
                       <Tabs defaultActiveKey="1" onChange={this.callback}>

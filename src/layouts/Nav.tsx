@@ -48,7 +48,9 @@ class Nav extends React.Component<NavProps, any> {
        this.state = {
 			 notice: [],
              lock:false,
-             curLang:'zh_CN'
+             curLang:'zh_CN',
+             showPop: false,
+             showLang:false
         }
    }
 
@@ -87,9 +89,11 @@ class Nav extends React.Component<NavProps, any> {
 
     //跳转
     redirect = (path) => {
-        return () => {
-            
+        return () => {  
            this.props.history.push(path);
+           this.setState({
+                showPop:false
+            })
         }
     }
     //选择语言
@@ -196,6 +200,21 @@ class Nav extends React.Component<NavProps, any> {
         });
     }
 
+    isPhone(){
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            return true
+        }
+        return false
+    }
+
+
+    showChange(e){
+        this.setState({
+            showPop:e
+        })
+    }
+
+
     render() {
         const { usrInfo  } = this.props.login;
         
@@ -221,11 +240,11 @@ class Nav extends React.Component<NavProps, any> {
                     );
        const content = (
                             <div className="pop-usr-body">
-                                <Link to="/personal" className="pop-usr-body-top">
-                                    <span>{intl.get("个人中心")}</span>
+                                <a href="javascript:;" onClick={this.redirect('/personal')} className="pop-usr-body-top">
+                                    <span>{intl.get("账户信息")}</span>
                                     <Icon type="right" />
-                                </Link>
-                                <Link to="/assets" className="pop-usr-body-bottom">
+                                </a>
+                                <a href="javascript:;" onClick={this.redirect('/assets')} className="pop-usr-body-bottom">
                                     <span>{intl.get("资产信息")}</span>
                                     <div className="pop-usr-body-assets">
                                         {/* <div>
@@ -234,7 +253,7 @@ class Nav extends React.Component<NavProps, any> {
                                         </div> */}
                                         <Icon type="right" />
                                     </div>
-                                </Link>
+                                </a>
                                 <div className="login-out" onClick={this.loginOut}>{intl.get("退出")}</div>
                             </div>
                         );
@@ -346,7 +365,7 @@ class Nav extends React.Component<NavProps, any> {
                                                             >{intl.get('提交工单')}
                                                             </NavLink>
                                                             <div className="user-info-wrap">
-                                                                <Popover content={content} title={title}>
+                                                                <Popover content={content} title={title} visible={this.state.showPop} onVisibleChange={e=>this.showChange(e)} trigger={this.isPhone()?'click':'hover'}>
                                                                     <img src={require('./../assets/01_02.portrait01.png')} alt='' width="18" height="18" style={{marginRight:'8px'}}/>
                                                                     <span style={{verticalAlign:'middle'}}>{formatStr(usrInfo.username)}</span>
                                                                     <i className="iconfont icon-sanJ-small">&#xe791;</i>
@@ -360,6 +379,7 @@ class Nav extends React.Component<NavProps, any> {
                                     //style={{paddingTop:10}} 
                                     defaultValue="zh"  
                                     className="lang" 
+                                    onClick={ (e) => this.setState({ showLang:!this.state.showLang }) }
                                     onMouseEnter={ (e) => this.langChange(e)} 
                                     onMouseLeave={ (e) => this.langLive(e)}
                                    ref="langMenu" 
@@ -368,9 +388,9 @@ class Nav extends React.Component<NavProps, any> {
                                           
                                     >
                                         <i className={cs('lang-icon', this.state.curLang)}></i>
-                                        <i className="lang-ifont iconfont icon-sanJ-small">&#xe791;</i>
+                                        <i className={cs("lang-ifont iconfont icon-sanJ-small",{"langhove":this.state.showLang})}>&#xe791;</i>
                                     </div>
-                                    <div className="select-lang-wrap">
+                                    <div className={cs("select-lang-wrap",{"showlang":this.state.showLang})}>
                                         <div className="lang-list"  onClick={() => this.selecLang('zh_CN')}>
                                             <i className="lang-icon zh_CN"></i>
                                             <span>简体中文</span>

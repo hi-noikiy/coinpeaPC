@@ -152,7 +152,11 @@
                 .langhove{
                     transform: rotate(180deg);     
                 }
-
+                .showlang{
+                    opacity: 1 !important;
+                    display: block !important;
+                    z-index: 888;
+                }
                 .select-lang-wrap{
                     position: absolute;
                     top:54px;
