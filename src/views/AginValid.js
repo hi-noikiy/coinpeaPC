@@ -39,7 +39,7 @@ class AginValid extends React.PureComponent {
             google:'',
             phone:'',
             err:'',
-            errText:intl.get('请输入6位的谷歌验证码'),
+            errText: '',
             timerStart:false,
             timerText:'',
             phoneNumber:'',
@@ -177,7 +177,7 @@ class AginValid extends React.PureComponent {
             if(this.state.err && this.state.google) {
                 return  this.setState({
                     err:true,
-                    errText:intl.get('请输入长度为6位的谷歌验证码')
+                    errText:intl.get('请输入长度为6位的谷歌验证码')     
                 })
             }
             aginValid({
