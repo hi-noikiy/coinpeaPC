@@ -13,6 +13,7 @@ import intl from 'react-intl-universal';
 
 import success from '../../../assets/success.svg';
 import verify from '../../../assets/verify.svg';
+import failed from '../../../assets/failed.svg';
 
 import './PersonalTwo.scss';
 import { message } from 'antd';
@@ -28,7 +29,8 @@ class AccountCheck extends Component {
             backText: intl.get('返回个人中心'),
             columText: intl.get('身份认证'),
             showForm: true,
-            ischeck: false
+            checkStatus:0,
+            showLayOut:false
         }
         
     }
@@ -48,21 +50,19 @@ class AccountCheck extends Component {
         const res = await authentication();
         if(res.status === 1){
             let showForm = true;
-            let ischeck = false;
             if(res.data.identifiStatus === 0){
                showForm = true;
             }else if(res.data.identifiStatus === 1){
                 showForm = false; 
-                ischeck = false;
             }else if(res.data.identifiStatus === 2){
-                showForm = true; 
-                message.error(intl.get('认证失败'));
+                showForm = false; 
             }else if(res.data.identifiStatus === 3){
-                showForm = false; ischeck = true;
+                showForm = false;
             }
             this.setState({
                 showForm,
-                ischeck
+                checkStatus: res.data.identifiStatus,
+                showLayOut:true
             })
         }
     }
@@ -75,6 +75,22 @@ class AccountCheck extends Component {
             wrapperCol:{ span: 8 },
         }
 
+
+        let imgUrl,text;
+
+        if(this.state.checkStatus === 1){
+            imgUrl = success;
+            text = intl.get('已认证');
+
+        }else if(this.state.checkStatus === 2){
+            imgUrl = failed;
+            text = intl.get('认证失败');
+
+        }else if(this.state.checkStatus === 3){
+            imgUrl = verify;
+            text = intl.get('认证中');
+        }
+
         return (
             <div id="personalTwo" style={{ margin: '0', border: 'none', width: 'auto' }}>
                {/*  <SubpageHead
@@ -83,7 +99,7 @@ class AccountCheck extends Component {
                     columText={this.state.columText}
                 /> */}
                 {
-                    this.state.showForm ?
+                    this.state.showForm && this.state.showLayOut?
                     <div className="personalTwo_con" style={{padding:'30px 0 60px'}}>
                         <p>*<span>{intl.get('身份认证提示')}</span></p>
                         <div>
@@ -104,8 +120,8 @@ class AccountCheck extends Component {
                         </div>
                     </div>:
                     <div className="submit">
-                        <img src={this.state.ischeck?verify:success} alt="" />
-                        <p>{this.state.ischeck?intl.get('认证中'):intl.get('已认证')}</p>
+                        <img src={imgUrl} alt="" />
+                        <p>{text} <a href="javascript:;" onClick={ ()=> this.setState({ showForm: true }) } style={{ display: this.state.checkStatus === 2?'inline-block':'none' }}>{intl.get('重新认证')}</a></p>
                     </div>
                 }
             </div>

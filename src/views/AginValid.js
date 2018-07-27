@@ -186,8 +186,13 @@ class AginValid extends React.PureComponent {
                 id:this.props.login.id,
                 validateType:this.state.validType
             }).then(res => {
-                message.info(res.msg);
-                this.props.emitSaveLogin(res)
+                if(res.status ===1){
+                    message.success(res.msg);
+                    this.props.history.push('/')
+                    this.props.emitSaveLogin(res)
+                }else{
+                    message.info(res.msg);
+                }
             })
 
         } else if(this.state.validType === "2") {
@@ -211,8 +216,14 @@ class AginValid extends React.PureComponent {
                 id:this.props.login.id,
                 validateType:this.state.validType
             }).then(res => {
-                message.info(res.msg);
-                this.props.emitSaveLogin(res)
+                if(res.status ===1){
+                    message.success(res.msg);
+                    this.props.history.push('/')
+                    this.props.emitSaveLogin(res)
+                }else{
+                    message.info(res.msg);
+                }
+
             })
         } else {
             if(this.state.activeKey === '1') {
@@ -236,8 +247,13 @@ class AginValid extends React.PureComponent {
                     id:this.props.login.id,
                     validateType:'1'
                 }).then(res => {
-                    message.info(res.msg);
-                    this.props.emitSaveLogin(res)
+                    if(res.status ===1){
+                        message.success(res.msg);
+                        this.props.history.push('/')
+                        this.props.emitSaveLogin(res)
+                    }else{
+                        message.info(res.msg);
+                    }
                 })
             } else {
 
@@ -261,8 +277,13 @@ class AginValid extends React.PureComponent {
                     id:this.props.login.id,
                     validateType:'2'
                 }).then(res => {
-                    message.info(res.msg);
-                    this.props.emitSaveLogin(res)
+                    if(res.status ===1){
+                        message.success(res.msg);
+                        this.props.history.push('/')
+                        this.props.emitSaveLogin(res)
+                    }else{
+                        message.info(res.msg);
+                    }
                 })
             }
         }

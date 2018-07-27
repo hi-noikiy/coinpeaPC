@@ -303,7 +303,6 @@ const MyRouter = (props) => (
             );
 
 const mapStateToprops = (state) => {
-
     return {
         loginState: state.login.loginState
     }

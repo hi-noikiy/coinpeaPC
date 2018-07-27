@@ -153,36 +153,25 @@ export default function login(state:ILoginState = initState, action) {
         }
         // 保存二次登陆后用户信息
         case SAVE_LOGIN: {
+            ls.set('login', {loginState:true});
+            
+                const usrInfo = {
+                        amount:action.data.data.amount,
+                        id: action.data.data.id,
+                        token:action.data.data.token,
+                        username: action.data.data.username,
+                        
+                };
 
-          if(action.data.status === 1) {
-                setTimeout(() => {
-                    state.history.push('/');
-                }, 2000);
-                ls.set('login', {loginState:true});
-                
-                    const usrInfo = {
-                            amount:action.data.data.amount,
-                            id: action.data.data.id,
-                            token:action.data.data.token,
-                            username: action.data.data.username,
-                            
-                    };
-
-                ls.set('usrInfo', usrInfo);
-                return {
-                    ...state,
-                    validateType:action.data.data.validateType,
-                    // tslint:disable-next-line:object-literal-sort-keys
-                    loginState: true,
-                    bool:false,
-                    usrInfo,
-                }
-          }
-          else {
-              return {
-                  ...state
-              }
-          }
+            ls.set('usrInfo', usrInfo);
+            return {
+                ...state,
+                validateType:action.data.data.validateType,
+                // tslint:disable-next-line:object-literal-sort-keys
+                loginState: true,
+                bool:false,
+                usrInfo,
+            }
         }
         case LOGIN_SUCCESS: {
             
