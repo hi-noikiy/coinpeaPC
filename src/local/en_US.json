@@ -432,5 +432,8 @@
     "请输入谷歌验证器中的6位验证码":"Please enter the 6-digit verification code in Google Authenticator",
     "请输入短信验证码":"Please enter SMS verification code",
     "请输入长度为6位的谷歌验证码":"Please enter a 6-digit Google verification code",
-    "上传失败":"Upload failed"
+    "上传失败":"Upload failed",
+    "注册返币":"Registered",
+    "邀请返币":"Invitation",
+    "交易返币":"Trade"
 }
