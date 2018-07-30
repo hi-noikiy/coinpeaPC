@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // api
-import { myInvite , myInviteBanner , myInviteRank, myRebirth, myInviteList } from '../../api/personal'
+import { myInvite , myInviteBanner , myInviteRank, myRebirth, myInviteList, activeRule } from '../../api/personal'
 
 import { CLEAR_LOGIN_ACTIONS } from '../LoginRedux';
 
@@ -90,6 +90,7 @@ export class MyInvite extends Component {
                 position:"bottom",
                 onChange:this.getTabsData2
             },
+            rules:''
         }
     }
 
@@ -102,6 +103,11 @@ export class MyInvite extends Component {
         this.myInviteRank()
         this.myInviteList(this.state.pagination.current);
         this.myRebirth(this.state.pagination2.current);
+        activeRule().then(res=>{
+			this.setState({
+				rules:res.data?res.data.content:[]
+			})
+		})
     }
     myInviteRank = async ()=>{
         const res= await myInviteRank();
@@ -158,7 +164,7 @@ export class MyInvite extends Component {
             this.setState({
                 data1:res.data,
                 pagination:{
-                    total:res.page.totalCount,
+                    total:Number(res.page.totalCount),
                     hideOnSinglePage:true
                 }
             })
@@ -174,7 +180,7 @@ export class MyInvite extends Component {
             this.setState({
                 data2:res.data,
                 pagination2:{
-                    total:res.page.totalCount,
+                    total:Number(res.page.totalCount),
                     hideOnSinglePage:true
                 }
             })
@@ -302,7 +308,7 @@ export class MyInvite extends Component {
                     <ul className="inv-rank">
                       { rankList }
                     </ul>
-                    <div className="inv-mess" style={{display:this.state.loginShow ? "none" : 'flex'}}>
+                    <div className="inv-mess" style={{display:this.state.loginShow ? "none" : 'block'}}>
                         <div className="inv-messcon">
                             <div className="inv-messL">
                                 <h2>{intl.get('我的邀请')}</h2>
@@ -365,8 +371,8 @@ export class MyInvite extends Component {
                             </li>
                             <li style={{display:'flex',flexDirection:'column'}}>
                                 <h4><span>{intl.get("返佣比例")}</span></h4>
-                                <span style={{fontSize:'12px',textAlign:'left'}}>一级12%</span>
-                                <span style={{fontSize:'12px',textAlign:'left'}}>二级8%</span>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>一级{this.state.inviteInfo.one}%</span>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>二级{this.state.inviteInfo.two}%</span>
                             </li>
                         </ul>              
                     </div>
@@ -387,16 +393,7 @@ export class MyInvite extends Component {
                             <p className="goLogin">{intl.get('还没有账号')}？<Link to="/register">{intl.get('去注册')}</Link></p>
                         </div>
                     </div>
-                    <div className="rule">
-                      <h4>{intl.get("活动细则")}</h4>
-                      <ul>
-                          <li>•<span>{intl.get('细则1')}</span></li>
-                          <li>•<span>{intl.get('细则2')}</span></li>
-                          <li>•<span>{intl.get('细则3')}</span></li>
-                          <li>•<span>{intl.get('细则4')}</span></li>
-                          <li>•<span>{intl.get('细则5')}</span></li>
-                      </ul>
-                    </div>
+                    <div className="rule" dangerouslySetInnerHTML={{__html:this.state.rules}}></div>
                 </div>
 
 

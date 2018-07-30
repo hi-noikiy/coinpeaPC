@@ -38,7 +38,9 @@
             color: #C6D0DD;
             overflow: hidden;
             width: 300px;
-           .slick-slide>div>div{
+           .slick-slide>div>a{
+               color: #fff;
+               display: block !important;
                text-overflow: ellipsis;
                white-space: nowrap;
                overflow: hidden;

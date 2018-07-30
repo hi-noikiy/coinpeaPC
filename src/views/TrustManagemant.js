@@ -127,7 +127,7 @@ class TrustManagement extends React.Component {
             if(res.status === 1){
                 this.setState({
                     bodyListDelegate1:res.data.entrust?res.data.entrust:[],
-                    total:res.data.page.totalCount,
+                    total:Number(res.data.page.totalCount),
                     totalPage:res.data.page.totalPage,
                 })   
                 if(!res.data.entrust){
@@ -153,7 +153,7 @@ class TrustManagement extends React.Component {
             if(res.status === 1){
                 this.setState({
                     bodyListDelegate2:res.data.record?res.data.record:[],
-                    total:res.data.page.totalCount,
+                    total:Number(res.data.page.totalCount),
                     totalPage:res.data.page.totalPage,
                 })   
                 if(!res.data.entrust){

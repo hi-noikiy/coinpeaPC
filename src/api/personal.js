@@ -82,3 +82,6 @@ export const googleStatus = () => _mAjax('/coinex-interface/api/usercentre/check
 
 //获取国家
 export const getCountry = () => _mAjax('/coinex-interface/api/sysauthcountry/areaList',{method:'get'});
+
+//活动细则
+export const activeRule = () => _mAjax('/coinex-interface/api/websit/article/inviteArticle');
