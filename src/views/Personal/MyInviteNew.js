@@ -169,7 +169,11 @@ export class MyInvite extends Component {
                 data1:res.data,
                 pagination:{
                     total:Number(res.page.totalCount),
-                    hideOnSinglePage:true
+                    hideOnSinglePage:true,
+                    pageSize:10,
+                    showQuickJumper:true,
+                    position:"bottom",
+                    onChange:this.getTabsData
                 }
             })
         }
@@ -185,7 +189,8 @@ export class MyInvite extends Component {
                 data2:res.data,
                 pagination2:{
                     total:Number(res.page.totalCount),
-                    hideOnSinglePage:true
+                    hideOnSinglePage:true,
+                    showQuickJumper:true,
                 }
             })
         }
@@ -193,19 +198,25 @@ export class MyInvite extends Component {
 
     //表格分页事件
     getTabsData = (page) => {
-        this.myInviteList(page);
+        this.myInviteList(page.current);
         this.setState({ 
             pagination:{
-                current:page
+                current:page.current,
+                total:Number(page.totalCount),
+                hideOnSinglePage:true,
+                showQuickJumper:true,
             }
         })
     }
     //表格分页事件
     getTabsData2 = (page) => {
-        this.myRebirth(page);
+        this.myRebirth(page.current);
         this.setState({ 
             pagination2:{
-                current:page
+                current:page.current,
+                total:Number(page.totalCount),
+                hideOnSinglePage:true,
+                showQuickJumper:true,
             }
         })
     }
@@ -385,10 +396,10 @@ export class MyInvite extends Component {
                     <div className="myinvite-middle clear" style={{display:this.state.loginShow ? "none" : 'block'}}>
                       <Tabs defaultActiveKey="1" onChange={this.callback}>
                         <TabPane tab={intl.get('邀请记录')} key="1">
-                        <Table columns={columns1} pagination={this.state.pagination}  dataSource={inviteList} size="small" locale={{emptyText: intl.get('暂无邀请好友记录') }}/>
+                        <Table columns={columns1} pagination={this.state.pagination} onChange={ this.getTabsData }  dataSource={inviteList} size="small" locale={{emptyText: intl.get('暂无邀请好友记录') }}/>
                         </TabPane>
                         <TabPane tab={intl.get('返佣记录')} key="2">
-                          <Table columns={columns2} pagination={this.state.pagination2} dataSource={detailList} size="small" locale={{emptyText: intl.get('暂无返佣记录') }} />
+                          <Table columns={columns2} pagination={this.state.pagination2} onChange={ this.getTabsData2 } dataSource={detailList} size="small" locale={{emptyText: intl.get('暂无返佣记录') }} />
                         </TabPane>
                       </Tabs>
                     </div>
