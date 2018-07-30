@@ -365,8 +365,8 @@ export class MyInvite extends Component {
                             </li>
                             <li style={{display:'flex',flexDirection:'column'}}>
                                 <h4><span>{intl.get("返佣比例")}</span></h4>
-                                <span style={{fontSize:'12px',textAlign:'left'}}>一级12%</span>
-                                <span style={{fontSize:'12px',textAlign:'left'}}>二级8%</span>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>{intl.get("一级")} 12%</span>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>{intl.get("二级")} 8%</span>
                             </li>
                         </ul>              
                     </div>
