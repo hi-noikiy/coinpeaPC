@@ -242,6 +242,13 @@ const Dividend =  Loadable({
     delay:200
 })
 
+//工单页面
+const Issue =  Loadable({
+    loader:()=>import('../views/Issue'),
+    loading:Loading,
+    delay:200
+})
+
 // http://coinex8.com/.well-known/pki-validation/fileauth.txt
 const Fileauth = Loadable({
     loader:()=>import('../views/Fileauth'),
@@ -295,6 +302,7 @@ const MyRouter = (props) => (
                         <Route path="/currency"  component={JoinCoin}></Route>
                         <Route path="/details"  component={Details}></Route>
                         <Route path="/dividend"  component={Dividend}></Route>
+                        <PrivateRoute path="/issue"  component={Issue} loginState={props.loginState}></PrivateRoute>
                         <Route path="/.well-known/pki-validation/fileauth.txt" component={Fileauth}  ></Route>
                         <Redirect to="/" />
                     {/* </AnimatedSwitch> */}

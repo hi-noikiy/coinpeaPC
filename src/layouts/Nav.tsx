@@ -2,7 +2,7 @@
     头部导航
 */
 import React from 'react';
-import { NavLink, Link, withRouter, RouteComponentProps,  } from 'react-router-dom';
+import { NavLink, withRouter, RouteComponentProps,  } from 'react-router-dom';
 import { connect } from 'react-redux';
 import cs  from 'classnames';
 import intl from 'react-intl-universal';
@@ -30,6 +30,8 @@ interface NavState {
     notice: Array<any>
     lock: boolean;
     curLang: string;
+    showPop:boolean;
+    showLang:boolean;
 }
 
 interface  NavProps extends RouteComponentProps<any> {
@@ -358,7 +360,7 @@ class Nav extends React.Component<NavProps, any> {
                                                             >{intl.get('委托管理')}
                                                             </NavLink>
                                                             <NavLink
-                                                                     to="/"
+                                                                     to="/issue"
                                                                      className="animated  nav-name" 
                                                                      activeClassName="nav-active" 
                                                                      exact onClick={this.addClassName} 

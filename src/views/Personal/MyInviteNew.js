@@ -60,7 +60,7 @@ export class MyInvite extends Component {
         this.state = {
             inviteInfo:{
                 url:''
-            }
+            },
             Modal2Visible: false,
             data1: [],
             data2: [],
@@ -348,7 +348,7 @@ export class MyInvite extends Component {
                         </div>
                         <ul className="myinvite-top-data clear">
                             <li>
-                                <h4><img src={friends} alt='' /><span>{intl.get('邀请总人数')}</span></h4>
+                                <h4><span>{intl.get('邀请总人数')}</span></h4>
                                 <span>{this.state.inviteInfo.count}</span>
                             </li>
                             <li>
@@ -360,7 +360,7 @@ export class MyInvite extends Component {
                                 <span>{this.state.inviteInfo.KYCCoinNum}</span>
                             </li>
                             <li>
-                                <h4><img src={commission} alt='' /><span>{intl.get("获得返佣")}（BTC）</span></h4>
+                                <h4><span>{intl.get("获得返佣")}（BTC）</span></h4>
                                 <span>{this.state.inviteInfo.BTCCount}</span>
                             </li>
                             <li style={{display:'flex',flexDirection:'column'}}>

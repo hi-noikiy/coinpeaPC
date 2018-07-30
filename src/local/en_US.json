@@ -435,5 +435,15 @@
     "上传失败":"Upload failed",
     "注册返币":"Registered",
     "邀请返币":"Invitation",
-    "交易返币":"Trade"
+    "交易返币":"Trade",
+    "咨询":"Advisory",
+    "回复":"Reply",
+    "请输入联系方式":"Please enter your contact information",
+    "请输入您请求的详情。我们的一名支持人员将尽快答复您。":"Please enter the details of your request. One of our support staff will respond to you as soon as possible.",
+    "我的咨询": "My Consultation",
+    "提交请求":"Submit A Request",
+    "问题分类":"Question Category",
+    "问题描述":"Problem Description",
+    "联系方式":"Contact Information",
+    "账户信息":"Account Information"
 }

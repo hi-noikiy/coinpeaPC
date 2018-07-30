@@ -50,8 +50,8 @@ class Frames extends  Component {
     }
 
     componentDidMount()  {
-
-        const search = window.location.search.splice(1);
+        
+        const search = window.location.search.slice(1);
 
         if(qs.parse(search)['origin'] === 'wap'){
             const ss = new _sessionStorage();
