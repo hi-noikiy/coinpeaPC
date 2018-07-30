@@ -233,6 +233,11 @@
             text-align: center;
             float: none !important;
         }
+        .ant-pagination.mini{
+            .ant-pagination-item{
+                margin-right: 8px;
+            }
+        }
     }
     .rule{
         margin-top: 15px;

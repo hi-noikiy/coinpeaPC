@@ -445,5 +445,7 @@
     "问题分类":"Question Category",
     "问题描述":"Problem Description",
     "联系方式":"Contact Information",
-    "账户信息":"Account Information"
+    "账户信息":"Account Information",
+    "一级邀请":"Level 1 friend",
+    "二级邀请":"Level 2 friend"
 }

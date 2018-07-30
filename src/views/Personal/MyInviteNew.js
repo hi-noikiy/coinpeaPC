@@ -11,6 +11,7 @@ import intl from 'react-intl-universal';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { formatStr } from '../../utils/index';
 
 // api
 import { myInvite , myInviteBanner , myInviteRank, myRebirth, myInviteList, activeRule } from '../../api/personal'
@@ -44,14 +45,17 @@ const columns2 = [{
     title: intl.get('币种'),
     dataIndex: 'coin',
 },{
-    title: intl.get('状态'),
-    dataIndex: 'state',
+	title: intl.get('一级邀请'),
+	dataIndex: 'invite1'
 },{
-    title: intl.get('邮箱'),
-    dataIndex: 'email',
-}, {
+	title: intl.get('二级邀请'),
+	dataIndex: 'invite2'
+},{
     title: intl.get('时间'),
     dataIndex: 'time',
+},{
+    title: intl.get('状态'),
+    dataIndex: 'state',
 }];
 
 export class MyInvite extends Component {
@@ -282,6 +286,8 @@ export class MyInvite extends Component {
                 coin:item.coinName,
                 state:item.status?intl.get('已结算'):intl.get('未结算'),
                 email: item.contributor,
+                invite1: (item.contributors && item.contributors[0])?item.contributors[0]:'',
+				invite2: (item.contributors && item.contributors[1])?formatStr(item.contributors[1]):'',
                 time: moment(item.createTime).format('YYYY-MM-DD HH:mm:ss'),
             }
         })
