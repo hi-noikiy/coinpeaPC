@@ -11,9 +11,10 @@ import intl from 'react-intl-universal';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { formatStr } from '../../utils/index';
 
 // api
-import { myInvite , myInviteBanner , myInviteRank, myRebirth, myInviteList } from '../../api/personal'
+import { myInvite , myInviteBanner , myInviteRank, myRebirth, myInviteList, activeRule } from '../../api/personal'
 
 import { CLEAR_LOGIN_ACTIONS } from '../LoginRedux';
 
@@ -44,14 +45,17 @@ const columns2 = [{
     title: intl.get('币种'),
     dataIndex: 'coin',
 },{
-    title: intl.get('状态'),
-    dataIndex: 'state',
+	title: intl.get('一级邀请'),
+	dataIndex: 'invite1'
 },{
-    title: intl.get('邮箱'),
-    dataIndex: 'email',
-}, {
+	title: intl.get('二级邀请'),
+	dataIndex: 'invite2'
+},{
     title: intl.get('时间'),
     dataIndex: 'time',
+},{
+    title: intl.get('状态'),
+    dataIndex: 'state',
 }];
 
 export class MyInvite extends Component {
@@ -90,6 +94,7 @@ export class MyInvite extends Component {
                 position:"bottom",
                 onChange:this.getTabsData2
             },
+            rules:''
         }
     }
 
@@ -102,6 +107,11 @@ export class MyInvite extends Component {
         this.myInviteRank()
         this.myInviteList(this.state.pagination.current);
         this.myRebirth(this.state.pagination2.current);
+        activeRule().then(res=>{
+			this.setState({
+				rules:res.data?res.data.content:[]
+			})
+		})
     }
     myInviteRank = async ()=>{
         const res= await myInviteRank();
@@ -158,8 +168,12 @@ export class MyInvite extends Component {
             this.setState({
                 data1:res.data,
                 pagination:{
-                    total:res.page.totalCount,
-                    hideOnSinglePage:true
+                    total:Number(res.page.totalCount),
+                    hideOnSinglePage:true,
+                    pageSize:10,
+                    showQuickJumper:true,
+                    position:"bottom",
+                    onChange:this.getTabsData
                 }
             })
         }
@@ -174,8 +188,9 @@ export class MyInvite extends Component {
             this.setState({
                 data2:res.data,
                 pagination2:{
-                    total:res.page.totalCount,
-                    hideOnSinglePage:true
+                    total:Number(res.page.totalCount),
+                    hideOnSinglePage:true,
+                    showQuickJumper:true,
                 }
             })
         }
@@ -183,19 +198,25 @@ export class MyInvite extends Component {
 
     //表格分页事件
     getTabsData = (page) => {
-        this.myInviteList(page);
+        this.myInviteList(page.current);
         this.setState({ 
             pagination:{
-                current:page
+                current:page.current,
+                total:Number(page.totalCount),
+                hideOnSinglePage:true,
+                showQuickJumper:true,
             }
         })
     }
     //表格分页事件
     getTabsData2 = (page) => {
-        this.myRebirth(page);
+        this.myRebirth(page.current);
         this.setState({ 
             pagination2:{
-                current:page
+                current:page.current,
+                total:Number(page.totalCount),
+                hideOnSinglePage:true,
+                showQuickJumper:true,
             }
         })
     }
@@ -276,6 +297,8 @@ export class MyInvite extends Component {
                 coin:item.coinName,
                 state:item.status?intl.get('已结算'):intl.get('未结算'),
                 email: item.contributor,
+                invite1: (item.contributors && item.contributors[0])?item.contributors[0]:'',
+				invite2: (item.contributors && item.contributors[1])?formatStr(item.contributors[1]):'',
                 time: moment(item.createTime).format('YYYY-MM-DD HH:mm:ss'),
             }
         })
@@ -302,7 +325,7 @@ export class MyInvite extends Component {
                     <ul className="inv-rank">
                       { rankList }
                     </ul>
-                    <div className="inv-mess" style={{display:this.state.loginShow ? "none" : 'flex'}}>
+                    <div className="inv-mess" style={{display:this.state.loginShow ? "none" : 'block'}}>
                         <div className="inv-messcon">
                             <div className="inv-messL">
                                 <h2>{intl.get('我的邀请')}</h2>
@@ -365,18 +388,18 @@ export class MyInvite extends Component {
                             </li>
                             <li style={{display:'flex',flexDirection:'column'}}>
                                 <h4><span>{intl.get("返佣比例")}</span></h4>
-                                <span style={{fontSize:'12px',textAlign:'left'}}>{intl.get("一级")} 12%</span>
-                                <span style={{fontSize:'12px',textAlign:'left'}}>{intl.get("二级")} 8%</span>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>一级{this.state.inviteInfo.one}%</span>
+                                <span style={{fontSize:'12px',textAlign:'left'}}>二级{this.state.inviteInfo.two}%</span>
                             </li>
                         </ul>              
                     </div>
                     <div className="myinvite-middle clear" style={{display:this.state.loginShow ? "none" : 'block'}}>
                       <Tabs defaultActiveKey="1" onChange={this.callback}>
                         <TabPane tab={intl.get('邀请记录')} key="1">
-                        <Table columns={columns1} pagination={this.state.pagination}  dataSource={inviteList} size="small" locale={{emptyText: intl.get('暂无邀请好友记录') }}/>
+                        <Table columns={columns1} pagination={this.state.pagination} onChange={ this.getTabsData }  dataSource={inviteList} size="small" locale={{emptyText: intl.get('暂无邀请好友记录') }}/>
                         </TabPane>
                         <TabPane tab={intl.get('返佣记录')} key="2">
-                          <Table columns={columns2} pagination={this.state.pagination2} dataSource={detailList} size="small" locale={{emptyText: intl.get('暂无返佣记录') }} />
+                          <Table columns={columns2} pagination={this.state.pagination2} onChange={ this.getTabsData2 } dataSource={detailList} size="small" locale={{emptyText: intl.get('暂无返佣记录') }} />
                         </TabPane>
                       </Tabs>
                     </div>
@@ -387,16 +410,7 @@ export class MyInvite extends Component {
                             <p className="goLogin">{intl.get('还没有账号')}？<Link to="/register">{intl.get('去注册')}</Link></p>
                         </div>
                     </div>
-                    <div className="rule">
-                      <h4>{intl.get("活动细则")}</h4>
-                      <ul>
-                          <li>•<span>{intl.get('细则1')}</span></li>
-                          <li>•<span>{intl.get('细则2')}</span></li>
-                          <li>•<span>{intl.get('细则3')}</span></li>
-                          <li>•<span>{intl.get('细则4')}</span></li>
-                          <li>•<span>{intl.get('细则5')}</span></li>
-                      </ul>
-                    </div>
+                    <div className="rule" dangerouslySetInnerHTML={{__html:this.state.rules}}></div>
                 </div>
 
 

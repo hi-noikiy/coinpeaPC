@@ -282,16 +282,20 @@ class Nav extends React.Component<NavProps, any> {
                                             vertical
                                         >
                                             {
-                                                this.state.notice.map( (item) => {
+                                                this.state.notice.map( (item,index) => {
                                                     return(
-                                                        <div key={Math.random().toString(36)} onClick={this.redirect(`/news?id=${item.articleType}`)}>{item.title}</div>
+                                                        <NavLink key={Math.random().toString(36)} to={{ 
+                                                            pathname: '/neaws_details',    
+                                                            state:{id:item.articleType,index:index} 
+                                                          }}>{item.title}</NavLink>
                                                         )
                                                 })
                                             }
                                         </Carousel>
-                                </div>
-                                <Icon type="close" onClick={this.hiddNotify} />
-                            </div> : null
+                                    </div>
+                                    <Icon type="close" onClick={this.hiddNotify} />
+                                </div> 
+                                : null
 							}
                         </div>
                    
