@@ -191,7 +191,7 @@ class Issue extends React.PureComponent<any, Istate> {
                         </div>
                     </div>
                     <p className={cs("tips",{'showTypeTips': (issueText === '-' || !issueText) && validator})} >
-                        {intl.get('请输入联系方式')}
+                        {intl.get('请选择咨询问题')}
                     </p>
                 </div>
 

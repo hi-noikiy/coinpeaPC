@@ -257,7 +257,8 @@ class PassPort extends Component {
               this.setState({
                   lock:true
               })
-              postAuthenInfo({...values}).then(data=>{
+              const Id = this.state.country.filter(e=>e.countryName === values.nationalityId)[0].id;
+              postAuthenInfo({...values,nationalityId:Id}).then(data=>{
                 if(data.status === 1){
                   message.success(intl.get('提交成功审核中'));
                   this.props.idcardCheck(); 
@@ -285,7 +286,7 @@ class PassPort extends Component {
         )
         
         const countrys = this.state.country.length?this.state.country.map((e,i)=>{
-            return <Option value={e.id}>{e.countryName}</Option>
+            return <Option key={i} value={e.countryName}>{e.countryName}</Option>
         }):null
 
 
@@ -313,7 +314,7 @@ class PassPort extends Component {
                 {...formItemLayout}
                 label={intl.get('选择国家')}
                 >
-                <Select {...countryProps} placeholder={intl.get('搜索或直接选择')} >
+                <Select showSearch {...countryProps} placeholder={intl.get('搜索或直接选择')} >
                     {countrys}
                 </Select>
                 </FormItem>
