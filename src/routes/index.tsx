@@ -6,7 +6,7 @@ import * as React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import PrivateRoute from '../components/shared/PrivateRoute';
-import { Spin, Icon } from 'antd';
+// import { Spin, Icon } from 'antd';
 import {connect} from 'react-redux';
 // import { spring, AnimatedSwitch  } from 'react-router-transition';
 
@@ -15,18 +15,18 @@ import 'nprogress/nprogress.css';
 import AsyncSiteContent from  '../views/SiteContent';*/
 import './router.scss';
 
-const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
+// const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
+// import pulse from '../assets/pulse.gif'
 
 const Loading = (props) => { 
-    
+    console.log(props.pastDelay)
     if (props.error) {
         return <div style={{textAlign:'center',fontSize:'30', paddingTop:'50', color:'#3dadd9'}}>加载出错啦，请刷新页面</div>;
       } else if (props.pastDelay) {
-       
-        return <div style={{textAlign:'center', paddingTop:200, height:500,paddingBottom:200}}><Spin indicator={antIcon} /></div>
+       console.log('world')
+        return <div style={{textAlign:'center', background:'#252e33', width:'100%', height:'100%' }}> <img src={require('../assets/pulse.gif')} width='20px' height='20px' alt="" /> </div>
 
       } else { 
-      
         return null;
     }    
 };
