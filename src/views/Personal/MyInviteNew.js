@@ -398,7 +398,7 @@ export class MyInvite extends Component {
                         <TabPane tab={intl.get('邀请记录')} key="1">
                         <Table columns={columns1} pagination={this.state.pagination} onChange={ this.getTabsData }  dataSource={inviteList} size="small" locale={{emptyText: intl.get('暂无邀请好友记录') }}/>
                         </TabPane>
-                        <TabPane tab={intl.get('返佣记录')} key="2">
+                        <TabPane tab={intl.get('奖励记录')} key="2">
                           <Table columns={columns2} pagination={this.state.pagination2} onChange={ this.getTabsData2 } dataSource={detailList} size="small" locale={{emptyText: intl.get('暂无返佣记录') }} />
                         </TabPane>
                       </Tabs>

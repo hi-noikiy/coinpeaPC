@@ -19,7 +19,7 @@
   background: #f0f2f5;
   .inviteBanner{
       width: 100%;
-      min-height:400px;
+      min-height:300px;
   }
   .myinvite-top{
     margin-bottom: 60px;
@@ -61,6 +61,7 @@
         @include box;
         padding: 30px 30px 40px;
         margin-bottom: 15px;
+        flex-flow: wrap column;
         .myinvite-top-data{
             margin-top: 28px;
             li{
