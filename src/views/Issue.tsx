@@ -160,15 +160,25 @@ class Issue extends React.PureComponent<any, Istate> {
                                     <span className="red">{intl.get("咨询")}：</span>
                                     <span>{v.content}</span>
                                 </p>
-                                <p className="gray">{moment(v.createTime).format('YYYY-DD-HH HH:mm:ss ')}</p>
+                                <p className="gray">{moment(v.createTime).format('YYYY-MM-DD HH:mm:ss')}</p>
                             </div>
-                            <div className="respones">
-                                <p>
-                                    <span className="red">{intl.get('回复')}：</span>
-                                    <span>{v.content}</span>
-                                </p>
-                                <p className="gray">{moment(v.createTime).format('YYYY-DD-HH HH:mm:ss ')}</p>
-                            </div>
+                            {
+                                v.replyStatus ?
+                                 <div className="respones">
+                                    <p>
+                                        <span className="red">{intl.get('回复')}：</span>
+                                        <span>{v.questionContentReplyDo?v.questionContentReplyDo.content:""}</span>
+                                    </p>
+                                    <p className="gray">{moment(v.questionContentReplyDo?v.questionContentReplyDo.createTime:'').format('YYYY-MM-DD HH:mm:ss ')}</p>
+                                </div>
+                                :<div className="respones">
+                                    <p>
+                                        <span className="red">{intl.get('回复')}：</span>
+                                        <span>{intl.get('您的咨询已收到，请稍候。')}</span>
+                                    </p>
+                                </div>
+                            }
+                           
                         </li>
                     )
         })
