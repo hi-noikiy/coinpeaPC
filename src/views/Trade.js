@@ -63,7 +63,7 @@ class Trade extends Component {
         sales:[],
         cacelEntrustLock:false,
         sun: true,
-        list:[intl.get('K线图'), intl.get('深度图'), intl.get('币种介绍'), intl.get('查看专业K线')], //'深度图', '币种类介绍', '查看专业K线'
+        list:[intl.get('K线图'), intl.get('深度图'), intl.get('币种介绍')], //'深度图', '币种类介绍', '查看专业K线'
         index:0,
         pannelHdList:[
                 {
