@@ -16,15 +16,12 @@ import AsyncSiteContent from  '../views/SiteContent';*/
 import './router.scss';
 
 // const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
-// import pulse from '../assets/pulse.gif'
 
 const Loading = (props) => { 
-    console.log(props.pastDelay)
     if (props.error) {
         return <div style={{textAlign:'center',fontSize:'30', paddingTop:'50', color:'#3dadd9'}}>加载出错啦，请刷新页面</div>;
       } else if (props.pastDelay) {
-       console.log('world')
-        return <div style={{textAlign:'center', background:'#252e33', width:'100%', height:'100%' }}> <img src={require('../assets/pulse.gif')} width='20px' height='20px' alt="" /> </div>
+        return <div style={{textAlign:'center', background:'#252e33', width:'100%', height:'100%', paddingTop:'150px', minHeight:'600px' }}> <img src={require('../assets/pulse.gif')} width='50px' height='50px' /> </div>
 
       } else { 
         return null;
