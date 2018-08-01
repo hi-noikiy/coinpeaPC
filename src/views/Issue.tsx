@@ -188,12 +188,11 @@ class Issue extends React.PureComponent<any, Istate> {
                 <div className="type">
                     <h4>{intl.get('问题分类')}<span>*</span></h4>
                     <div className="select-wrap">
-                        <div className="select-text">
+                        <div className="select-text" onClick={this.showIssueTypeHandle}>
                             <p>{issueText}</p>
                             <Icon 
                                 type="down"  
                                 className={cs("dow-arrows",  {'rotate': showIssueType} )}
-                                onClick={this.showIssueTypeHandle}
                             />
                         </div>
                         <div className={cs("select-list-wrap", {'show': showIssueType})} >

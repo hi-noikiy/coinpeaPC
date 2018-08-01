@@ -176,7 +176,6 @@ class Funds extends Component {
                                     onChange={this.handleInputChange.bind(this)}
                                     onFocus={this.handleFocusBlur.bind(this)}
                                     onBlur={this.handleFocusBlur.bind(this)}
-
                                 />
                             </InputGroup>
                             <Icon type="search" style={{ color: this.state.focus ? '#3DADD9' : '#B0BDCE' }} />

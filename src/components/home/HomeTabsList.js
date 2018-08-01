@@ -81,7 +81,6 @@ class HomeTabsList extends Component {
                             isUp={this.state.isUp}
                             isCountDown={this.state.isCountDown}
                             isCountUp={this.state.isCountUp}
-                            
                     />
                 </TabPane>
             )

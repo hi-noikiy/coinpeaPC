@@ -371,7 +371,7 @@ class Nav extends React.Component<NavProps, any> {
                                                             >{intl.get('提交工单')}
                                                             </NavLink>
                                                             <div className="user-info-wrap">
-                                                                <Popover content={content} title={title} visible={this.state.showPop} onVisibleChange={e=>this.showChange(e)} trigger={this.isPhone()?'click':'hover'}>
+                                                                <Popover placement="bottom" content={content} title={title} visible={this.state.showPop} onVisibleChange={e=>this.showChange(e)} trigger={this.isPhone()?'click':'hover'}>
                                                                     <img src={require('./../assets/01_02.portrait01.png')} alt='' width="18" height="18" style={{marginRight:'8px'}}/>
                                                                     <span style={{verticalAlign:'middle'}}>{formatStr(usrInfo.username)}</span>
                                                                     <i className="iconfont icon-sanJ-small">&#xe791;</i>
