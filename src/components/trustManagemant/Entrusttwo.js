@@ -58,7 +58,7 @@ const Entrusttwo = (props) => {
             return(
                     <tr key={index.toString()} >
                         <td>{moment(item.createTime).format('YYYY-MM-DD HH:mm:ss')}</td>
-                        <td className={formatColor(item.type)}>{item.type===0? intl.get('买'): intl.get('卖')}</td>
+                        <td className={formatColor(item.type)}>{item.type===1? intl.get('买'): intl.get('卖')}</td>
                         <td>{item.price_fmt}</td>
                         <td>{item.quantity_fmt}</td>
                         <td>{item.amount_fmt}</td>

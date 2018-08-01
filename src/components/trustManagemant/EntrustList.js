@@ -31,7 +31,7 @@ const formatVal = (val) => {
 }
 
 const formatColor = (val) => {
-    if(val === 1) {
+    if(val === 0) {
         return 'sell-coin';
     } else {
         return 'buy-coin';
@@ -96,7 +96,7 @@ const Entrust = (props) => {
             return(
                     <tr key={index.toString()} >
                         <td>{moment(item.createTime).format('YYYY-MM-DD HH:mm:ss')}</td>
-                        <td className={formatColor(item.type)}>{item.type===0? intl.get('买'): intl.get('卖')}</td>
+                        <td className={formatColor(item.type)}>{item.type===1? intl.get('买'): intl.get('卖')}</td>
                         <td>{item.price_fmt}</td>
                         <td>{item.quantity_fmt}</td>
                         <td>{item.successQuantity_fmt}</td>

@@ -5,27 +5,30 @@
      cursor: pointer;
      width: 150px;
      height: 60px;
-    position: relative;
+     position: relative;
+
     .KlineSelectCoin-name{
         position: absolute;
         top:0;
-        height: 60px;
+        height: 40px;
         z-index: 99;
         font-size: 22px;
-        line-height: 60px;
-        color: #FFFFFF;
+        line-height: 40px;
+        color: rgb(227, 236, 240);
+        margin-top: 10px;
         width:100%;
         text-align: center;
         border-left: 1px solid rgba(255,255,255,0.1);
         border-right: 1px solid rgba(255,255,255,0.1);
         transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        
         .KlineSelectCoin-slide{
             transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
             font-size: 10px;
             margin-left: 8px;
             margin-top:-5px;
             vertical-align: middle;
-            color:#49CCFF;
+            color:#e3ecf0;
         }
     }
     .active-select{
@@ -37,17 +40,18 @@
     }
     .KlineSelectCoin-list{
         position: absolute;
-        top:59px;
-        right: 0;
-        width: 700px;
-        height: 460px;
+        top:49px;
+        left: 0;
+        width: 596px;
+        height: 378px;
         border: 1px solid rgba(255,255,255,0.1);
-        background: rgb(23,36,51);
+        background: #223143;
         box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.5);
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         z-index: 98;
-        padding:16px 16px;
-      
+        background: #172433;
+        padding: 4px 4px;
+
         .selectCoinArea{
             background: #29394D;
             color:#49CCFF;
@@ -56,7 +60,7 @@
         .KlineSelectCoin-nav{
             display: flex;
             font-size: 16px;
-            color: #FFFFFF;
+            color: rgb(227, 236, 240);
             height: 50px;
             line-height: 50px;
             text-align: center;
@@ -93,7 +97,7 @@
                 tbody{
                     td{
                         font-size: 14px;
-                        color: #FFFFFF;
+                        color: rgb(227, 236, 240);
                         padding:10px 0;
                     }
                     .selectCoinArea-coinPair{
@@ -106,7 +110,7 @@
     .KlineSelectCoin-line{
        
         position: absolute;
-        top:59px;
+        top:49px;
         width: 148px;
         height: 1px;
         left: 1px;
@@ -115,5 +119,38 @@
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
+    .ant-tabs-nav-wrap{
+        background:#223143; 
+       
+    }
+
+     .ant-tabs-card > .ant-tabs-content {
+        height: 120px;
+        margin-top: -16px;
+       
+      }
+      
+     .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
+        background: #223143;
+        padding: 0;
+      }
+      
+    .ant-tabs-card > .ant-tabs-bar {
+        border-color: rgba(255,255,255,0.1);
+      }
+      
+    .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+        border-color: transparent;
+        background: transparent;
+        color: rgb(227, 236, 240);
+        font-size: 16px;
+      }
+      
+    .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+        border-color: transparent;
+        background: #29394d;
+        color: #49CCFF;
+        
+      }
    
 }

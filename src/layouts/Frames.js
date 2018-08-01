@@ -121,6 +121,7 @@ class Frames extends  Component {
 
             if(key === 'siteInfo') {
                 this.props.saveInfo(res.data)
+                document.title = res.data.name;
             }
           
         }

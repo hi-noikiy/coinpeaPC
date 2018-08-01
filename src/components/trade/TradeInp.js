@@ -2,14 +2,17 @@
     交易页 输入框
     PriceInp: 输入框
 */
-import React from 'react';
 import {Button} from 'antd';
+import './TradeInp.scss';
+
+import React from 'react';
+
 import cs from 'classnames';
 import PriceInp from './priceInp';
-import { setPrecision } from '../../utils';
+
 import intl from "react-intl-universal";
 
-import './TradeInp.scss';
+
 
 
 const percent = ['25%', '50%', '75%', '100%'];
@@ -61,7 +64,7 @@ const TradeInp = ( props ) => {
                     props.tradeType === 'market' ? <div className="fees-wrap"><p>{intl.get("手续费")}: <span>{props.fees?props.fees:0}%</span></p></div>
                                                  : <div className="fees-wrap">
                                                       {/*   <p>手续费: <span>{props.fees?props.fees:0}%</span></p> */}
-                                                        <p>{intl.get("交易额")}: <span>{props.count}&nbsp;{props.coinArea}</span> <span style={{color:'#8EA0B5'}}>(≈ {props.countEX?props.countEX :'0'})</span></p>
+                                                        <p>{intl.get("交易额")}：<span>{props.count}&nbsp;{props.coinArea}</span> <span style={{color:'#8EA0B5'}}>(≈ {props.countEX?props.countEX :'0'})</span></p>
                                                    </div>
                 }
                 <Button 

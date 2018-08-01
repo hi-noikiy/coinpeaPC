@@ -67,6 +67,14 @@ class Nav extends React.Component<NavProps, any> {
         }
  
    }
+
+   componentWillReceiveProps(nextProps) {
+        if(nextProps.location.pathname.indexOf('/klineTrade') > -1) {
+            $('.coinPea').css('display', 'none');
+        } else {
+        $('.coinPea').css('display', 'block');
+        }
+    }
    
  
    //退出登录
@@ -259,7 +267,17 @@ class Nav extends React.Component<NavProps, any> {
                                 <div className="login-out" onClick={this.loginOut}>{intl.get("退出")}</div>
                             </div>
                         );
-         
+        
+        const content_ex = (
+            <div className="select-ex">
+                <p   onClick={this.redirect('/trade')}>
+                    { intl.get('标准版')}
+                </p>
+                <p   onClick={this.redirect('/klineTrade')}>
+                    { intl.get('专业版')}
+                </p>
+            </div>
+        )
 
         return(
                     <div className="coinPea">
@@ -313,14 +331,24 @@ class Nav extends React.Component<NavProps, any> {
                                                     exact className="nav-name" 
                                                     activeClassName="nav-active"
                                         >{intl.get('首页')}</NavLink>
-                                    <NavLink 
+                                    {/*<NavLink 
                                             to="/trade"  
                                             className="nav-name "  
                                             activeClassName="nav-active" 
                                             onClick={this.addClassName}
                                     >
                                         {intl.get('交易')}
-                                    </NavLink>
+                                    </NavLink>*/}
+                                    <div className={cs("nav-name",{"nav-active": this.props.location.pathname.indexOf('/trade') > -1})}>
+                                        <Popover 
+                                            placement="bottom"
+                                            overlayClassName="ex_pop"
+                                            content={content_ex}  
+                                            trigger={this.isPhone()?'click':'hover'}
+                                        >
+                                            {intl.get('交易')}
+                                        </Popover>
+                                    </div>
                                 <NavLink
                                     to={{pathname:"/news"}}
                                         exact

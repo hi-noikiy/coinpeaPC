@@ -16,39 +16,44 @@
         }
         .tradeInp-title-des{
             font-size: 12px;
-            color: #FFFFFF;
+            color: rgb(227, 236, 240);
         }
     }
 
     .prcieInp-wrap {
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 0px;
-        height: 40px;
-        line-height: 40px;
+        height: 36px;
+        line-height: 36px;
+        padding:4px 4px;
         display: flex;
         align-items: center;
         justify-content: space-around;
         span{
-            color:#fff;
+            color:rgb(227, 236, 240);
             font-size: 12px;
+           display: inline-block;
+           height: 28px;
+           line-height: 28px;
         }
         input {
             width:166px;
             background: transparent;
             border: none;
             outline:none;
-            color:#fff;
+            color:rgb(227, 236, 240);
             font-size: 12px;
             padding-left:0;
             padding-right: 0;
+            height: 28px;
+            line-height: 28px;
         }
         input:focus{
             box-shadow:none;
         }
     }
    .myBtn{
-       position: absolute;
-       bottom:15px;
+        margin-top:15px;
        line-height: 38px !important;
    }
   
@@ -82,23 +87,23 @@
         color: #8EA0B5;
     }
     .activePercent{
-        background:#89B738;
-        color:#fff;
+        background:#06B07C;
+        color:rgb(227, 236, 240);
     }
 }
 .sale{
     .activePercent{
         background:#E45252;
-        color:#fff;
+        color:rgb(227, 236, 240);
     }
 }
 .fees-wrap{
     p{
         font-size: 12px;
-        color: #FFFFFF;
+        color: rgb(227, 236, 240);
         height: 12px;
         line-height: 12px;
-        margin-top: 25px;
+        margin-top: 15px;
         span{
             line-height: 16px;
         }

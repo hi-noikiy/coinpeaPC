@@ -17,22 +17,26 @@
     .ContralTitle-top{
         position: relative;
         display: flex;
-        padding: 0 10px;
-        height: 45px;
-        line-height: 45px;
+        height: 30px;
+        line-height: 30px;
         color:#fff;
         border-bottom: 2px solid #49CCFF;
         align-items: center;
+        border-color: transparent;
+     
         div{
             cursor: pointer;
             margin-right: 20px;
         }
-        div:hover{
+        div:hover, .isActive {
             color:#49CCFF;
         }
+        
         .triangle{
             margin: 0;
             @include triangle;
+            display: none;
+           
             transition:all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
         

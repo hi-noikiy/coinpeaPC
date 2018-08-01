@@ -2,14 +2,16 @@
 
     交易页面委托面板
 */
-
+import { Button } from 'antd';
+import './DelegateTabsPannel.scss';
 import React from 'react';
 import DelegateTabs from './DelegateTabs';
-import { Button } from 'antd';
+
 import cs from 'classnames';
-import './DelegateTabsPannel.scss';
-import { is, fromJS } from 'immutable';
+
+import { is } from 'immutable';
 import intl from 'react-intl-universal';
+import Clock from '../shared/Clock';
 
 class DelegateTabsPannel extends React.Component {
     constructor(props) {
@@ -28,10 +30,19 @@ class DelegateTabsPannel extends React.Component {
                 tradeState:'all'
             })
 
-      
+     
         this.props.deleTabsHdClcik(index, types);
-        const pos = e.target.offsetLeft + e.target.offsetWidth/2-38+'px';
-        this.refs.delegater.style.transform = `translate3d(${pos}, 0px, 0px)`;
+
+        try {
+            
+            const pos = e.target.offsetLeft + e.target.offsetWidth/2-38+'px';
+            this.refs.delegater.style.transform = `translate3d(${pos}, 0px, 0px)`;   
+        } 
+
+        catch(e) {
+            console.log(e.target)
+        }
+       
     }
 
     controlDelegateList = (val, fn) => {
@@ -89,6 +100,7 @@ class DelegateTabsPannel extends React.Component {
             )
         });
         
+        console.log(this.props.showClock)
       
        return (
         <div className="delegateTabs trade-content-center-b">
@@ -97,10 +109,17 @@ class DelegateTabsPannel extends React.Component {
                     <div className="delegateTabs-top">
                         <div className="triangle" ref="delegater"></div>
                         {pannelHd}
-                       
+
                     </div>
-                    <div className="delegateTabs-right">
-                            <span
+
+                    {
+                        this.props.showClock ? 
+                        <div className="date">
+                            <Clock />
+                        </div>
+                        :
+                        <div className="delegateTabs-right">
+                           {/*  <span
                                     onClick={ () => this.controlDelegateList('buy', this.props.deleTabsHdClcik)}
                                     className={cs({'isActive':this.state.tradeState === 'buy'})}   
                             >{intl.get("买入")}</span>
@@ -111,9 +130,12 @@ class DelegateTabsPannel extends React.Component {
                             <span   
                                     onClick={ () => this.controlDelegateList('all', this.props.deleTabsHdClcik)}
                                     className={cs({'isActive':this.state.tradeState === 'all'})}
-                            >{intl.get("全部")}</span>
-                            <Button type="primary" size="small" ghost onClick={() => this.props.moreClick(this.state.activeIndex)}>{intl.get("更多")}></Button>
-                    </div>
+                            >{intl.get("全部")}</span> */
+                           }
+                            <Button type="primary" size="small" ghost onClick={() => this.props.moreClick(this.state.activeIndex)}>{intl.get("查看更多")}></Button>
+                         </div>
+                    }
+                    
                    
                 </div>
             {pannelContent}

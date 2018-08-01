@@ -1,121 +1,289 @@
+@function vw($px) {
+    @return ($px / 1920) * 100vw;
+}
+@function vh($px) {
+    @return ($px / 760) * 100vh;
+}
 .KlineTrade{
-    background: #172433;
-    min-height: 100vh;
+    background: #000;
+    max-height: 100vh;
+    height: 100vh;
+    p{
+        margin: 0;
+        padding:0;
+    }
     .ktrade-header-nav{
-        padding:0 15px;
-        height: 60px;
-        background: #223143 ;
+        padding:0 vw(15);
+        height: vh(48);
+        background: #1D2B3B ;
         display: flex;
         align-items: center;
         width: 100%;
         justify-content: space-between;
+
         .ktrade-header-nav-l,.ktrade-header-nav-r{
             display: flex;
             align-items: center;
         }
-        //LOGO动画
-        .hd-text{
-            font-size:34px;
-            font-weight: bold;
-            text-transform: uppercase;
-            fill:none;
-            stroke-width: 2px;
-            stroke-dasharray: 90 310;
-           animation: stroke 6s infinite linear;
+
+
+        //登陆
+        .nav-user-login{
+            display: flex;
+            justify-content:flex-end;
+            align-items: center;
+            min-width: vw(300);
+            margin-right: vw(6);
         }
-        .hd-text_1{
-            stroke: #3498db;
-            text-shadow: 0 0 1px #3498db;
-            animation-delay: -1.5s;
-        }
-        .hd-text_2{
-            stroke: #f39c12;
-            text-shadow: 0 0 1px #f39c12;
-            animation-delay: -3s;
-        }
-        .hd-text_3{
-            stroke: #e74c3c;
-            text-shadow: 0 0 1px #e74c3c;
-            animation-delay: -4.5s;
-        }
-        .hd-text_4{
-            stroke: #9b59b6;
-            text-shadow: 0 0 1px #9b59b6;
-            animation-delay: -6s;
-        }
-        @keyframes stroke {
-            100%{
-                stroke-dashoffset: -400;
+
+        .nav-user-info {
+            line-height: vw(69);
+            a {
+                display: inline-block;
+                border-color: transparent;
+                background: transparent;
+                font-size: vw(14);
+                line-height: vw(14);
+                padding: 0 vw(15);
+                color: rgb(227, 236, 240);
+            }
+            .last-btn{
+                position: relative;
+            }
+            .last-btn::after{
+                display: inline-block;
+                content: ' ';
+                width:1px;
+                height: vw(14);
+                background:  #6B7784;
+                right: 0;
+                position: absolute;
             }
         }
+
+        //选择语言
+        .lang{
+            margin-left: vw(15);
+            position: relative;
+            cursor: pointer; 
+        }
+
+        
+        .iconfont{
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            color: rgb(227, 236, 240);
+        }
+
+        .langhove{
+            transform: rotate(180deg);     
+        }
+        .cur-lang-wrap{
+            line-height: vw(60);
+        }
+
+        
+        .select-lang-wrap{
+            position: absolute;
+            top:vw(54);
+            width: vw(106);
+            background: rgb(227, 236, 240);
+            box-shadow: 0 vw(6) vw(8) 0 rgba(0,0,0,0.12);
+            border-radius: vw(2);
+            z-index: -10;
+            height: auto;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            left:vw(-66);
+            opacity: 0;
+            display: none;
+            
+            .lang-list{
+                height: vw(32);
+                line-height: vw(32);
+                padding: 0 vw(15);
+                cursor: pointer;
+
+                span{
+                    font-size: vw(12);
+                    color: #1e2b34;
+                }
+            }
+        }
+
+        .lang-icon{
+            display: inline-block;
+            width:vw(18);
+            height: vw(12);
+            vertical-align: middle;
+            margin-right:vw(5);
+         
+        }
+        .zh_CN{
+            background: url('../assets/02_02.language_chinese.svg') no-repeat 100% 100%;
+        }
+        .en_US{
+            background: url('../assets/02_02.language_english.svg') no-repeat 100% 100%;
+        }
+
+        .logo{
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            width:vw(144);
+            height: vw(27);
+            line-height: vw(27);
+            display: inline-block;
+            vertical-align:text-bottom;
+            margin-right: vw(50);
+        }
+
         /* 币种信息 */
         .coin-info-wrap{
-          
-           margin-right: 48px;
+            margin-left: vh(30);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 586px;
+            width: vw(860);
             text-align: center;
+            padding-top: vw(4);
             .coin-info-box{
+                text-align: left;
+
                 span{
-                    font-size: 16px;
+                    font-size: 12px;
                     color: #8EA0B5;
                 }
+
                 p{
-                  
-                    font-size: 16px;
-                    color:#fff;
+                   
                     font-weight: normal;
+
+                    span{
+                        color: rgb(227, 236, 240);
+                        font-size: 16px;
+                   
+                    }
                 }
             }
         }
+
+        .fullScreen{
+            color: #49CCFF;
+            cursor: pointer;
+            padding-left:20px;
+            background: url('../assets/screen01.svg') no-repeat;
+            background-position: 0px 2px;
+            background-size: 14px 14px;
+            margin-right: vw(20);
+        }
+
+        .fullS{
+            background: url('../assets/screen02.svg') no-repeat;
+            background-position: 0px 2px;
+            background-size: 14px 14px;
+        }
+
+      
     }
     //内容
     .KlineTrade-content{
-        padding: 15px 15px;
+        padding: vw(3) vw(4);
+        width: 100%;
+        
+        .contralTitle-content{
+            height: 100%;
+            background: #1D2B3B;
+
+            .kline-wrap{
+                height: 100%;
+            }
+        }
+        
         .KlineTrade-content-l{
-            width: 1200px;
+            width: 66%;
             float: left;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+           .ContralTitle{
+              // height:vh(415);
+              height: vh(415);
+           }
+
             .ContralTitle-top{
                 border-bottom-color: transparent;
                 //width: 200px;
                position: absolute;
-               right:20px;
-               top:-2px;
+               right:0px;
+               top:vh(6);
                z-index: 1;
+               height: vh(24);
+              line-height: vh(24);
+               padding-right: 0;
+
                 #kchartTriangle{
                     display: none;
                 }
+
                 div{
-                    padding: 0 4px;
-                    background:#44556B; 
-                    height: 20px;
-                    line-height: 20px;
+                    padding:0px vh(9);
+                    background:transparent ;//#304359; 
+                    height: vh(24);
+                    line-height: vh(24);
                     border-radius:0;
+                    color: #9AABBF;
+                }
+                div:hover{
+                    color: #c7cce6;
+                    background:transparent;// #2c3b59;
+                }
+
+                .isActive{
+                    color:#49CCFF;
+                    background: transparent;
                 }
             }
+
             .delegateTabs {
-                  height: 401px;
-                  background:#223143; 
-                  margin-top: 15px;
+                  height:vh(292);
+                  background:#1D2B3B; 
+                  margin-top: vw(3);
                   border-radius:0;
+
                   .tradeInpPannel-top{
+                    height:2.34375vw;
+                    line-height: 2.34375vw;
                       display: flex;
                       align-items: center;
                       font-size: 12px;
-                     color: #8EA0B5;
-                     border-bottom: 1px solid rgba(255,255,255,0.1);
+                        color: #8EA0B5;
+                        border-bottom:0;
+                        background: #15202E;
+                        padding:0;
+                        justify-content: space-between;
+
+                     .date{
+                        display: flex;
+                        align-items: center;
+                        margin-left: vw(10);
+                        flex: 1;
+                        justify-content: flex-end;
+                        margin-right: vw(10);   
+                         
+                    }
+
                      .triangle{
                         display: none;
                     }
                      span{
                          cursor: pointer;
                          display: inline-block;
-                         padding: 4px 4px;
-                         background: #44556B;
+                         padding: 0 vw(18); //13
                          border-radius:0x;
+                     }
+                     .isActive{
+                        background: #1D2B3B;
                      }
                      .ant-btn-primary{
                          border: 0;
@@ -125,80 +293,211 @@
                             }
                      }
                   }
-                  .delegateTabs-top{
-                      padding: 15px 15px;
+
+                  .delegateTabs-right{
+
+                      width: auto;
+                      display: none;
+
+                      .ant-btn{
+                        height: vw(44);
+
+                        span{
+                            padding: 0;
+                        }
+
+                        &:hover{
+                            span{
+                                color: #49CCFF;
+                            }
+                        }
+
+                      }
+
+                      span.isActive {
+                          background: transparent;
+                      }
                   }
+
+                  .my-tabs .ant-table-tbody > tr > td{
+                      height:vh(19);
+                      line-height: vh(19);
+                   
+                  }
+                
             }
         }
+
         .KlineTrade-content-r{
-            width: 640px;
+            width: 33.9%;
             float: right;
+            display: flex;
+            flex-direction: column;
+           // height: calc(100vh - 65px);
         }
 
         //右侧列表
         .KlineTrade-content-r{
+           
             .KlineTrade-content-r-t{
                 display: flex;
                 justify-content: space-between;
                 align-items: top;
+                position: relative;
+                height:vh(415);
+
                 .TradePricesList-wrap{
-                    height: 612px;
-                    width: 345px;
+                    height:vh(415);
+                    width: 50%;
+                    margin-left: vw(2);
                     border-radius:0;
-                    background: #223143;
+                    background: #1D2B3B;
+                    overflow: hidden;
+
                     .TradePricesList-wrap-top{
-                        border-bottom:1px solid rgba(255, 255, 255, 0.1);
+                      //  border-bottom:1px solid rgba(255, 255, 255, 0.1);
+                        background: #15202E;
+                        height: vw(45);
                         .triangle{
                             display: none;
                         }
+
+                        .icon_wrap{
+                            display: inline-block;
+                            padding:vw(8) vw(15) vw(13) vw(15);
+                            transition: all 0.3s ease-in-out;
+
+                        }
+
+                        .isActive_list{
+                            background: #1D2B3B;
+                        }
+
+                       
                     }
                     
                     .TradePricesList-title{
                         margin-bottom: 0;
                     }
                     .TradePricesList-title, ul{
-                        background: #223143;
+                        background: #1D2B3B;
+                    }
+
+                    ul{
+                        padding-top: vw(6);
+                        padding-bottom: vw(10);
+
+                      
+                     
+                    }
+                    .list-wrap{
+                        height: vh(18);
+                        margin-bottom: 0;
+                        line-height: vh(18);
+                        div{
+                            height: 100%;
+                        }
                     }
                 }
+
                 .new-trade-wrap{
                     border-radius:0;
-                    height: 612px;
-                    background: #223143;
+                    height:vh(415);
+                    width: 49%;
+                    background: #1D2B3B;
+
                     .new-trade-title{
                         display: none;
                     }
+
                     .new-trade-list-hd{
-                        padding:16px 10px;
+                        padding:0.762vw vw(10);
+                    }
+
+                    .new-trade-list{
+                        height: auto;
+                    }
+
+                    .list-wrap{
+                        height: vh(18);
+                        line-height: vh(18);
                     }
                 }
             }
+
             .KlineTrade-content-r-b{
-                background: #223143;
+                height: vh(292);
+                background: #1D2B3B;
                 border-radius:0x;
-                margin-top: 15px;
+                margin-top: vw(3);
                 border-radius:0x;
+                margin-left: vw(2);
+                box-sizing: border-box;
                 .tradeInpPannel-top{
-                    height: 45px;
-                    line-height: 45px;
-                    background: #1D2A3B;
+                    height:2.34375vw;
+                    line-height: 2.34375vw;
+                    background: #15202E;
+                    justify-content: space-between;
                    span{
                        display: inline-block;
-                       height: 45px;
-                       padding:0 15px;
+                       height: 2.34375vw;
+                       padding:0 0.78125vw;
                        color:#8EA0B5;
                        cursor: pointer;
                    }
                    .isActive{
-                       background: #223143;
+                       background: #1D2B3B;
                    }
                    span:last-child{
                        margin-left: 0 !important;
                    }
                 }
+               
                 .tradeInpPannel-content{
                     display: flex;
                     justify-content: space-between;
-                    padding:0 15px;
+                    padding:0 vw(15);
+
+                    .tradeInp-wrap{
+                        width: 48%;
+                        height: 18vw;
+
+                        .tradeInp-title {
+                            height: vw(40);
+
+                            h3 {
+                                font-size: vw(18);
+                                display: none;
+                            }
+                        }
+
+                        .prcieInp-wrap {
+
+                            height:vh(36);
+                            line-height:vh(36);
+                        }
+
+                        .price-des{
+                            height: vw(32);
+                            line-height: vw(32);
+                        }
+
+                        .tradeInp-content{
+                            height: 100%;
+                        }
+
+                        .fees-wrap {
+                            p{
+                                margin-top: vh(10);
+                            }
+                        }
+                        .myBtn {
+                            margin-top: vh(18);
+                            position: static;
+                            height: vh(36) !important;
+                            line-height: vh(36) !important;
+                        }
+                    }
                 }
                
             }

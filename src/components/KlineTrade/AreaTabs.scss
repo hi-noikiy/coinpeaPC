@@ -1,22 +1,27 @@
 /* 
     交易也 交易区表格样式
 */
-.trade-content-left-t{
+#KlineSelectCoin{
     .ant-tabs-content{
         box-sizing: border-box;
     }
     .trade-tab{
         margin: 0 auto;
-        width: 280px;
+        width: 100%;
         box-sizing: border-box;
         overflow: hidden;
+
         .trade-area-title{
-            height: 30px;
-            line-height: 30px;
-            font-size: 12px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
             color: #8EA0B5;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.1);
             display: flex;
+
+            p{
+                flex:1;
+            }
           
         }
         ul {
@@ -24,13 +29,19 @@
             padding-top: 4px;
             li{
                 cursor: pointer;
-                height: 22px;
-                line-height: 22px;
+                height: 36px;
+                line-height: 36px;
                 color: rgb(227, 236, 240);
                 display: flex;
-               span{
+                font-size: 14px;
+
+                div{
+                    flex:1;
+                }
+                span{
                    letter-spacing: 1px;
-               }
+                }
+
                 .custom-select{
                     color:#BCBCBC;
                  

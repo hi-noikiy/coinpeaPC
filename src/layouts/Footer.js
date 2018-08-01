@@ -32,6 +32,11 @@ import Tcoinex from '../assets/Tcoinex8.png';
       /*   this.getInfo(getLink, 'flinks');
         this.getInfo(getSiteInfo, 'siteInfo');
         this.getInfo(getSite,'links'); */
+        if(this.props.location.pathname.indexOf('/klineTrade') > -1) {
+            document.querySelector('#footer').style.display = 'none';
+          } else {
+              document.querySelector('#footer').style.display = 'block';
+          }
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -67,6 +72,15 @@ import Tcoinex from '../assets/Tcoinex8.png';
         ls.set("footerList",res.data)
      }
  */
+componentWillReceiveProps(nextProps) {
+
+    if(nextProps.location.pathname.indexOf('/klineTrade') > -1) {
+      document.querySelector('#footer').style.display = 'none';
+    } else {
+        document.querySelector('#footer').style.display = 'block';
+    }
+    
+}
     redirect = (path) => {
         this.props.history.push(path);
     }

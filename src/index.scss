@@ -4,6 +4,13 @@
 h1,h2,h3,h4,ul, p,dl,dd,dt{
 	padding:0;margin:0;
 }
+ol, ul, dl{
+	margin-top: 0;
+	margin-bottom: 1em !important;
+}
+dd{
+	margin-bottom: 0.5em !important;
+}
 ul li{
 	list-style: none;
 }

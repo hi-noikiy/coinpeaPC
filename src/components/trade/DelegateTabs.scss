@@ -6,8 +6,8 @@
     .ant-table-thead{
         th{
             padding:0 16px;
-            height: 46px;
-            line-height: 46px;
+            height: 30px;
+            line-height:30px;
             font-size: 12px;
             color: #8EA0B5;
             border:0;
@@ -20,10 +20,10 @@
     }
     .ant-table-tbody > tr > td {
         border:0;
-        color:#fff;
+        color:rgb(227, 236, 240);
         font-size: 12px;
-        line-height: 26px;
-        height: 26px;
+        line-height: 24px;
+        height: 24px;
         padding:0 16px;
     }
     .ant-table-thead > tr.ant-table-row-hover > td, .ant-table-tbody > tr.ant-table-row-hover > td, .ant-table-thead > tr:hover > td, .ant-table-tbody > tr:hover > td{

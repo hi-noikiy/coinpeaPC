@@ -1,49 +1,62 @@
 /* 
     交易页交易区表格
 */
-
-import React, { Component } from 'react';
+import './AreaTabs.scss';
+import React from 'react';
 import {  Icon,   } from 'antd';
 import { setSymbol } from '../../utils';
 import { Scrollbars } from 'react-custom-scrollbars';
 import intl from 'react-intl-universal';
-
 import cs from 'classnames';
-import './TradeTabs.scss';
 
-export default class TradeTabs extends Component {
 
- 
+interface IProps {
+    tradeList: any[];
+    selectCoin: (e:any, item:any) => void;
+    saveCoin: (e:any, item:any, areaIndex:number) => void;
+    coinId: string|number;
+    areaIndex: number;
+    calculateEX:(pr:string) => string;
+}
+
+
+export default class AreaTabs extends React.Component<IProps, any> {
+
     render() {
-          
+
             const TrList = this.props.tradeList.map( (item, index) => {
-                 
+                   
                     return (
                         <li 
                             key={index.toString()} 
                             className={String(this.props.coinId) === String(item.id)?'select-coin-tr':''}
-                            onClick={(e) => {this.props.selectCoin(e, item)}}
+                            onClick={(e) => { this.props.selectCoin(e, item)}}
                         >
-                            <div style={{textAlign:'left',paddingLeft:10,width:'42%',overflow:'hidden'}}>
-                           
+                            <div style={{textAlign:'left',paddingLeft:10,overflow:'hidden'}}>
                                 <Icon 
                                         type={item.isc?"star":"star-o"} 
                                         className={cs('custom-select',{'custom-slect-add':item.isc})}
                                         onClick={ (e) => {this.props.saveCoin(e, item, this.props.areaIndex)}}
                                 />
-                                <span> {item.na}</span>
+                                <span > {item.na}</span>
                             </div>
                             <div 
                                 className={setSymbol(item.ty, 'addColor')} 
-                                style={{width:'28%',overflow:'hidden'}}
+                                style={{overflow:'hidden'}}
                             >
                                 {item.np}
+                                <span style={{fontSize:12, color:"#8EA0B5"}}>/{this.props.calculateEX(item.np)}</span>
                             </div>
                             <div 
                                 className={setSymbol(item.ty, 'addColor')}  
-                                style={{width:'30%',paddingRight:10,boxSizing:'border-box',textAlign:'right',overflow:'hidden'}}
+                                style={{paddingRight:10,boxSizing:'border-box',textAlign:'right',overflow:'hidden'}}
                             >
                                 {setSymbol(item.ty)}{item.ud}%
+                            </div>
+                            <div 
+                                style={{paddingRight:10,boxSizing:'border-box',textAlign:'right',overflow:'hidden'}}
+                            >
+                                {item.gv}%
                             </div>
                         </li>
                     )
@@ -52,12 +65,13 @@ export default class TradeTabs extends Component {
             return (
                 <div className="trade-tab">
                         <div className="trade-area-title">
-                            <p style={{width:'42%',paddingLeft:10}}>{intl.get("交易区")}</p>
-                            <p  style={{width:'38%'}}>{intl.get('最新价')}</p>
-                            <p  style={{width:'20%',textAlign:'right', paddingRight:10}}>{intl.get("涨跌")}</p>
+                            <p style={{paddingLeft:10}}>{intl.get("交易区")}</p>
+                            <p >{intl.get('最新价')}</p>
+                            <p  style={{textAlign:'right', paddingRight:10}}>{intl.get("24H涨跌")}</p>
+                            <p  style={{textAlign:'right', paddingRight:10}}>{intl.get("24H成交量")}</p>
                         </div>
                     <Scrollbars   
-                            style={{ width: 280, height: 362 }}
+                            style={{  width: 586, height:280 }}
                             renderThumbVertical={({ style, ...props }) =>
                             <div {...props} style={{ ...style, borderRadius:8,backgroundColor:'#3C4A59', width: '5px', }}/>
                          }>

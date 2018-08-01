@@ -2,15 +2,15 @@
     最新成交列表
     PriList: 列表组件
 */
-
+import './NewTradeList.scss';
 import React from 'react';
 import PriceList from '../shared/PriceList';
 import moment from 'moment';
 import { is } from 'immutable';
 import { Scrollbars } from 'react-custom-scrollbars';
-import './NewTradeList.scss';
+
 import intl from "react-intl-universal"
-import $ from 'jquery'
+
 
 class NewTradeList  extends React.Component {
     
@@ -176,10 +176,10 @@ class NewTradeList  extends React.Component {
                         
                         <PriceList 
                             key={index.toString()}
-                            left={moment(item.ti).format("HH:mm:ss")}
-                            center={item.pr}
+                            right={moment(item.ti).format("HH:mm:ss")}
+                            center={item.qu}
                             type={item.ty}
-                            right={item.qu}
+                            left={item.pr}
                             listClickHandle={()=>{}}
                         />
                 )
@@ -187,19 +187,19 @@ class NewTradeList  extends React.Component {
        
          return (
              <div className="new-trade-wrap">
-                    <div className="new-trade-title">
+                   {/*  <div className="new-trade-title">
                         {intl.get('最新成交')}
-                    </div>
+                    </div> */}
                     <div className="new-trade-list-hd">
-                        <p style={{width:"38%"}}>{intl.get('成交时间')}</p>
-                        <p style={{width:"32%"}}>{intl.get('成交价格')}</p>
-                        <p style={{width:"30%", textAlign:'right'}}>{intl.get('成交量')}</p>
+                        <p>{intl.get('价格')}</p>
+                        <p>{intl.get('数量')}</p>
+                        <p>{intl.get('时间')}</p>
                     </div>
                     <Scrollbars 
-                            style={{ width: 280, height: this.props.height || 312, }}
+                            style={{ width: this.props.width|| 280, height: this.props.height || 312, }}
                             renderThumbVertical={({ style, ...props }) =>
-                            <div {...props} style={{ ...style, borderRadius:8,backgroundColor: this.props.scrollBg, width: '5px', }}/>
-                         }
+                                <div {...props} style={{ ...style, borderRadius:8,backgroundColor: this.props.scrollBg, width: '5px', }}/>
+                             }
                     >
                         <ul className="new-trade-list">{list}</ul>
                     </Scrollbars>

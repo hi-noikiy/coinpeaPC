@@ -12,13 +12,15 @@ import AllList from './AllPriceList';
 import './TradePriceList.scss';
 
 //图片
-import Icon_all_1 from "../../assets/02_01.all.svg";
-import Icon_buy_1 from "../../assets/02_01.buy.svg";
-import Icon_sale_1 from "../../assets/02_01.sale.svg";
 
-import Icon_all_2 from "../../assets/02_04.all.svg";
+
+import Icon_all_ex_1 from "../../assets/13_02.up_and_down01.svg";
+import Icon_buy__ex_1 from "../../assets/13_02.up_and_down02.svg";
+import Icon_sale_ex_1 from "../../assets/13_02.up_and_down03.svg";
+
+/* import Icon_all_2 from "../../assets/02_04.all.svg";
 import Icon_buy_2 from "../../assets/02_04.buy.svg";
-import Icon_sale_2 from "../../assets/02_04.sale.svg";
+import Icon_sale_2 from "../../assets/02_04.sale.svg"; */
 import { is, fromJS } from 'immutable';
 import intl from 'react-intl-universal';
 import cs from 'classnames';
@@ -275,7 +277,7 @@ export default class TradePriceList extends React.Component {
             case 0: 
             list = this.props.sale.length || this.props.buy.length ? <ul>
                     <AllList 
-                            listData={this.props.sale.slice(0,12).reverse()} 
+                            listData={this.props.sale.slice(0,9).reverse()} 
                             type="salePrice" 
                             addWidth={this.addWidth}
                             listClickHandle={this.props.getPrice}
@@ -284,12 +286,27 @@ export default class TradePriceList extends React.Component {
                     />
                         <li 
                               ref="alls"
-                              onClick={() => {  this.props.getPrice('buyPrice', this.refs.alls.getAttribute('data')); this.props.getPrice('sale', this.refs.alls.getAttribute('data'));}}
-                            className={cs("price-list-newPrice", {"buy-coin":ty === 0, 'sell-coin': ty===1}) } 
-                            data={this.props.newPrice}><span>{this.props.newPrice}</span> ≈ {this.props.money}
+                              onClick={() => { 
+                                        this.props.getPrice('buyPrice', this.refs.alls.getAttribute('data')); 
+                                        this.props.getPrice('sale', this.refs.alls.getAttribute('data'));
+                                    }}
+                                className={cs("price-list-newPrice", {"buy-coin":ty === 0, 'sell-coin': ty===1}) } 
+                                data={this.props.newPrice}>
+                                <span style={{color:"#e3ecf0"}}>{this.props.newPrice}</span>
+                                <span style={{fontSize:12, marginRight:24, marginLeft:10}}>
+                                    {this.props.money}
+                                </span>
+                                <div className='wifi' >
+                                    <svg id="Layer_1"  xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                        <rect width="4" height="6" x="0" y="12" />
+                                        <rect width="4" height="8"  x="5" y="10"/>
+                                        <rect width="4" height="10" x="10" y="8" />
+                                        <rect width="4" height="12"  x="15" y="6"/>
+                                    </svg>
+                                </div>
                         </li>
                     <AllList 
-                            listData={this.props.buy.slice(0,12)} 
+                            listData={this.props.buy.slice(0,9)} 
                             type="buyPrice"
                             addWidth={this.addWidth}
                             listClickHandle={this.props.getPrice}
@@ -301,7 +318,7 @@ export default class TradePriceList extends React.Component {
             case 1: 
             list =  this.props.sale.length  ?
                 <Scrollbars 
-                    style={{ width: 280, height: this.props.height || 786, }}
+                    style={{ width: this.props.width || 280, height: this.props.height || 614, }}
                     renderThumbVertical={({ style, ...props }) =>
                         <div {...props} style={{ ...style, borderRadius:8,backgroundColor:'#3C4A59', width: '5px', }}/>
                     }
@@ -311,7 +328,20 @@ export default class TradePriceList extends React.Component {
                              ref="sales"
                              onClick={() => {this.props.getPrice('buyPrice', this.refs.sales.getAttribute('data')); this.props.getPrice('sale', this.refs.sales.getAttribute('data'));}}
                             className={cs("price-list-newPrice", {"buy-coin":ty === 0, 'sell-coin': ty===1}) } 
-                            data={this.props.newPrice}><span>{this.props.newPrice}</span> ≈ {this.props.money}
+                            data={this.props.newPrice}>
+                                <span style={{color:"#e3ecf0"}}>{this.props.newPrice}</span>
+                                <span style={{fontSize:12, marginRight:24, marginLeft:10}}>
+                                    {this.props.money}
+                                </span>
+                                <div className='wifi' >
+                                    <svg id="Layer_1"  xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                        <rect width="4" height="6" x="0" y="12" />
+                                        <rect width="4" height="8"  x="5" y="10"/>
+                                        <rect width="4" height="10" x="10" y="8" />
+                                        <rect width="4" height="12"  x="15" y="6"/>
+                                    </svg>
+                                    
+                                </div>
                         </li>
                         <AllList 
                                 listData={this.props.sale} 
@@ -327,7 +357,7 @@ export default class TradePriceList extends React.Component {
             case 2:
             list =   this.props.buy.length ?
                 <Scrollbars 
-                    style={{ width: 280, height: this.props.height || 786, }}
+                    style={{ width: this.props.width || 280, height: this.props.height || 614, }}
                     renderThumbVertical={({ style, ...props }) =>
                         <div {...props} style={{ ...style, borderRadius:8,backgroundColor:'#3C4A59', width: '5px', }}/>
                     }
@@ -337,7 +367,19 @@ export default class TradePriceList extends React.Component {
                             ref="buys"
                             onClick={() => {this.props.getPrice('buyPrice', this.refs.buys.getAttribute('data')); this.props.getPrice('sale', this.refs.buys.getAttribute('data'));}}
                             className={cs("price-list-newPrice", {"buy-coin":ty === 0, 'sell-coin': ty===1}) } 
-                            data={this.props.newPrice}><span>{this.props.newPrice}</span> ≈ {this.props.money}
+                            data={this.props.newPrice}>
+                                <span style={{color:"#e3ecf0"}}>{this.props.newPrice}</span>
+                                <span style={{fontSize:12, marginRight:24, marginLeft:10}}>
+                                    {this.props.money}
+                                </span>
+                                <div className='wifi' >
+                                    <svg id="Layer_1"  xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                        <rect width="4" height="6" x="0" y="12" />
+                                        <rect width="4" height="8"  x="5" y="10"/>
+                                        <rect width="4" height="10" x="10" y="8" />
+                                        <rect width="4" height="12"  x="15" y="6"/>
+                                    </svg>
+                                </div>
                         </li>
                         <AllList 
                                 listData={this.props.buy} 
@@ -361,27 +403,36 @@ export default class TradePriceList extends React.Component {
                 <div className="TradePricesList-wrap-top">
                     <div className="TradePricesList-wrap-top-toggle">
                         <div className="triangle" ref="flag"></div>
-                        <Avatar 
-                                src={Icon_all_1} size="small"
-                                style={{cursor:'pointer',marginRight:12}} 
-                                shape="square" 
-                                className="select-trade-session" 
-                                onClick={(e) => {this.toggleTrade('0px',0)}}
-                               
-                        />
-                        <Avatar 
-                                src={Icon_buy_1} 
-                                size="small"  
-                                style={{cursor:'pointer',marginRight:12}} 
-                                shape="square" 
-                                onClick={(e) => {this.toggleTrade('36px',1)}}
-                        />
-                        <Avatar 
-                                src={Icon_sale_1} size="small"
-                                style={{cursor:'pointer',marginRight:12}} 
+                        <span className={cs("icon_wrap", {'isActive_list':this.state.priceListFlag===0})}>
+                            <Avatar 
+                                    src={Icon_all_ex_1} 
+                                    size="small"
+                                    style={{cursor:'pointer',}} 
+                                    shape="square" 
+                                    className="select-trade-session" 
+                                    onClick={(e) => {this.toggleTrade('0px',0)}}
+                                
+                            />
+                        </span>
+                       <span className={cs("icon_wrap", {'isActive_list':this.state.priceListFlag===1})}>
+                            <Avatar 
+                                    src={Icon_buy__ex_1} 
+                                    size="small"  
+                                    style={{cursor:'pointer',}} 
+                                    shape="square" 
+                                    onClick={(e) => {this.toggleTrade('36px',1)}}
+                            />
+                       </span>
+                       <span className={cs("icon_wrap", {'isActive_list':this.state.priceListFlag===2})}>
+                            <Avatar 
+                                src={
+Icon_sale_ex_1} 
+                                size="small"
+                                style={{cursor:'pointer',}} 
                                 shape="square"
                                 onClick={(e) => {this.toggleTrade('72px',2)}}
-                        />
+                            />
+                       </span>
                     </div>
                     <div className="deep-merge-wrap">
                         {/* <span className="deep-merge-title">深度合并：</span>

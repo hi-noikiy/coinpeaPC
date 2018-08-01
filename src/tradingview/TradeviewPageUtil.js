@@ -4,7 +4,7 @@ import qs from 'querystring';
 import intl from 'react-intl-universal';
 
 const datafeedConfig = (params) => {
-  let { resolution, Datafeeds, serverUrl, pushInterval, coinPairId, symbolName } = params;
+  let { resolution, Datafeeds, serverUrl, pushInterval, coinPairId, symbolName, height } = params;
   
   let style = {
         up: "#589065",
@@ -29,7 +29,7 @@ const datafeedConfig = (params) => {
     container_id: 'tv_chart_container',
     datafeed: new Datafeeds.UDFCompatibleDatafeed(serverUrl, pushInterval),
     width: "100%",
-    height:'398',
+    height:height ||'398',
   //  library_path: './',
     locale: 'zh',
     drawings_access: {
@@ -131,10 +131,10 @@ const datafeedConfig = (params) => {
     
     },
     studies_overrides: {
-     /*  "volume.volume.color.0": "#fff",
-      "volume.volume.color.1": "#fff",
+     /*  "volume.volume.color.0": "rgb(227, 236, 240)",
+      "volume.volume.color.1": "rgb(227, 236, 240)",
       "volume.volume.transparency": 70,
-      "volume.volume ma.color": "#fff", 
+      "volume.volume ma.color": "rgb(227, 236, 240)", 
      "volume.volume ma.transparency": 30,
      "volume.volume ma.linewidth": 5,
       "volume.show ma": false,
@@ -157,57 +157,54 @@ const chartReady = (widget) => {
     {
       value: "1",
       period: "1min",
-      text: "1min",
+      text: "M1",
     },
     {
       value: "5",
       period: "5min",
-      text: "5min",
+      text: "M5",
     },
-    {
+   /*  {
       value: "15",
       period: "15min",
-      text: "15min",
-    },
+      text: "M15",
+    }, */
     {
       value: "30",
       period: "30min",
-      text: "30min",
+      text: "M30",
     },
     {
       value: "60",
       period: "1hour",
-      text: "1hour",
+      text: "H1",
     },
   
-    {
+   /*  {
       value: "360",
       period: "6hour",
-      text: "6hour",
-    },
-    {
+      text: "H6",
+    }, */
+   /*  {
       value: "720",
       period: "12hour",
-      text: "12hour",
-    },
+      text: "H12",
+    }, */
     {
       value: "1D",
       period: "1D",
-      text: intl.get("日线"),
+      text: "D1"//intl.get("日线"),
     },
     {
       value: "1W",
       period: "1W",
-      text: intl.get("周线"),
+      text: "W1"//intl.get("周线"),
     },
   ]
 
   let btn = {};
 
-  let handleClick = (e, value) => {
- 
-      
-      
+   let handleClick = (e, value) => {
         if(value === "1line") {
           widget.chart().setChartType(2);
           $(e.target).addClass('select').closest('div.space-single').siblings('div.space-single').find('div.button').removeClass('select');
@@ -218,21 +215,25 @@ const chartReady = (widget) => {
         }
        
         widget.chart().setResolution(value);
-      
+    
   }
+
 
   buttonArr.forEach((v, i) => {
   
     btn = widget.createButton().on('click', function (e) {
-       handleClick(e, v.value);
+          handleClick(e, v.value);
     });
 
+  
     if(i === 2) {
       btn[0].className += ' select';
     }
-      btn[0].innerHTML = v.text;
-      btn[0].title = v.text;
-  })
+        btn[0].innerHTML = v.text;
+        btn[0].title = v.text;
+       
+    }) 
+   
 }
 
 export default {

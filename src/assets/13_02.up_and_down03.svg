@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>13_02.up_and_down03</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="13_03.加入专业K线" transform="translate(-1402.000000, -78.000000)">
+            <g id="Group-4" transform="translate(1274.000000, 63.000000)">
+                <g id="13_02.up_and_down03" transform="translate(125.000000, 11.000000)">
+                    <polyline id="Path-4-Copy" stroke="#06B07C" transform="translate(12.514282, 13.724609) scale(1, -1) translate(-12.514282, -13.724609) " points="3 15.9492188 5.16210938 15.9492188 6.40820312 11.5 7.87792969 15.9492188 9.76953125 13.7246094 22.0285645 13.7246094"></polyline>
+                    <path d="M10,8 L21.9951172,8" id="Path-5" stroke="#8EA0B5"></path>
+                    <path d="M3.07763672,5 L22.0498047,5" id="Path-5-Copy-3" stroke="#8EA0B5"></path>
+                    <path d="M10,11 L22.0095215,11" id="Path-5-Copy" stroke="#8EA0B5"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

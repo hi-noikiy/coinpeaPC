@@ -2,10 +2,11 @@
     交易页面 委托列表样式
 */
 .delegateTabs {
+    
     .delegateTabs-top{
-        span{
-            margin-right: 20px;
-        }
+        height: 100%;
+       
+        
     }
   .delegateTabs-right{
       position: absolute;
@@ -13,11 +14,21 @@
       display: flex;
       align-items: center;
       font-size: 12px;
-      width: 200px;
-      justify-content: space-between;
+      min-width: 200px;
+      justify-content: flex-end;
+
+      span {
+          background: transparent !important ;
+      }
+
       .ant-btn span{
           font-size: 12px;
           color:#49CCFF ;
+            &:last-child{
+                padding: 0;
+            }
+
+            line-height: 24px;
       }
       .ant-btn-background-ghost.ant-btn-primary{
           border-color:#49CCFF;

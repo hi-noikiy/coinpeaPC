@@ -24,6 +24,7 @@ export class _LocalStorage {
         }
     }
 
+    
 
     //设置localstorage
     public set(key, data) {
@@ -168,7 +169,6 @@ export const setPrecision =  (val, decimal?) => {
         const b = a.toFixed(Number(decimal || 4) , Decimal.ROUND_DOWN);
         let c = b.split('.');
 
-       
        if(c[1] === undefined || Number(c[1].toString()) === 0) {
             return c[0];
         } else {
@@ -184,7 +184,7 @@ export const setPrecision =  (val, decimal?) => {
             str = c[0]+'.'+ arr.join('');
             return str 
         }
-     //   return  b;
+     // return  b;
             
 }
 
@@ -267,7 +267,7 @@ export function getQueryString(name) {
 
 
 //设置符号和颜色
-export const setSymbol = (type, isAddColor) => {
+export const setSymbol = (type, isAddColor?) => {
     if(isAddColor) {
         switch(String(type)){
             case '-1':
@@ -293,6 +293,9 @@ export const setSymbol = (type, isAddColor) => {
     }
     
 }
+
+
+
 
 
   //计算汇率符号

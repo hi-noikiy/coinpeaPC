@@ -25,13 +25,19 @@ class Clock extends React.PureComponent {
     componentWillUnmount() {
         clearInterval(this.timer);
         this.timer = null;
-        
+        this.setState= (state, callback) => {
+			return;
+		}
     }
 
  
     render() {
         return (
-            <div id="clock">{moment(this.state.localData).format("YYYY-MM-DD HH:mm:ss")}</div>
+            <div id="clock">
+                <i></i>
+                {moment(this.state.localData).format("YYYY-MM-DD HH:mm:ss")}
+                <span>UTC+8</span>
+            </div>
         )
     }
 }

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import TradeTabs from './TradeTabs.js';
-import { Tabs , message, Slider} from 'antd';
+import { Tabs } from 'antd';
 import datafeedConfig from '../../utils/datafeed/datafeedConfig.js';
-import { remove } from 'lodash';
+
 import { _LocalStorage } from '../../utils/index.ts';
-import { is, fromJS, toArray, entries  } from 'immutable';
-import querystring from 'querystring';
+import { is } from 'immutable';
 import qs from 'querystring';
+
 //api 
 import { addSelect , delSelect } from '../../api/home.js';
 
@@ -16,6 +16,7 @@ import './TradeTabsList.scss';
 //变量
 const TabPane = Tabs.TabPane;
 let { symbolResolveJSON } = datafeedConfig;
+
 export default class TradeTabsList extends Component {
     constructor(props) {
         super(props);
@@ -66,28 +67,7 @@ export default class TradeTabsList extends Component {
             return true
         }
         return false;
-      /*   const thisProps = this.props || {}, thisState = this.state || {};
-     
-        if( Object.keys(thisProps).length !== Object.keys(nextProps).length ||
-             Object.keys(thisState).length !== Object.keys(nextState).length) {
-              
-            return true;
-        }
-        
-        for (const key in nextProps) {
-            if (!is(fromJS(thisProps[key]), fromJS(nextProps[key]))) {
-                return true;
-            }
-          }
-        
-          for (const key in nextState) {
-        
-            if (thisState[key] !== nextState[key] || !is(fromJS(thisState[key]),fromJS(nextState[key]))) {
-               
-                return true;
-            }
-          }
-          return false; */
+  
     }
 
     componentWillReceiveProps(nextProps) {

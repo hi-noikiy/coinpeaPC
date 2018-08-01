@@ -6,11 +6,6 @@ import { Input, Tooltip } from 'antd';
 import cs from 'classnames';
 import { formatNumber }  from '../../utils';
 
-import './priceInp.scss';
-
-
-
-
 const PriceInp = (props) => {
 
     const { value, tooltip } = props;

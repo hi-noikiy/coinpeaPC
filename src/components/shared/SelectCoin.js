@@ -115,7 +115,7 @@ class SelectCoin extends React.Component {
       
         const id = this.props.activeCoinIndex;
         let selectData;
-        this.props.coinList.foreach( e => {
+        this.props.coinList.map( e => {
             const data1 = e.regionCoinRelations.filter(e=>e.id === id);
             if(data1.length){
                 selectData = data1[0]

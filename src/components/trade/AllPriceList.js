@@ -15,7 +15,7 @@ const AllPriceList = (props) =>{
                 left={item.pr}
                 center={precision_zero(item.qu, props.quanPre)} // 买价格精度
                 type={props.type}
-                right={setPrecision(item.money.toFixed(), props.pricePre)} // setPrecision(item.money, props.pricePre)
+                right={setPrecision(item.money, props.pricePre)} // setPrecision(item.money, props.pricePre)
                 addWidth={props.addWidth(props.listData, item.qu, 280)}
                 listClickHandle={() => {props.listClickHandle(props.type, item.pr, item.id)}}
             />

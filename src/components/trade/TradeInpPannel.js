@@ -2,16 +2,17 @@
     交易页交易面板
     TradeInp: 输入框面板组件
 */
-
+import { message}  from 'antd';
+import './TradeInpPannel.scss';
 import React from 'react';
 import TradeInp from './TradeInp';
 import cs from 'classnames';
-import { message}  from 'antd';
+
 import { is , fromJS} from 'immutable';
-import { times, setPrecision,precision_zero ,shallowEqualImmutable } from '../../utils';
+import { times, setPrecision,precision_zero  } from '../../utils';
 import { connect } from 'react-redux';
 
-import './TradeInpPannel.scss';
+
 import intl from "react-intl-universal";
 
 import { CHANGE_ASSETS_ACTION } from '../../views/LoginRedux'
@@ -258,7 +259,7 @@ class TradeInpPannel extends React.Component {
     selectPercent = (e, type) => {
         if(e.target.className === 'selectPercent' || e.target.className === 'selectPercent sale') return false;
         const index = Number(e.target.getAttribute('index'));
-        const val = parseInt(e.target.innerText) / 100;
+        const val = parseInt(e.target.innerText, 10) / 100;
         e.target.className="activePercent";
 
         
@@ -404,4 +405,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(undefined,mapDispatchToProps)(TradeInpPannel);
+export default connect(null,mapDispatchToProps)(TradeInpPannel);

@@ -23,7 +23,7 @@ const datafeedConfig = (params) => {
     datafeed: new Datafeeds.UDFCompatibleDatafeed(serverUrl, pushInterval),
     width: "100%",
     height:'612',
-    'library_path': './',
+   
     locale: 'zh',
     drawings_access: {
       type: 'black',

@@ -31,7 +31,7 @@ class ContralTitle extends React.Component {
                 <div className="contralTitle-content">
                    {
                          React.Children.map(this.props.children, (child, index) => {
-                                return <div style={{display:this.props.index === index?'block':'none'}}>{child}</div>
+                                return <div style={{display:this.props.index === index?'block':'none'}} >{child}</div>
                             
                         })
                    }

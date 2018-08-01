@@ -10,10 +10,12 @@
     DeepChart: 深度图
 */
 
-
+//css
+import './Trade.scss';
+//import './Trade_light.scss';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { is, fromJS, List, Map , toArray, sortBy, } from 'immutable';
+import { is, fromJS, List, Map } from 'immutable';
 import { Avatar } from 'antd';
 import cs from 'classnames';
 import $ from 'jquery';
@@ -25,11 +27,7 @@ import intl from 'react-intl-universal';
 
 
 //utils
-import { addTotal, times, shallowEqualImmutable, _LocalStorage, setSymbol, setPrecision, createdSymbol, numToString } from '../utils';
-
-//css
-import './Trade.scss';
-import './Trade_light.scss';
+import { addTotal, times,  _LocalStorage, setSymbol, setPrecision, createdSymbol, numToString } from '../utils';
 
 //自定义组件
 import TradeTabsList from '../components/trade/TradeTabsList';
@@ -65,7 +63,7 @@ class Trade extends Component {
         sales:[],
         cacelEntrustLock:false,
         sun: true,
-        list:[intl.get('K线图'), intl.get('深度图'), intl.get('币种介绍')], //'深度图', '币种类介绍', '查看专业K线'
+        list:[intl.get('K线图'), intl.get('深度图'), intl.get('币种介绍'), intl.get('查看专业K线')], //'深度图', '币种类介绍', '查看专业K线'
         index:0,
         pannelHdList:[
                 {
@@ -238,10 +236,15 @@ class Trade extends Component {
         } else if(index === 1 ) {
             pos = '62px';
         } else if(index === 2){
+
             this.props.history.push(`/coin?symbol=${this.props.coinAreaData.coin}`);
         } else {
-            this.props.history.push("/klineTrade");
+            const search = qs.parse(this.props.location.search)['?na'];
+            const url = search ? "/klineTrade?na="+search : '/klineTrade';
+
+            this.props.history.push(url);
         }
+
        $('#kchartTriangle').css({
             transform:`translate3d(${pos}, 0px, 0px)`
        });   
@@ -270,10 +273,9 @@ class Trade extends Component {
               a = Object.assign(a, item);
               a.st = 3;
            }
-       }); */
-      
-        
+       }); */  
     }
+    
     //websocket 获取数据
     handleData = (data) => {
             if(data === 'pong') return;
@@ -719,7 +721,7 @@ class Trade extends Component {
     areaHandleData = (data) => {
         if(data === 'pong') return;
         const res = JSON.parse(data);
-      
+        if(!res[1]) return;
         if(Object.prototype.toString.call(res) !==  "[object Array]") {
             this.props.updateCoin(res.id, res);
          
@@ -870,6 +872,7 @@ class Trade extends Component {
 
     }
 
+
     componentDidMount() {
        
         const wsUrl = window.location.hostname;
@@ -883,9 +886,7 @@ class Trade extends Component {
        dataType.forEach( (item, index) => {
            dataHandle[index].type = item;
        });
-       
-    
-      
+
        // const { Map } = require('immutable@4.0.0-rc.9')
     
     }
@@ -946,6 +947,9 @@ class Trade extends Component {
         clearInterval(this.tiemrs2);
         this.mounted = false;
         this.tiemrs= this.tiemrs2= null;
+        this.setState = (state,callback)=>{
+            return;
+          };  
     }
 
     //点击查看更多
@@ -982,11 +986,11 @@ class Trade extends Component {
         })
         
         $('.container').toggleClass('light');
-        const style = this.state.sun ? {
+   /*      const style = this.state.sun ? {
             up: "rgba( 83, 185, 135, 1))",
             down: "rgba( 255, 77, 92, 1)",
-            bg: "#fff",
-            grid: "#fff",
+            bg: "rgb(227, 236, 240)",
+            grid: "rgb(227, 236, 240)",
             cross: "#9194A3",
             border: "rgba( 255, 77, 92, 1)",
             text: "#61688A",
@@ -1003,46 +1007,17 @@ class Trade extends Component {
             text: "#61688A",
             areatop: "rgba(122, 152, 247, .1)",
             areadown: "rgba(122, 152, 247, .02)"
-        }
+        } */
      
        
         window.widget.applyOverrides({
-            "paneProperties.background": "#fff"
-        /*   "scalesProperties.lineColor": style.text,
-            "scalesProperties.textColor": style.text,
-            "paneProperties.background": style.bg,
-            "paneProperties.vertGridProperties.color": style.grid,
-            "paneProperties.horzGridProperties.color": style.grid,
-            "paneProperties.crossHairProperties.color": style.cross,
-            "mainSeriesProperties.candleStyle.upColor": style.up,
-            "mainSeriesProperties.candleStyle.downColor": style.down,
-            "mainSeriesProperties.candleStyle.borderColor": style.border,
-            "mainSeriesProperties.candleStyle.borderUpColor": style.up,
-            "mainSeriesProperties.candleStyle.borderDownColor": style.down,
-            "mainSeriesProperties.candleStyle.wickUpColor": style.up,
-            "mainSeriesProperties.candleStyle.wickDownColor": style.down,
-            "mainSeriesProperties.hollowCandleStyle.upColor": style.up,
-            "mainSeriesProperties.hollowCandleStyle.downColor": style.down,
-            "mainSeriesProperties.hollowCandleStyle.borderColor": style.border,
-            "mainSeriesProperties.hollowCandleStyle.borderUpColor": style.up,
-            "mainSeriesProperties.hollowCandleStyle.borderDownColor": style.down,
-            "mainSeriesProperties.hollowCandleStyle.wickColor": style.line,
-            "mainSeriesProperties.haStyle.upColor": style.up,
-            "mainSeriesProperties.haStyle.downColor": style.down,
-            "mainSeriesProperties.haStyle.borderColor": style.border,
-            "mainSeriesProperties.haStyle.borderUpColor": style.up,
-            "mainSeriesProperties.haStyle.borderDownColor": style.down,
-            "mainSeriesProperties.haStyle.wickColor": style.border,
-            "mainSeriesProperties.barStyle.upColor": style.up,
-            "mainSeriesProperties.barStyle.downColor": style.down,
-            "mainSeriesProperties.lineStyle.color": style.border,
-            "mainSeriesProperties.areaStyle.color1": style.areatop,
-            "mainSeriesProperties.areaStyle.color2": style.areadown,
-            "mainSeriesProperties.areaStyle.linecolor": style.border, */
+            "paneProperties.background": "rgb(227, 236, 240)"
+   
         });
 
         $("iframe" ).contents().find('body').toggleClass('light');
     }
+
     render() {
         //获取state
         const { loginState }= this.props;
@@ -1050,95 +1025,86 @@ class Trade extends Component {
         const buy =  this.state.data.get('buy').toArray();
         const sale =  this.state.data.get('sale').toArray();
         const record = this.state.data.get('record');
-        const wsUrl = window.location.hostname === 'localhost' ? 'www.coinex8.com' :  window.location.hostname ;
+        const wsUrl = window.location.hostname === 'localhost' ? 'www.coinex8.com' :  window.location.hostname;
+        const wsProtocol = window.location.protocol === 'http:'?'ws':'wss';
         const ty = this.state.data.get('record')[0]? this.state.data.get('record')[0].ty:-1;
        // console.log(window.performance.navigation)
         return (
             <div id="trade">
-                {/* 头部 */}
-                <div className="trade-top">
-                    <div className="trade-top-l">
-                        <Avatar
-                            src={this.props.coinAreaData.icon}
-                            size="large"
-                            style={{  verticalAlign: 'middle' }}
-                        />
-                        <h3>
-                            <span className="trade-top-l-coin">{this.props.coinAreaData.coin}</span>
-                            <span className="trade-top-l-coin-area">/{this.props.coinAreaData.coinArea}</span>
-                        </h3>
-                    </div>
-                    <div className="trade-top-c">
-                        <dl>
-                            <dt>{intl.get("最新价")}</dt>
-                            <dd>
-                                <span className={cs({"buy-coin":ty === 0, 'sell-coin': ty===1}) }>{hdInfo.np} </span>
-                                <span>{this.calculateEX(hdInfo.np || 0)}</span>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>{intl.get("24H涨跌")}</dt>
-                            <dd>
-                                <span  className={setSymbol(hdInfo.tp, 'addColor')}>{this.formatSymobol(hdInfo.tp)}{hdInfo.ud ?hdInfo.ud: 0} %</span>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>{intl.get("24H最高价")}</dt>
-                            <dd>
-                                <span className="price">{hdInfo.hp} </span>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>{intl.get("24H最低价")}</dt>
-                            <dd>
-                                <span className="price">{hdInfo.lp} </span>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>{intl.get("24H成交量")}</dt>
-                            <dd>
-                                <span className="price">{hdInfo.vo} </span>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>{intl.get("24H成交额")}</dt>
-                            <dd>
-                                <span className="price">{hdInfo.vot} </span>
-                            </dd>
-                        </dl>
-                    </div>
-                    {/*<div className={cs("trade-top-r", { 'sun': this.state.sun })}></div>*/}
-                </div>
-
+			
+				<div className="trad-w">
+				<div className="l">
+					{/* 头部 */}
+					<div className="trade-top">
+						<div className="trade-top-l">
+						{ /*   <Avatar
+								src={this.props.coinAreaData.icon}
+								size="large"
+								style={{  verticalAlign: 'middle' }}
+						/> */}
+							<h3>
+								<span className="trade-top-l-coin">{this.props.coinAreaData.coin}</span>
+								<span className="trade-top-l-coin-area">/{this.props.coinAreaData.coinArea}</span>
+							</h3>
+						</div>
+						<div className="trade-top-c">
+							<dl>
+								<dt>{intl.get("最新价")}</dt>
+								<dd>
+									<span className={cs({"buy-coin":ty === 0, 'sell-coin': ty===1}) }>{hdInfo.np} </span>
+									<span>{this.calculateEX(hdInfo.np || 0)}</span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>{intl.get("24H涨跌")}</dt>
+								<dd>
+									<span  className={setSymbol(hdInfo.tp, 'addColor')}>{this.formatSymobol(hdInfo.tp)}{hdInfo.ud ?hdInfo.ud: 0} %</span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>{intl.get("24H最高价")}</dt>
+								<dd>
+									<span className="price">{hdInfo.hp} </span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>{intl.get("24H最低价")}</dt>
+								<dd>
+									<span className="price">{hdInfo.lp} </span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>{intl.get("24H成交量")}</dt>
+								<dd>
+									<span className="price">{hdInfo.vo} </span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>{intl.get("24H成交额")}</dt>
+								<dd>
+									<span className="price">{hdInfo.vot} </span>
+								</dd>
+							</dl>
+						</div>
+						{/*<div className={cs("trade-top-r", { 'sun': this.state.sun })}></div>*/}
+					</div>
                 {/* 中间内容 */}
-                <div className="trade-content">
-                    {/* 内容部分左侧 */}
-                    <div className="trade-content-left">
-                        <div className="trade-content-left-t">
-                            {/* 交易区 */}
-                               {
-                                   this.props.coinAreaData.id ?  
-                                   <TradeTabsList
-                                     {...this.props}
-                                    loginState={loginState}  
-                                    saveCoinAction={this.props.saveCoin}
-                                    data={this.props.coinAreaData}
-                                    changeCoin={this.props.changeCoin}
-                                    sendMessage={this.sendMessage}
-                                    activeChart={this.state.index}
-                               />:null
-                               }
-                        </div>
-
-                        {/* 最新成交记录 */}
-                        <div className="trade-content-left-b" >
-                            <NewTradeList
-                                scrollBg={this.state.scollBg}
-                                record={record} 
-                            />
-                        </div>
-                    </div>
-
+				<div className="trade-content">
+                       	{/* 交易区  买卖盘*/}
+                    <div className="trade-content-right">
+                        <TradePriceList 
+                            newPrice={hdInfo.np} //最新成交价
+                            money={this.calculateEX(hdInfo.np || 0)}    // 折合价格
+                            buy={buy} //委托盘 买
+                            sale={sale} //委托盘 卖
+                            exType={this.state.data.get('record')[0] || -1}
+                            getPrice={this.getPrice}
+                            coinName={this.props.coinAreaData.coin}
+                            coinArea={this.props.coinAreaData.coinArea}
+                            pricePre ={this.state.pricePre } // 买价格精度
+                            quanPre={this.state.quanPre} //卖价格精度
+                        />
+                    </div> 
                     <div className="trade-content-center">
                         {/* chart */}
                         <div className="trade-content-center-t">
@@ -1167,6 +1133,8 @@ class Trade extends Component {
                                             pricePre={this.state.pricePre} //价格精度
                                             quanPre={this.state.quanPre}//数量精度
                                             index={this.state.index}
+                                            height="398"
+                                            bgcolor={'#223143'}
                                         />/* : null */
                                     }
                                 </ContralTitle> : null}
@@ -1196,32 +1164,50 @@ class Trade extends Component {
                                     quanPre={this.state.quanPre} //卖价格精度
                                 />
                             }
-                        </div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			
+            <div>
+                	{/* 交易区 */}
+					<div className="trade-content-left">
+                    <div className="trade-content-left-t">
+                    
+                        {
+                            this.props.coinAreaData.id ?  
+                            <TradeTabsList
+                                    {...this.props}
+                                    loginState={loginState}  
+                                    saveCoinAction={this.props.saveCoin}
+                                    data={this.props.coinAreaData}
+                                    changeCoin={this.props.changeCoin}
+                                    sendMessage={this.sendMessage}
+                                    activeChart={this.state.index}
+                                />:null
+                        }
                     </div>
 
-                    {/* 交易区  买卖盘*/}
-                    <div className="trade-content-right">
-                        <TradePriceList 
-                            newPrice={hdInfo.np} //最新成交价
-                            money={this.calculateEX(hdInfo.np || 0)}    // 折合价格
-                            buy={buy} //委托盘 买
-                            sale={sale} //委托盘 卖
-                            exType={this.state.data.get('record')[0] || -1}
-                            getPrice={this.getPrice}
-                            coinName={this.props.coinAreaData.coin}
-                            coinArea={this.props.coinAreaData.coinArea}
-                            pricePre ={this.state.pricePre } // 买价格精度
-                            quanPre={this.state.quanPre} //卖价格精度
-                        />
-                    </div>
+                {/* 最新成交记录 */}
+                <div className="trade-content-left-b" >
+                    <NewTradeList
+                        scrollBg={this.state.scollBg}
+                        record={record}
+                        height={256}
+                    />
                 </div>
+            </div>
+         
+			</div>  
+        </div>
                 
                 {/* 委托列表 */}
                 <div className="trade-bottom">
                     <DelegateTabsPannel  
-                            pannelHdList={this.state.pannelHdList} 
-                            deleTabsHdClcik={this.deleTabsHdClcik}
-                            moreClick={this.moreClick}
+                        pannelHdList={this.state.pannelHdList} 
+                        deleTabsHdClcik={this.deleTabsHdClcik}
+                        moreClick={this.moreClick}
                     />
                 </div>
 

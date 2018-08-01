@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 //import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Carousel, Modal, Button } from 'antd';
+import { Carousel, Modal, Button,message } from 'antd';
 import { is, fromJS } from 'immutable';
 import Websocket from 'react-websocket';
 

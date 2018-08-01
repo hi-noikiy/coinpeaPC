@@ -9,7 +9,7 @@ import { Icon } from 'antd';
 import { addSymbols, setPrecision } from '../../utils';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { indexOf, remove } from 'lodash';
-
+import intl from 'react-intl-universal';
 class KlineSelectCoin extends React.PureComponent {
 
     constructor(props) {
@@ -215,6 +215,7 @@ class KlineSelectCoin extends React.PureComponent {
                             </div>
                         );
             const trs = item.coins.map((val, num) => {
+              
                 return (
                     <tr 
                         key={Math.random()*Math.random()**100}
@@ -229,7 +230,7 @@ class KlineSelectCoin extends React.PureComponent {
                             />
                         </td>
                         <td>{val.coinPair.name}</td>
-                        <td>{setPrecision(val.t.last, val.coinPair.pricePrecision)}</td>
+                        <td>{setPrecision(val.t.last, val.coinPair.pricePrecision)}/<span>{val.times}</span></td>
                         <td className={cs({'down':val.t.increase < 0, 'up':val.t.increase>0})}>
                             {addSymbols(val.t.increase)}
                         </td>
@@ -247,12 +248,12 @@ class KlineSelectCoin extends React.PureComponent {
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>市场</th>
-                                <th>价格</th>
-                                <th>24h涨跌</th>
+                                <th>{intl.get('市场')}</th>
+                                <th>{intl.get('价格')}</th>
+                                <th>{intl.get('24H涨跌')}</th>
                                 <th>
-                                    24h成交量
-                                    <Icon type="arrow-down"  style={{color:'#49CCFF'}}/>
+                                    {intl.get('24H成交量')}
+                                    <Icon type="arrow-down"  style={{color:'#49CCFF'}} />
                                 </th>
                             </tr>
                         </thead>

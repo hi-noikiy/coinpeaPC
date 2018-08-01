@@ -1,13 +1,13 @@
 /* 
     委托列表
 */
-
-import React from 'react';
 import './DelegateTabs.scss';
+import React from 'react';
+
 
 import { Table } from 'antd';
 import intl from 'react-intl-universal'
-import { is,fromJS } from 'immutable'
+/* import { is,fromJS } from 'immutable' */
 
 class DelegateTabs extends React.Component {
    
