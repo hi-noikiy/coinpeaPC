@@ -121,7 +121,7 @@ class Frames extends  Component {
 
             if(key === 'siteInfo') {
                 this.props.saveInfo(res.data)
-                document.title = res.data.name;
+                document.title = res.data.name?res.data.name:'coin';
             }
           
         }
