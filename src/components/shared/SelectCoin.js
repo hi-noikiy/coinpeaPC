@@ -3,11 +3,10 @@
 */
 
 import React from 'react';
-import { Avatar, Icon, Tabs} from 'antd';
+import { Icon, Tabs} from 'antd';
 import cs from 'classnames';
 import './SelectCoin.scss';
-import { forEach } from 'lodash';
-import { Map } from 'immutable';
+
 import intl from 'react-intl-universal';
 const TabPane = Tabs.TabPane;
 
@@ -116,7 +115,7 @@ class SelectCoin extends React.Component {
       
         const id = this.props.activeCoinIndex;
         let selectData;
-        this.props.coinList.map(e => {
+        this.props.coinList.foreach( e => {
             const data1 = e.regionCoinRelations.filter(e=>e.id === id);
             if(data1.length){
                 selectData = data1[0]

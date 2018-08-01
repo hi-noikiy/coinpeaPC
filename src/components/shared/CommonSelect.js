@@ -3,7 +3,7 @@
 */
 
 import React from 'react';
-import { Avatar, Icon, Tabs} from 'antd';
+import { Avatar, Icon } from 'antd';
 import cs from 'classnames';
 import './SelectCoin.scss';
 import './CommonSelect.scss';

@@ -149,7 +149,8 @@ module.exports = {
           {
             test: /\.(js|jsx|mjs)$/,
             include: paths.appSrc,
-            loader: require.resolve('babel-loader'),
+            exclude: /node_modules/,
+            loader: require.resolve('babel-loader?cacheDirectory'),
             options: {
               compact: true,
             },
@@ -264,7 +265,7 @@ module.exports = {
     new CompressionPlugin({
       asset: "[path].gz[query]",
       algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
+      test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
       threshold: 10240,
       minRatio: 0.8
     }),
@@ -288,7 +289,7 @@ module.exports = {
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
-   
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.DefinePlugin(env.stringified),
     // Minify the code.
     new UglifyJsPlugin({

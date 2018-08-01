@@ -98,6 +98,7 @@
     "@types/react-redux": "^6.0.4",
     "@types/react-router": "^4.0.28",
     "@types/react-router-dom": "^4.2.7",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "compression-webpack-plugin": "^1.1.11",
     "react-app-rewire-import": "^1.0.1",
     "react-app-rewire-scss": "^1.0.2",
