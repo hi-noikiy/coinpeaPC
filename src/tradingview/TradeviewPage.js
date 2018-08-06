@@ -108,7 +108,7 @@ class TradeviewPage extends React.Component {
      
         const coinPairId = this.props.coinAreaData.id ;
         const symbolName = this.props.coinAreaData.coin+'/'+this.props.coinAreaData.coinArea;
-        const height = window.location.pathname.indexOf('/klineTrade') > -1 ?document.querySelector('.ContralTitle').getBoundingClientRect().height:'342';
+        const height = window.location.pathname.indexOf('/klineTrade') > -1 ?document.querySelector('.ContralTitle').getBoundingClientRect().height:'442';
 
         let params = {
                 resolution: "5",
