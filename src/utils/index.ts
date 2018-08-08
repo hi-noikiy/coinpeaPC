@@ -53,6 +53,56 @@ export class _LocalStorage {
     }
 } 
 
+export class _sessionStorage {
+    
+    public LS:any;
+  //  public name:string;
+
+    constructor() {
+     //   this.name = name;
+        this.LS = null;
+        this.isLocalStorage();
+    }
+
+    //判断是否支持Locastorage
+     isLocalStorage() {
+
+        if(window && window.sessionStorage) {
+            this.LS = window.sessionStorage;
+        } else {
+            throw new Error('您的浏览器不支持sessionStorage')
+        }
+    }
+
+    
+
+    //设置localstorage
+    public set(key, data) {
+        
+        if(this.LS.getItem( window.location.hostname+key)) {
+            this.clear( window.location.hostname+key);
+        }
+        
+        this.LS.setItem( window.location.hostname+key, JSON.stringify(data));
+    }
+
+    //获取localstorage
+    public get(name) {
+      
+        let data = this.LS.getItem( window.location.hostname+name);
+       
+        if( data === 'undefined' || data === null) return false;
+      
+        data = JSON.parse(data);
+        return data;
+    }
+
+    //清除localStorage
+    public clear(key) {
+        this.LS.removeItem(window.location.hostname+key);
+    }
+} 
+
 //表格文字买卖颜色
 export const addColor = (type, val) => {
     if(Number(val) === 0) return;

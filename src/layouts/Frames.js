@@ -7,7 +7,7 @@ import Nav from './Nav';
 import MyRouter from '../routes';
 import { Layout, LocaleProvider } from 'antd';
 import Footer from './Footer'
-import { _LocalStorage } from '../utils';
+import { _LocalStorage,_sessionStorage } from '../utils';
 import { is, fromJS } from 'immutable';
 import { connect } from 'react-redux';
 import intl from 'react-intl-universal';
@@ -51,14 +51,20 @@ class Frames extends  Component {
 
     componentDidMount()  {
 
-        if(qs.parse(window.location.search)['?langue']) {
+        const search = window.location.search.slice(1);
+
+        if(qs.parse(search)['origin'] === 'wap'){
+            const ss = new _sessionStorage();
+            ss.set('origin','wap');
+        }
+        
+        if(qs.parse(search)['langue']) {
             const ls = new _LocalStorage();
-            ls.set('lang',qs.parse(window.location.search)['?langue']);
-            this.props.changeLang(qs.parse(window.location.search)['?langue']);
-            
+            ls.set('lang',qs.parse(search)['langue']);
+            this.props.changeLang(qs.parse(search)['langue']);
         }
       
-        this.loadLocales(qs.parse(window.location.search)['?langue']);
+        this.loadLocales(qs.parse(search)['langue']);
         
         this.getInfo(getLink, 'flinks');
         this.getInfo(getSiteInfo, 'siteInfo');
