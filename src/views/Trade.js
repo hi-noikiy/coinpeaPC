@@ -782,7 +782,7 @@ class Trade extends Component {
     areaHandleOpen =() => {
         if(this.state.validateLock) return;
         validate().then(res => {
-            if(res.data.loginstatus === 1) {
+            if( res.data && res.data.loginstatus === 1) {
                 this.setState({
                     validateLock:true
                 })
@@ -796,7 +796,7 @@ class Trade extends Component {
             
             this.props.saveExRate(res.data);
             if(this.refWebSocketCoin && this.refWebSocketCoin.state.ws.readyState === 1) {
-                this.refWebSocketCoin.state.ws.send(res.data.houseId); 
+                res.data && this.refWebSocketCoin.state.ws.send(res.data.houseId); 
                // this.sendPing('timer2', this.refWebSocketCoin.state.ws);
                 this.tiemrs= setInterval(() => {
                     if(this.refWebSocketCoin && this.refWebSocketCoin.state.ws.readyState === 1)    {

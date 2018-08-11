@@ -95,7 +95,7 @@ class Banner extends React.PureComponent {
                                 <p className="last-p ">{intl.get('Banner-r-c')}</p>
                                 <p className={cs('p-small')}>
                                    {/*  <i></i> */}
-                                    {this.state.data.output} &nbsp;{this.state.data.coinName}  &nbsp;
+                                   <Link to="/rebate" className="p-small"> {this.state.data.output}</Link> &nbsp;{this.state.data.coinName}  &nbsp;
                                     <Link to="/neaws_details?mk=1" className="banner-link">{intl.get('Bnner-r-link1')}</Link>
                                 </p>
                             </div>

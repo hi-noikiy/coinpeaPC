@@ -7,7 +7,7 @@ import intl from 'react-intl-universal';
 /* import moment from 'moment';
 import { connect } from 'react-redux'; */
 import { Divider } from 'antd';
-
+import { precision_zero } from '../utils/index';
  
 //scss
 import './Details.scss'
@@ -75,7 +75,7 @@ class Details extends React.PureComponent<any, IDetailsState> {
 			try {
 					if(search === 'today') {
 						this.setState({
-							data: res.data.statExFeeHourDos,
+							data: res.data.statExFeeDayDos,
 							totaldistributed: res.data.totaldistributed,
 							undistributed: res.data.undistributed
 						})		
@@ -106,28 +106,30 @@ class Details extends React.PureComponent<any, IDetailsState> {
 			return <PriceList 
 						key={index.toString()} 
 						left={item.coinName} 
-						right={item.fee} 
-						center={item.culFee}
+						right={item.culFee} 
+						center={item.fee}
 						listClickHandle={()=> void(0)}
 					/>
 		});
 
         return (
             <div className="details">
-                <div className="banner"></div>
+                <div className="banner">
+					<h2>{intl.get('收入分配明细')}</h2>	
+				</div>
                 <section className="banner-des">
                     <div className="left">
-						<h3>{intl.get(this.state.text+'日分配收入折合')}</h3>
-						<p>
-							<i></i>
-							<span>{this.state.undistributed}</span>
-						</p>
-					</div>
-					<div className="right">
 						<h3>{intl.get(this.state.text+'日平台总收入折合')}</h3>
 						<p>
 							<i></i>
-							<span>{this.state.totaldistributed}</span>
+							<span>{precision_zero(this.state.totaldistributed,8)}</span>
+						</p>
+					</div>
+					<div className="right">
+						<h3>{intl.get(this.state.text+'日分配收入折合')}</h3>
+						<p>
+							<i></i>
+							<span>{precision_zero(this.state.undistributed,8)}</span>
 						</p>
 					</div>
 					

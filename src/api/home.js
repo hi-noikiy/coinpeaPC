@@ -37,3 +37,6 @@ export const  validate = () => _mAjax('/coinex-interface/api/sys/system');
 
 //挖矿
 export const  tradingIsMining = () => _mAjax('/coinex-interface/api/index/websit/tradingIsMining');
+
+//手续费返还
+export const rebate = (data) => _mAjax('/coinex-interface/api/deal/poundagedayreturn/dealreturn',{method:'post',data});
