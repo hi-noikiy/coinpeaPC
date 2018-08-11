@@ -153,6 +153,12 @@ class Recharge extends Component{
                 this.setState({
                     address:data.data.address
                 })
+            }else{
+                message.destroy();
+                message.info(data.msg);
+                this.setState({
+                    address: ''
+                })
             }
             
         });
@@ -175,12 +181,14 @@ class Recharge extends Component{
         });
      
         this.getRechargeAddr(coinId);
-        this.getRechargeList(1);
+        this.getRechargeList(coinId,1);
     }
      
     render(){
         
         const { coinList, activeCoinid, activeCoinName, count, freeze, useable,  } = this.props.allCoins;
+
+        const rechargeList = coinList.filter(e=>e.rechargeStatus === 1);
        
         const recordDate = this.state.note.length?this.state.note.map( (item,index)=>{
             return (
@@ -218,7 +226,7 @@ class Recharge extends Component{
                 <div className="assets-wrap-top">
                     <div className="coin-search-wrap">
                         <CommonSelect 
-                            coinList={coinList}
+                            coinList={rechargeList}
                             coinName={activeCoinName}
                             coinIcon={this.state.coinIcon}
                             coinClick={this.coinClick.bind(this)}

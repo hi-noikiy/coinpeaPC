@@ -597,6 +597,8 @@ class Withdraw extends React.Component {
 
     render() {
         const { coinList, activeCoinid, activeCoinName, count, freeze, useable, icoinUrl } = this.props.allCoins;
+
+        const withdrawList = coinList.filter(e=>e.withdrawStatus === 1);
         const formItemLayout = {
             labelCol: {
               xs: { span: 24 },
@@ -651,7 +653,7 @@ class Withdraw extends React.Component {
             <div className="assets-wrap-top">
                 <div className="coin-search-wrap">
                     <CommonSelect 
-                            coinList={coinList}
+                            coinList={withdrawList}
                             coinName={activeCoinName}
                             coinIcon={icoinUrl}
                             coinClick={this.coinClick.bind(this)}

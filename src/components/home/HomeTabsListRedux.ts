@@ -8,7 +8,7 @@ import { call, fork, put, take } from 'redux-saga/effects';
 import 'whatwg-fetch';
 import { _LocalStorage } from '../../utils';
 
-import {  List , Map} from 'immutable';
+import {  List , OrderedMap, Map} from 'immutable';
 import intl from "react-intl-universal";
 import { createdSymbol, numToString ,setPrecision, times} from '../../utils';
 
@@ -141,12 +141,12 @@ function coinFormat(data, login, state) {
                      }
 
                   })
-                  v.data = Map(hash);
+                  v.data = OrderedMap(hash);
              }
            
          });
         
-         data[0].data = Map(lcdata?lcdata:{});
+         data[0].data = OrderedMap(lcdata?lcdata:{});
      } else {
       
          data.forEach((v, i) => {
@@ -179,7 +179,7 @@ function coinFormat(data, login, state) {
                      }
                   })
                   
-                  v.data = Map(hash);
+                  v.data = OrderedMap(hash);
              }
            
          });
