@@ -22,7 +22,7 @@ import { CLEAR_LOGIN_ACTIONS } from '../LoginRedux';
 import friends from '../../assets/07_08.friends.png'
 import commission from '../../assets/07_08.commission.png'
 
-import inVite_CN from  '../../assets/11_01.chinese_card.jpeg';
+import inVite_CN from  '../../assets/11_01.chinese_card.png';
 import inVite_EN from  '../../assets/11_02.english_card.png';
 
 
@@ -243,7 +243,7 @@ export class MyInvite extends Component {
       
         bgImg.onload = () =>{
             ctx.drawImage(bgImg,0,0,415,750);
-            ctx.drawImage(code,293,570,110,110);
+            ctx.drawImage(code,65,590,80,80);
             srcImg = canvas.toDataURL("image/png");
             this.setState({
                 codepic:srcImg,
