@@ -147,7 +147,17 @@ class Recharge extends Component{
 
 
     //获取充值地址
-    getRechargeAddr(activeCoinid){
+    getRechargeAddr(activeCoinid,rechargeStatus){
+        const fundsData = this.props.funds.srcData;
+        const currentCoinData = fundsData.filter((item) => {
+            return item.coinBasicInfoDo.id === activeCoinid
+        });
+        if(!currentCoinData[0].coinBasicInfoDo.rechargeStatus){
+            this.setState({
+                address: ''
+            })
+            return message.info(intl.get('该币种暂时不允许')+intl.get('充值'));
+        }
         GetRechargeAddr(activeCoinid).then(data=>{
             if(data.data) {
                 this.setState({
@@ -188,7 +198,6 @@ class Recharge extends Component{
         
         const { coinList, activeCoinid, activeCoinName, count, freeze, useable,  } = this.props.allCoins;
 
-        const rechargeList = coinList.filter(e=>e.rechargeStatus === 1);
        
         const recordDate = this.state.note.length?this.state.note.map( (item,index)=>{
             return (
@@ -226,7 +235,7 @@ class Recharge extends Component{
                 <div className="assets-wrap-top">
                     <div className="coin-search-wrap">
                         <CommonSelect 
-                            coinList={rechargeList}
+                            coinList={coinList}
                             coinName={activeCoinName}
                             coinIcon={this.state.coinIcon}
                             coinClick={this.coinClick.bind(this)}
