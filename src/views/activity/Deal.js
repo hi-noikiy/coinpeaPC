@@ -116,7 +116,7 @@ export class Deal extends Component {
                     <div id='timer'></div>
                 </div>
                 <div className='act_caption'>
-                    <h1 className='caption_title'>//活动说明//</h1>
+                    <h1 className='caption_title'>//&nbsp;&nbsp;活动说明&nbsp;&nbsp;//</h1>
                     <ul className='caption_content'>
                         <li className='items'>
                             <span>1</span>活动期间: 8月12日14:00开启全球公测模拟交易大赛，持续到8月15日14:00结束，为时72小时。
@@ -137,14 +137,14 @@ export class Deal extends Component {
                 <div className='act_Leaderboard_content'>
                     <div className='content_items'>
                         <h1>
-                            贫民棒
+                            富豪榜
                             <span>我的排名：100名</span>
                         </h1>
                         <Table pagination={false} columns={columns} dataSource={dataSource} locale={{ 'emptyText': intl.get('暂无数据') }} />
                     </div>
                     <div className='content_items'>
                         <h1>
-                            贫民棒
+                            贫民榜
                             <span>我的排名：100名</span>
                         </h1>
                         <Table 

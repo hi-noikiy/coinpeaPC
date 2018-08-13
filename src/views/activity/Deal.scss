@@ -39,7 +39,17 @@
 			text-align: left;
 			font-size: 18px;
 			color: #b241b4;
-
+			span {
+				display: inline-block;
+				width: 33px;
+				height: 33px;
+				text-align: center;
+				background: #8941e8;
+				border-radius: 50%;
+				color: #fff;
+				line-height: 34px;
+				margin-right: 10px;
+			}
 		}
 		.caption_btn {
 			font-size: 22px;
