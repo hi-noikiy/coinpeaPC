@@ -46,39 +46,7 @@ export class Deal extends Component {
     constructor(props){
         super(props);
         this.state = {
-            inviteInfo:{
-                url:''
-            },
-            Modal2Visible: false,
-            data1: [],
-            data2: [],
-            data3:[],
-            copyPic:require('./../../assets/07_08.copy_button01.svg'),
-            loginShow:false,
-            bannerUrl:'',
-            pagination:{
-                total: 0,
-                current:1,
-                hideOnSinglePage:true,
-                pageSize:10,
-                showQuickJumper:true,
-                next:1,
-                pre:1,
-                position:"bottom",
-                onChange:this.getTabsData
-            },
-            pagination2:{
-                total: 0,
-                current:1,
-                hideOnSinglePage:true,
-                pageSize:10,
-                showQuickJumper:true,
-                next:1,
-                pre:1,
-                position:"bottom",
-                onChange:this.getTabsData2
-            },
-            rules:''
+            
         }
     }
 
