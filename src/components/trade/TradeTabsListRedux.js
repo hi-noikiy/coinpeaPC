@@ -6,7 +6,7 @@ import { put, take, call, fork } from 'redux-saga/effects';
 import { _LocalStorage } from '../../utils';
 import { selectCoin } from '../home/HomeTabsListRedux';
 import { init } from 'react-intl-universal';
-import{ Map, List, forEach as _forEach } from 'immutable';
+import{ Map, List, forEach,OrderedMap } from 'immutable';
 import intl from "react-intl-universal";
 
 
@@ -54,12 +54,12 @@ const lcdata =  ls.get('checkedCoinArr');
                         o.isc = true;
                     }
                  })
-                 v.data = Map(hash);
+                 v.data = OrderedMap(hash);
             }
           
         });
        
-        data[0].data = Map(lcdata?lcdata:{});
+        data[0].data = OrderedMap(lcdata?lcdata:{});
       
     } else {
         data.forEach(v => {
@@ -68,7 +68,7 @@ const lcdata =  ls.get('checkedCoinArr');
                 v.data.forEach( o => {
                     hash[o.id] = o;
                  })
-                 v.data = Map(hash);
+                 v.data = OrderedMap(hash);
             }
           
         });
@@ -76,7 +76,7 @@ const lcdata =  ls.get('checkedCoinArr');
     }
 
     if(!data[0].data) {
-        data[0].data = Map({});
+        data[0].data = OrderedMap({});
     }
    
     return List(data);

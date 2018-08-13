@@ -76,7 +76,7 @@ class SelectCoin extends React.Component {
             
               const list = item.regionCoinRelations.map( (val, i) => {
                   return (
-                            <span 
+                            <div 
                                  onClick={(e)=> {
                                      e.nativeEvent.stopPropagation();
                                      e.stopPropagation();
@@ -85,9 +85,9 @@ class SelectCoin extends React.Component {
                                  key={(Math.random()**2).toString()}
                                  className={cs("coin-name",this.props.activeCoinIndex===val.id?'isActive':'')}
                             >
-                                <img style={{ verticalAlign:'middle', marginRight:8 }} alt=""  src={val.icoinUrl} />
+                                <span><img style={{ verticalAlign:'middle' }} alt=""  src={val.icoinUrl} /></span>
                                 <span>{val.sortName}</span>
-                            </span>
+                            </div>
                         ) 
               });
             
