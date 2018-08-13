@@ -6,6 +6,17 @@
 	text-align: center;
 	padding-bottom: 50px;
 	background: #111a24;
+	#timer {
+		color: #fc7fff;
+		position: absolute;
+		top: 337px;
+		font-size: 58px;
+	}
+	.act_banner {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
 	.act_banner img {
 		width: 100%;
 	}

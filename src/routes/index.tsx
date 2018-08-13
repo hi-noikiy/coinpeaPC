@@ -153,6 +153,27 @@ const AsyncAssets = Loadable({
      delay: 200, 
 });
 
+//模拟交易活动   首页
+const AsyncDeal = Loadable({
+    loader:()=>import('../views/activity/Deal'),
+    loading: Loading,
+     delay: 200, 
+});
+
+//模拟交易活动   模拟交易
+const AsyncDealTrade = Loadable({
+    loader:()=>import('../views/activity/DealTrade'),
+    loading: Loading,
+     delay: 200, 
+});
+
+//模拟交易活动   模拟钱包
+const AsyncDealWallet = Loadable({
+    loader:()=>import('../views/activity/DealWallet'),
+    loading: Loading,
+     delay: 200, 
+});
+
 //资讯页面
 const AsyncNews = Loadable({
     loader:()=>import('../views/News'),
@@ -305,6 +326,9 @@ const MyRouter = (props) => (
                         <PrivateRoute path="/googlecheck"  component={AsyncGoogleCheck} loginState={props.loginState}></PrivateRoute>
                         <Route path="/site" component={AsyncSiteContent}></Route>
                         <PrivateRoute path="/assets" component={AsyncAssets}  loginState={props.loginState}></PrivateRoute>
+                        <PrivateRoute path="/deal" component={AsyncDeal}  loginState={props.loginState}></PrivateRoute>
+                        <PrivateRoute path="/dealTrade" component={AsyncDealTrade}  loginState={props.loginState}></PrivateRoute>
+                        <PrivateRoute path="/dealWallet" component={AsyncDealWallet}  loginState={props.loginState}></PrivateRoute>
                         <Route path="/login" component={Login}></Route>
                         <Route path="/register" component={Regiester} ></Route>
                         <Route path="/registerSucess" component={RegiesterSucess}></Route>

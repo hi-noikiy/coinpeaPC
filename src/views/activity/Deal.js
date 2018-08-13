@@ -82,10 +82,29 @@ export class Deal extends Component {
     }
 
     componentDidMount() {
-
+        this.leftTimer();
     }
 
-    
+    leftTimer = (year,month,day,hour,minute,second) =>{ 
+      var leftTime = (new Date(year,month-1,day,hour,minute,second)) - (new Date()); //计算剩余的毫秒数 
+      var days = parseInt(leftTime / 1000 / 60 / 60 / 24 , 10); //计算剩余的天数 
+      var hours = parseInt(leftTime / 1000 / 60 / 60 % 24 , 10); //计算剩余的小时 
+      var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟 
+      var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数 
+      days = this.checkTime(days); 
+      hours = this.checkTime(hours); 
+      minutes = this.checkTime(minutes); 
+      seconds = this.checkTime(seconds); 
+      setInterval(() =>{this.leftTimer(2018,8,17,0,0,0)},1000); 
+      document.getElementById("timer").innerHTML = days+":" + hours+":" + minutes+":"+seconds;  
+    } 
+    checkTime = (i) =>{ //将0-9的数字前面加上0，例1变为01 
+      if(i<10) 
+      { 
+        i = "0" + i; 
+      } 
+      return i; 
+    } 
     
  
     render() {
@@ -94,6 +113,7 @@ export class Deal extends Component {
             <div className="deal">
                 <div className='act_banner'>
                     <img src={banner} alt=""/>
+                    <div id='timer'></div>
                 </div>
                 <div className='act_caption'>
                     <h1 className='caption_title'>//活动说明//</h1>
