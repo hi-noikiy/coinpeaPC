@@ -9,6 +9,7 @@ import './Deal.scss'
 
 // img
 import banner from '../../assets/jieshao_bg.png'
+import rank from '../../assets/jieshao_ico_huangguan.png'
 
 const dataSource = [{
   key: '1',
@@ -133,7 +134,9 @@ export class Deal extends Component {
                     </ul>
                     <div className='caption_btn'><a href="">查看活动详情 &gt;</a></div>
                 </div>
-                <div className='act_Leaderboard_title'></div>
+                <div className='act_Leaderboard_title'>
+                    <img src={rank} alt=""/>
+                </div>
                 <div className='act_Leaderboard_content'>
                     <div className='content_items'>
                         <h1>
