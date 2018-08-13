@@ -51,7 +51,15 @@ export class Deal extends Component {
     }
 
     componentDidMount() {
-        this.leftTimer();
+      const Timer = setInterval((year,month,day,hour,minute,second) =>{
+        let TimerDiff = (new Date(year,month-1,day,hour,minute,second)) - (new Date());
+        if (TimerDiff < 0) {
+          clearInterval(Timer);
+          document.getElementById("timer").innerHTML = 0+":" + 0+":" + 0+":"+0;  
+        }else {
+          this.leftTimer(2018,8,17,0,0,0)
+        }
+      },1000); 
     }
 
     leftTimer = (year,month,day,hour,minute,second) =>{ 
@@ -64,7 +72,6 @@ export class Deal extends Component {
       hours = this.checkTime(hours); 
       minutes = this.checkTime(minutes); 
       seconds = this.checkTime(seconds); 
-      setInterval(() =>{this.leftTimer(2018,8,17,0,0,0)},1000); 
       document.getElementById("timer").innerHTML = days+":" + hours+":" + minutes+":"+seconds;  
     } 
     checkTime = (i) =>{ //将0-9的数字前面加上0，例1变为01 
