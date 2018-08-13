@@ -108,6 +108,7 @@ export class MyInvite extends Component {
         this.myInviteList(this.state.pagination.current);
         this.myRebirth(this.state.pagination2.current);
         activeRule().then(res=>{
+            console.log('res.data===>', res)
 			this.setState({
 				rules:res.data?res.data.content:[]
 			})

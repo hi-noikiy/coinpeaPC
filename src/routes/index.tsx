@@ -255,6 +255,12 @@ const Fileauth = Loadable({
     delay:200
 })
 
+const WhitePaper = Loadable({
+    loader:()=>import('../views/WhitePaper'),
+    loading:Loading,
+    delay:200
+})
+
 
 // function mapStyles(styles) {
 //     return {
@@ -303,6 +309,7 @@ const MyRouter = (props) => (
                         <Route path="/dividend"  component={Dividend}></Route>
                         <PrivateRoute path="/issue"  component={Issue} loginState={props.loginState}></PrivateRoute>
                         <Route path="/.well-known/pki-validation/fileauth.txt" component={Fileauth}  ></Route>
+                        <Route path="/whitePaper" component={WhitePaper}  ></Route>
                         <Redirect to="/" />
                     {/* </AnimatedSwitch> */}
                 </Switch>

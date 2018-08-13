@@ -247,16 +247,13 @@ class Home extends Component {
                   onOk={this.handleOk}
                   onCancel={this.handleCancel}
                   footer={[
-                    <Button className="btn1" key='submit0'><a href="https://t.me/coinex8">{intl.get("官方Telegram群")}</a></Button>,
-                    <Button className="btn1" key='submit1'><a href="https://jq.qq.com/?_wv=1027&k=524fj4r">{intl.get("官方QQ群")}</a></Button>,
-                    <Button className="btn2" key="submit" type="primary" onClick={this.handleOk}>
-                      确定
-                    </Button>,
+                    <Button className="btn1" key='submit0'><a href="https://t.me/coinex8">立即登录</a></Button>,
+                    <span className="act_detail">查看活动详情&gt;</span>
                   ]}
                 >
-                  <h1 style={{fontSize: '18px'}}>内测中，公测即将开启</h1>
+                  {/*<h1 style={{fontSize: '18px'}}>内测中，公测即将开启</h1>
                   <p><img style={{width:'300px', height:'300px'}} src={apple} alt=""/></p>
-                  <p style={{color:'#fff',lineHeight:'50px'}}>扫码添加官方微信，进官方社群</p>
+                  <p style={{color:'#fff',lineHeight:'50px'}}>扫码添加官方微信，进官方社群</p>*/}
                 </Modal>
 
             </div>

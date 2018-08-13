@@ -1,0 +1,19 @@
+.WhitePaper {
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	.pager {
+		display: flex;
+		margin-top: 20px;
+		li {
+			font-size: 20px;
+			line-height: 36px;
+			padding: 0 20px;
+			border: 1px solid blue;
+			border-radius: 4px;
+		}
+		li:first-child {
+			margin-right: 50px;
+		}
+	}
+}
