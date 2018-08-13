@@ -86,10 +86,17 @@ class PassPort extends Component {
             let fileList = info.fileList;   
             this.setState({ fileList });
             if (info.file.status === 'done') {
-                this.setState({
-                    imageUrl:info.file.response.data.pathUrl
-                })  
-                setFieldsValue({['frontUrl']:this.state.imageUrl});
+                if(info.file.response.status === 1){
+                    this.setState({
+                        imageUrl:info.file.response.data.pathUrl,
+                    })  
+                    setFieldsValue({['frontUrl']:this.state.imageUrl});
+                }else{
+                    message.error(intl.get('上传失败'));
+                    this.setState({
+                        fileList:[]
+                    })
+                }
             }
             if(info.file.status === 'error'){
                 message.error(intl.get('上传失败'));
@@ -105,11 +112,18 @@ class PassPort extends Component {
             let fileList2 = info.fileList;   
             this.setState({ fileList2 });
             if (info.file.status === 'done') {
+                if(info.file.response.status === 1){
+                    this.setState({
+                        imageUrl2:info.file.response.data.pathUrl
+                    })  
+                    setFieldsValue({['versoUrl']:this.state.imageUrl2});
+                }else{
+                    message.error(intl.get('上传失败'));
+                    this.setState({
+                        fileList2:[]
+                    })
+                }
                 
-                this.setState({
-                    imageUrl2:info.file.response.data.pathUrl
-                })  
-                setFieldsValue({['versoUrl']:this.state.imageUrl2});
             }
             if(info.file.status === 'error'){
                 message.error(intl.get('上传失败'));
@@ -125,11 +139,18 @@ class PassPort extends Component {
             let fileList3 = info.fileList;   
             this.setState({ fileList3 });
             if (info.file.status === 'done') {
-                
-                this.setState({
-                    imageUrl3:info.file.response.data.pathUrl
-                }) 
-                setFieldsValue({['handUrl']:this.state.imageUrl3}); 
+                if(info.file.response.status === 1){
+                    this.setState({
+                        imageUrl3:info.file.response.data.pathUrl
+                    }) 
+                    setFieldsValue({['handUrl']:this.state.imageUrl3}); 
+                }else{
+                    message.error(intl.get('上传失败'));
+                    this.setState({
+                        fileList3:[]
+                    })
+                }
+               
             }
             if(info.file.status === 'error'){
                 message.error(intl.get('上传失败'));

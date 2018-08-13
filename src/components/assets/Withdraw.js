@@ -127,7 +127,8 @@ class Withdraw extends React.Component {
             rollCount:0,
             hideGoogle:false,
             hidePhone:false,
-            addrTip:intl.get('请输入提币地址')
+            addrTip:intl.get('请输入提币地址'),
+            withdrawAllow:false
         }
     }    
 
@@ -194,6 +195,22 @@ class Withdraw extends React.Component {
     }
     //获取地址
     GetWithdrawAddr =async ( id )=>{
+        const fundsData = this.props.funds.srcData;
+        const currentCoinData = fundsData.filter((item) => {
+            return item.coinBasicInfoDo.id === id
+        });
+        if(!currentCoinData[0].coinBasicInfoDo.withdrawStatus){
+            this.setState({
+                address: '',
+                list:[],
+                withdrawAllow:false
+            })
+            return message.info(intl.get('该币种暂时不允许')+intl.get('提现'));
+        }else{
+            this.setState({
+                withdrawAllow:true
+            })
+        }
         const res =await GetWithdrawAddr(id);
        if(res.status === 1 && res.data) {
                 this.setState({
@@ -250,6 +267,9 @@ class Withdraw extends React.Component {
 
     //添加地址
     addAddress = () => {
+        if(!this.state.withdrawAllow){
+            return message.info(intl.get('该币种暂时不允许')+intl.get('提现'));
+        }
         if(this.state.clock) {
             return false;
         };
@@ -487,7 +507,9 @@ class Withdraw extends React.Component {
     }
     //提币
     withDrawCoin(){
-
+        if(!this.state.withdrawAllow){
+            return message.info(intl.get('该币种暂时不允许')+intl.get('提现'));
+        }
         if(this.state.lockBtn) return;
         if(!this.state.GA && !this.state.hideGoogle) return message.warning(intl.get('请填写谷歌验证'));
         if(!this.state.phoneCode && !this.state.hidePhone) return message.warning(intl.get('请填写短信验证码'));
@@ -597,6 +619,8 @@ class Withdraw extends React.Component {
 
     render() {
         const { coinList, activeCoinid, activeCoinName, count, freeze, useable, icoinUrl } = this.props.allCoins;
+
+        const withdrawList = coinList.filter(e=>e.withdrawStatus === 1);
         const formItemLayout = {
             labelCol: {
               xs: { span: 24 },
@@ -651,7 +675,7 @@ class Withdraw extends React.Component {
             <div className="assets-wrap-top">
                 <div className="coin-search-wrap">
                     <CommonSelect 
-                            coinList={coinList}
+                            coinList={withdrawList}
                             coinName={activeCoinName}
                             coinIcon={icoinUrl}
                             coinClick={this.coinClick.bind(this)}

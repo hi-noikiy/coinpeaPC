@@ -1,0 +1,81 @@
+.rebates{
+    .banner{
+        background-image: url('../assets/banner03.png');
+    }
+    .banner-des{
+        display: block;
+        padding: 25px;
+        h3{
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0.02px;
+            line-height: 16px;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 12px;
+            color: #FFFFFF;
+            letter-spacing: 0.01px;
+            text-align: justify;
+            line-height: 22px;
+        }
+    }
+    .income-wrap{
+        h3{
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0.02px;
+            line-height: 16px;
+            padding: 25px;
+            margin: 0;
+        }
+        .income-con{
+            margin-bottom: 0;
+            li{
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                padding: 23px 0 25px;
+                div{
+                    font-size: 12px;
+                    color: #FFFFFF;
+                    letter-spacing: 0.01px;
+                    line-height: 12px;
+                    box-sizing: border-box;
+                }
+                div:nth-child(1){
+                    padding-left: 25px;
+                    width: 8%;
+                    text-align: left;
+                }
+                div:nth-child(2),div:nth-child(3),div:nth-child(4){
+                    width: 24%;
+                    text-align: right;
+                }
+                div:nth-child(5){
+                    width: 20%;
+                    text-align: right;
+                    padding-right: 25px;
+                }
+            }
+            .income-list-head{
+                padding: 0 0 16px 0;
+                div{
+                    color: #A7B5C6;
+                }
+            }
+        }
+        .pagechange{
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 25px;
+            span{
+                font-size: 12px;
+                color: #3DADD9;
+                letter-spacing: 0.01px;
+                line-height: 12px;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
