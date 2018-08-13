@@ -5,7 +5,8 @@
 import React from 'react';
 import intl from 'react-intl-universal';
 import moment from 'moment';
-import { Icon } from 'antd';
+import { Icon,message } from 'antd';
+import { setPrecision } from '../utils/index';
 
 //scss
 import './Details.scss'
@@ -13,7 +14,6 @@ import './Rebate.scss'
 
 //api接口
 import { rebate } from '../api/home';
-import { message } from 'antd';
 
 
 
@@ -80,7 +80,7 @@ class Rebate extends React.PureComponent {
             return ( 
                 <li key = { `${index}+rebate` } >
                     <div> { item.statDate } </div> 
-                    <div> { item.pltfrmCoinAveragePrice } </div> 
+                    <div> { item.totalFee && item.pltfrmCoinMiningTotal? setPrecision(item.totalFee/item.pltfrmCoinMiningTotal,8):0 } </div> 
                     <div> { item.totalFee } </div> 
                     <div> { item.pltfrmCoinMiningTotal } </div> 
                     <div> { item.pltfrmCoinRebateTotal } </div> 
