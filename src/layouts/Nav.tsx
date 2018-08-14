@@ -267,7 +267,6 @@ class Nav extends React.Component<NavProps, any> {
                                 <div className="login-out" onClick={this.loginOut}>{intl.get("退出")}</div>
                             </div>
                         );
-        
         // const content_ex = (
         //     <div className="select-ex">
         //         <p   onClick={this.redirect('/trade')}>
@@ -339,49 +338,33 @@ class Nav extends React.Component<NavProps, any> {
                                     >
                                         {intl.get('交易')}
                                     </NavLink>
-                                    {/*<div className={cs("nav-name",{"nav-active": this.props.location.pathname.indexOf('/trade') > -1})}>
-                                        <Popover 
-                                            placement="bottom"
-                                            overlayClassName="ex_pop"
-                                            content={content_ex}  
-                                            trigger={this.isPhone()?'click':'hover'}
-                                        >
-                                            {intl.get('交易')}
-                                        </Popover>
-                        </div>*/}
-                                <NavLink
-                                    to={{pathname:"/news"}}
+                                    <NavLink
+                                        to={{pathname:"/news"}}
+                                            exact
+                                            onClick={this.addClassName} 
+                                            className=" animated  nav-name" 
+                                            activeClassName="nav-active">{intl.get('资讯')}
+                                    </NavLink>
+                                    <NavLink
+                                         to="/assets"
+                                         className="animated  nav-name" 
+                                         activeClassName="nav-active" 
+                                         exact onClick={this.addClassName}>{intl.get('钱包')}
+                                    </NavLink>
+                                    <NavLink 
+                                        to="/invited"
                                         exact
-                                        onClick={this.addClassName} 
-                                        className=" animated  nav-name" 
-                                        activeClassName="nav-active">{intl.get('资讯')}
-                                </NavLink>
-                               {/*  <NavLink 
-                                    to="/activity"
-                                    exact
-                                    onClick={this.removeClass}  
-                                    className={cs("animated  nav-name")}
-                                    activeClassName="nav-active">福利</NavLink> */}
-                                <NavLink
-                                     to="/assets"
-                                     className="animated  nav-name" 
-                                     activeClassName="nav-active" 
-                                     exact onClick={this.addClassName}>{intl.get('钱包')}
-                                </NavLink>
-                                <NavLink 
-                                    to="/invited"
-                                    exact
-                                    onClick={this.removeClass}  
-                                    className={cs("animated  nav-name")}
-                                    activeClassName="nav-active">{intl.get('邀请')}
-                                </NavLink> 
-                                <NavLink 
-                                    to="/deal"
-                                    exact
-                                    onClick={this.removeClass}  
-                                    className={cs("animated  nav-name")}
-                                    activeClassName="nav-active">{intl.get('模拟交易大赛')} <span className="Torch"></span>
-                                </NavLink> 
+                                        onClick={this.removeClass}  
+                                        className={cs("animated  nav-name")}
+                                        activeClassName="nav-active">{intl.get('邀请')}
+                                    </NavLink> 
+                                    <NavLink 
+                                        to="/deal"
+                                        exact
+                                        onClick={this.removeClass}  
+                                        className={cs("animated  nav-name")}
+                                        activeClassName="nav-active">{intl.get('模拟交易大赛')} <span className="Torch"></span>
+                                    </NavLink> 
                             </div>
                             <div className="nav-right">
                                 {

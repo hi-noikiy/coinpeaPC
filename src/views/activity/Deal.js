@@ -53,6 +53,7 @@ export class Deal extends Component {
     componentDidMount() {
       const Timer = setInterval((year,month,day,hour,minute,second) =>{
         let TimerDiff = (new Date(year,month-1,day,hour,minute,second)) - (new Date());
+        console.log('TimerDiff===>', TimerDiff)
         if (TimerDiff < 0) {
           clearInterval(Timer);
           document.getElementById("timer").innerHTML = 0+":" + 0+":" + 0+":"+0;  

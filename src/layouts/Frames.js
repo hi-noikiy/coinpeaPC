@@ -160,7 +160,7 @@ class Frames extends  Component {
         return (
             this.state.initDone &&
             <LocaleProvider locale={this.state.antlang}> 
-                <Layout className="frame" >  
+                <Layout className="frame" >
                 <Nav src={this.state.siteInfo.logo} selectLang={this.selectLang}/>
                     <section className="container">
                             <MyRouter />

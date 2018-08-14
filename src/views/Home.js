@@ -247,8 +247,8 @@ class Home extends Component {
                   onOk={this.handleOk}
                   onCancel={this.handleCancel}
                   footer={[
-                    <Button key='1' className="btn1" key='submit0'><a href="https://t.me/coinex8">立即登录</a></Button>,
-                    <span key='2' className="act_detail">查看活动详情&gt;</span>
+                    <Button key='1' className="btn1" key='submit0'><a href={this.state.validateLock ? '/deal' : '/ogin'}>{this.state.validateLock ? '查看详情' : '立即登录'}</a></Button>,
+                    // <span key='2' className="act_detail">查看活动详情&gt;</span>
                   ]}
                 >
                   {/*<h1 style={{fontSize: '18px'}}>内测中，公测即将开启</h1>
