@@ -51,12 +51,10 @@ export class Deal extends Component {
     }
 
     componentDidMount() {
-      const Timer = setInterval((year,month,day,hour,minute,second) =>{
-        let TimerDiff = (new Date(year,month-1,day,hour,minute,second)) - (new Date());
-        console.log('TimerDiff===>', TimerDiff)
+      const Timer = setInterval(() =>{
+        let TimerDiff = (new Date(2018,8,0,0,0,0)) - (new Date());
         if (TimerDiff < 0) {
-          clearInterval(Timer);
-          document.getElementById("timer").innerHTML = 0+":" + 0+":" + 0+":"+0;  
+          clearInterval(Timer)
         }else {
           this.leftTimer(2018,8,17,0,0,0)
         }
@@ -73,7 +71,12 @@ export class Deal extends Component {
       hours = this.checkTime(hours); 
       minutes = this.checkTime(minutes); 
       seconds = this.checkTime(seconds); 
-      document.getElementById("timer").innerHTML = days+":" + hours+":" + minutes+":"+seconds;  
+      this.setState({
+        days,
+        hours,
+        minutes,
+        seconds
+      })
     } 
     checkTime = (i) =>{ //将0-9的数字前面加上0，例1变为01 
       if(i<10) 
@@ -90,7 +93,9 @@ export class Deal extends Component {
             <div className="deal">
                 <div className='act_banner'>
                     <img src={banner} alt=""/>
-                    <div id='timer'></div>
+                    <div id='timer'>
+                      {this.state.days}:{this.state.hours}:{this.state.minutes}:{this.state.seconds}
+                    </div>
                 </div>
                 <div className='act_caption'>
                     <h1 className='caption_title'>//&nbsp;&nbsp;活动说明&nbsp;&nbsp;//</h1>
