@@ -128,6 +128,7 @@ class Home extends Component {
     areaHandleOpen =() => {
        if(this.state.validateLock) return;
         validate().then(res => {
+            console.log(res)
             if(res.status === 1) {
                 if(res.data.loginstatus === 1) {
                     this.setState({
@@ -247,7 +248,7 @@ class Home extends Component {
                   onOk={this.handleOk}
                   onCancel={this.handleCancel}
                   footer={[
-                    <Button key='1' className="btn1" key='submit0'><a href={this.state.validateLock ? '/deal' : '/ogin'}>{this.state.validateLock ? '查看详情' : '立即登录'}</a></Button>,
+                    <Button key='1' className="btn1" key='submit0'><a href={this.state.validateLock ? '/deal' : '/login'}>{this.state.validateLock ? '查看比赛详情' : '立即登录'}</a></Button>,
                     // <span key='2' className="act_detail">查看活动详情&gt;</span>
                   ]}
                 >

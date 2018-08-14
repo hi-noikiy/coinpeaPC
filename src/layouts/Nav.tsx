@@ -323,7 +323,10 @@ class Nav extends React.Component<NavProps, any> {
                         >
                             <nav className="header-nav">
                            
-                                <div className="nav-left">
+                                <div className="nav-left" 
+                                     style={{
+                                        display:window.location.pathname == '/ex/deal'?'none':window.location.pathname == '/ex/dealTrade'?'none':window.location.pathname == '/ex/dealWallet'?'none':'block'
+                                     }}>
                                     <NavLink className="logo" to="/" exact onClick={this.removeClass} />
                                 
                                         <NavLink to="/" onClick={this.removeClass} 
@@ -365,7 +368,39 @@ class Nav extends React.Component<NavProps, any> {
                                         className={cs("animated  nav-name")}
                                         activeClassName="nav-active">{intl.get('模拟交易大赛')} <span className="Torch"></span>
                                     </NavLink> 
-                            </div>
+                                </div>
+                                <div className="nav-left" 
+                                     style={{
+                                        display:window.location.pathname == '/ex/deal'?'block':window.location.pathname == '/ex/dealTrade'?'block':window.location.pathname == '/ex/dealWallet'?'block':'none'
+                                     }}>
+                                    <NavLink className="logo" to="/" exact onClick={this.removeClass} />
+                                
+                                        <NavLink to="/" onClick={this.removeClass} 
+                                                    exact className="nav-name" 
+                                                    activeClassName="nav-active"
+                                        >{intl.get('首页')}</NavLink>
+                                    <NavLink 
+                                        to="/deal"
+                                        exact
+                                        onClick={this.removeClass}  
+                                        className={cs("animated  nav-name")}
+                                        activeClassName="nav-active">比赛介绍
+                                    </NavLink> 
+                                    <NavLink 
+                                        to="/dealTrade"
+                                        exact
+                                        onClick={this.removeClass}  
+                                        className={cs("animated  nav-name")}
+                                        activeClassName="nav-active">模拟交易
+                                    </NavLink> 
+                                    <NavLink 
+                                        to="/dealWallet"
+                                        exact
+                                        onClick={this.removeClass}  
+                                        className={cs("animated  nav-name")}
+                                        activeClassName="nav-active">模拟钱包
+                                    </NavLink> 
+                                </div>
                             <div className="nav-right">
                                 {
                                     !this.props.login.loginState?<div className="nav-user-info" >
