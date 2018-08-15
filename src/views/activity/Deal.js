@@ -60,28 +60,28 @@ export class Deal extends Component {
           this.leftTimer(2018,8,17,0,0,0)
         }
       },1000); 
-      tradList({
-        rankType:1,
-        pageNum:1,
-        numPerPage:100
-      }).then(res =>{
-        console.log(res);
-        this.setState({
-          myRichRank: res.myRank,
-          richRankList: res.data
-        })
-      })
-      tradList({
-        rankType:2,
-        pageNum:1,
-        numPerPage:100
-      }).then(res =>{
-        console.log(res);
-        this.setState({
-          myPoolRank: res.myrank,
-          poolRankList: res.data,
-        })
-      })
+      // tradList({
+      //   rankType:1,
+      //   pageNum:1,
+      //   numPerPage:100
+      // }).then(res =>{
+      //   console.log(res);
+      //   this.setState({
+      //     myRichRank: res.myRank,
+      //     richRankList: res.data
+      //   })
+      // })
+      // tradList({
+      //   rankType:2,
+      //   pageNum:1,
+      //   numPerPage:100
+      // }).then(res =>{
+      //   console.log(res);
+      //   this.setState({
+      //     myPoolRank: res.myrank,
+      //     poolRankList: res.data,
+      //   })
+      // })
     }
     
 
