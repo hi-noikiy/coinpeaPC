@@ -35,7 +35,7 @@ class Banner extends React.PureComponent {
        
         return (
             <div className="block">
-                {/*<div className="block-top">
+                <div className="block-top">
                     <h3>{intl.get('Banner-hd')}</h3>
                     <p>
                         {
@@ -43,7 +43,7 @@ class Banner extends React.PureComponent {
                             intl.get('Banner-des-1')+this.state.data.coinName +' '+intl.get('Banner-des-2')
                         }
                     </p>
-                </div>*/}
+                </div>
                 <div className="block-bottom">
                         <div className="block-items">
                             <div>

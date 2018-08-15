@@ -201,17 +201,17 @@ class Home extends Component {
             <div id="home">
                 {/* banner */}
                 
-               { !this.props.tradeTabslist.siteInfo.bannerType ?<Carousel 
-                                       easing="ease-in-out"
-                                       effect="fade"
-                                       autoplay
-                                       speed="3000"
-                               >
-                                 {
-                                     imgList.length?imgList:<div className="frameWork">Welcome {window.location.pathname}!!!</div>
-                                 }
-                               </Carousel>:''
-                }
+               {/*{ !this.props.tradeTabslist.siteInfo.bannerType ?<Carousel 
+                                                      easing="ease-in-out"
+                                                      effect="fade"
+                                                      autoplay
+                                                      speed="3000"
+                                              >
+                                                {
+                                                    imgList.length?imgList:<div className="frameWork">Welcome {window.location.pathname}!!!</div>
+                                                }
+                                              </Carousel>:''
+                               }*/}
                 <Banner />
                 {/* 折线图 */}
                 {/*{this.state.coinList.length > 0 ?<MarKetLine all={this.state.coinList}/> :<div style={{height:130}}></div> } */}
