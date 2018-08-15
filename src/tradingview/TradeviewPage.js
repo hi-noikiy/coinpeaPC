@@ -203,7 +203,7 @@ class TradeviewPage extends React.Component {
         "pointvalue": 1, 
         'volume_precision':1000000,
         "pricescale": 100000000, */
-        library_path: window.location.hostname === 'localhost'?'/':'/ex/',
+        library_path: '/',
         locale: lang,
         drawings_access: {
             type: 'black',

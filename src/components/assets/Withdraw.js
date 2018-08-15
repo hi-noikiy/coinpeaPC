@@ -535,6 +535,10 @@ class Withdraw extends React.Component {
                 lockBtn:false
             })
             message.info(res.msg);
+            if(res.status ===1){
+                this.getWithdrawNote({ numPerPage: this.state.pagination.pageSize, pageNum: 1, withdrawRecord: { coinId: this.props.allCoins.activeCoinid } });
+                this.getAssetInfo(this.props.allCoins.activeCoinid);
+            }
         });
     }
 
@@ -547,9 +551,10 @@ class Withdraw extends React.Component {
              });
              if(data.status === 1) {
                   //获取提币记录
-                  this.getWithdrawNote({numPerPage:this.state.pagination.pageSize, pageNum:1, withdrawRecord:{coinId: this.props.allCoins.activeCoinid}});
-             } else {
-                    console.log(data);
+                this.getWithdrawNote({numPerPage:this.state.pagination.pageSize, pageNum:1, withdrawRecord:{coinId: this.props.allCoins.activeCoinid}});
+                this.getAssetInfo(this.props.allCoins.activeCoinid);
+            } else {
+                console.log(data);
              }
         })
     }

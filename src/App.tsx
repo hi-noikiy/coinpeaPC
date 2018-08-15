@@ -16,7 +16,7 @@ class App extends React.Component {
 
 		return(
 				<Provider store = {store}>
-					<BrowserRouter basename="/ex">
+					<BrowserRouter basename="/">
 						<Frames  />
 					</BrowserRouter>
 				</Provider>
