@@ -180,6 +180,8 @@
     }
     .joinT {
         background: #00b07c;
+        width: 190px;
+        z-index: 3;
         color: #fff;
         position: fixed;
         right: 20px;
@@ -204,5 +206,8 @@
     .joinT:focus {
         background: #00b07c;
         color: #fff;
+    }
+    .joinT1 {
+        bottom: 80px;
     }
     

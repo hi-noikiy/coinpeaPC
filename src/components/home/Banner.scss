@@ -1,7 +1,7 @@
 .block{
-    height: 670px;
+    // height: 670px;
     text-align: center;
-    background: url('../../assets/home_banner.png') no-repeat;
+    // background: url('../../assets/home_banner.png') no-repeat;
     background-color:rgba(244,245,246,1);
     background-size: 100% 440px;
     // border-bottom: 1px solid #333;
@@ -30,7 +30,8 @@
     .block-bottom {
         // width: 1400px;
         margin: 0 auto;
-        padding-top: 360px;
+        // padding-top: 360px;
+        margin-top: -70px;
         display: flex;
         font-size: 14px;
         color: #A7B5C6;
@@ -42,6 +43,7 @@
         .block-items{
             width:384px;
             text-align: center;
+            z-index: 2;
             // padding: 0 50px;
             // height: 148px;
             // width: 340px;

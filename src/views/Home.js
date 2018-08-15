@@ -211,8 +211,8 @@ class Home extends Component {
                                  {
                                      imgList.length?imgList:<div className="frameWork">Welcome {window.location.pathname}!!!</div>
                                  }
-                               </Carousel>:
-                <Banner />}
+                               </Carousel>:''
+                }
                 <Banner />
                 {/* 折线图 */}
                 {/*{this.state.coinList.length > 0 ?<MarKetLine all={this.state.coinList}/> :<div style={{height:130}}></div> } */}
