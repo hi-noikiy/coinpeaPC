@@ -3,6 +3,12 @@
     margin: 40px auto;
     border: 1px solid rgba(40,40,40,0.12);
     background: #fff;
+    .waitTip {
+        text-align: center;
+        font-size: 30px;
+        color: #888;
+        line-height: 600px;
+    }
     .personalNav{
         font-size:14px;
         a:last-child{padding-right:0}

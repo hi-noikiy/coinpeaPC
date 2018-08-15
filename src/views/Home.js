@@ -202,7 +202,7 @@ class Home extends Component {
             <div id="home">
                 {/* banner */}
                 
-               {/*{ !this.props.tradeTabslist.siteInfo.bannerType ?<Carousel 
+               { !this.props.tradeTabslist.siteInfo.bannerType ?<Carousel 
                                        easing="ease-in-out"
                                        effect="fade"
                                        autoplay
@@ -211,7 +211,8 @@ class Home extends Component {
                                  {
                                      imgList.length?imgList:<div className="frameWork">Welcome {window.location.pathname}!!!</div>
                                  }
-                               </Carousel>:*/}
+                               </Carousel>:
+                <Banner />}
                 <Banner />
                 {/* 折线图 */}
                 {/*{this.state.coinList.length > 0 ?<MarKetLine all={this.state.coinList}/> :<div style={{height:130}}></div> } */}
