@@ -7,6 +7,8 @@ import {Table} from 'antd';
 import intl from 'react-intl-universal';
 import './Deal.scss'
 
+import { tradList } from '../../api/activity'
+
 // img
 import banner from '../../assets/jieshao_bg.png'
 import rank from '../../assets/jieshao_ico_huangguan.png'
@@ -28,25 +30,24 @@ const dataSource = [{
 const columns = [{
   title: '排名',
   dataIndex: 'rank',
-  key: 'rank',
 }, {
   title: '账号',
   dataIndex: 'account',
-  key: 'account',
 }, {
   title: '涨幅%',
   dataIndex: 'gain',
-  key: 'gain',
 }, {
   title: '资产总额（ USDT ）',
   dataIndex: 'assets',
-  key: 'assets',
 }];
 export class Deal extends Component {
     constructor(props){
         super(props);
         this.state = {
-            
+            richRankList: [],
+            poolRankList: [],
+            myRichRank: '',
+            myPoolRank: '',
         }
     }
 
@@ -59,7 +60,30 @@ export class Deal extends Component {
           this.leftTimer(2018,8,17,0,0,0)
         }
       },1000); 
+      tradList({
+        rankType:1,
+        pageNum:1,
+        numPerPage:100
+      }).then(res =>{
+        console.log(res);
+        this.setState({
+          myRichRank: res.myRank,
+          richRankList: res.data
+        })
+      })
+      tradList({
+        rankType:2,
+        pageNum:1,
+        numPerPage:100
+      }).then(res =>{
+        console.log(res);
+        this.setState({
+          myPoolRank: res.myrank,
+          poolRankList: res.data,
+        })
+      })
     }
+    
 
     leftTimer = (year,month,day,hour,minute,second) =>{ 
       var leftTime = (new Date(year,month-1,day,hour,minute,second)) - (new Date()); //计算剩余的毫秒数 
@@ -88,7 +112,24 @@ export class Deal extends Component {
     
  
     render() {
-        
+        const richRankList=this.state.richRankList.map((item,index)=>{
+          return {
+            key: index,
+            rank: rank,
+            account:userName,
+            gain:increasely,
+            assets:amount,
+          }
+        })
+        const poolRankList=this.state.richRankList.map((item,index)=>{
+          return {
+            key: index,
+            rank: rank,
+            account:userName,
+            gain:increasely,
+            assets:amount,
+          }
+        })
         return (
             <div className="deal">
                 <div className='act_banner'>
@@ -101,16 +142,16 @@ export class Deal extends Component {
                     <h1 className='caption_title'>//&nbsp;&nbsp;活动说明&nbsp;&nbsp;//</h1>
                     <ul className='caption_content'>
                         <li className='items'>
-                            <span>1</span>活动期间: 8月12日14:00开启全球公测模拟交易大赛，持续到8月15日14:00结束，为时72小时。
+                            <span>1</span>活动时间：8月17日14:00开启全球公测模拟交易大赛，持续到8月20日14:00 结束，为时72小时。
                         </li>
                         <li className='items'>
-                            <span>1</span>活动期间: 8月12日14:00开启全球公测模拟交易大赛，持续到8月15日14:00结束，为时72小时。
+                            <span>1</span>启动资金：凡模拟大赛参赛用户将获得100,000USDT、100BTC和1,000ETH启动模拟资产，注册完成即发放到个人资产，最终活动奖励将按照用户资产总额USDT估值排名进行分配。
                         </li>
                         <li className='items'>
-                            <span>1</span>活动期间: 8月12日14:00开启全球公测模拟交易大赛，持续到8月15日14:00结束，为时72小时。
+                            <span>1</span>模拟交易大赛奖励：总奖金池100万EX8和100ETH，由前50名和后50名共同瓜分。
                         </li>
                         <li className='items'>
-                            <span>1</span>活动期间: 8月12日14:00开启全球公测模拟交易大赛，持续到8月15日14:00结束，为时72小时。
+                            <span>1</span>排名榜单将于每日整点更新一次，最终奖励结果按活动结束当天14:00排名为准。
                         </li>
                     </ul>
                     <div className='caption_btn'><a href="">查看活动详情 &gt;</a></div>
@@ -122,19 +163,19 @@ export class Deal extends Component {
                     <div className='content_items'>
                         <h1>
                             富豪榜
-                            <span>我的排名：100名</span>
+                            <span>{this.state.myRichRank > 100? '未上榜':'我的排名：${this.state.myRichRank}名'}</span>
                         </h1>
-                        <Table pagination={false} columns={columns} dataSource={dataSource} locale={{ 'emptyText': intl.get('暂无数据') }} />
+                        <Table pagination={false} columns={columns} dataSource={richRankList} locale={{ 'emptyText': intl.get('暂无数据') }} />
                     </div>
                     <div className='content_items'>
                         <h1>
                             贫民榜
-                            <span>我的排名：100名</span>
+                            <span>{this.state.myPoolRank > 100? '未上榜':'我的排名：${this.state.myPoolRank}名'}</span>
                         </h1>
                         <Table 
                         pagination={false} 
                         columns={columns} 
-                        dataSource={dataSource} 
+                        dataSource={poolRankList} 
                         locale={{ 'emptyText': intl.get('暂无数据') }} 
                         onRow={(record) => {
                             return {
